@@ -57,6 +57,7 @@ header
         padding-top: 66px
         background: url("/assets/imagine.png")
         overflow: hidden
+        float: left
     .menu
       +grid-column(6)
       text-align: right
@@ -80,6 +81,17 @@ hr
   +border-radius(5px)
 
 body.problems.show
+  .problem_statement
+    background: $lochmara url("/assets/highlight.png") no-repeat
+    margin-bottom: 40px
+    .statement
+      +grid-column(6)
+      span
+        font-size: 32px
+        color: white
+        display: block
+        padding: 40px 0
+        font-weight: bold
   .problem_title
     +grid-column(12)
   .idea
