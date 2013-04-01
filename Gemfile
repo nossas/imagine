@@ -47,3 +47,4 @@ end
 
 gem 'inherited_resources'
 gem 'slim-rails'
+gem 'omniauth-facebook'

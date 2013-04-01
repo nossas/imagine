@@ -23,8 +23,12 @@ body class="#{controller.controller_name} #{controller.action_name}"
       .row
         .mr_logo= link_to "Meu Rio", "http://meurio.org.br/"
         .login
-          | Entre com a sua conta do 
-          = link_to image_tag("facebook.png"), "#"
+          - if current_user
+            | #{current_user.name} 
+            = image_tag current_user.image
+          - else
+            | Entre com a sua conta do 
+            = link_to image_tag("facebook.png"), "/auth/facebook", :id => "auth-facebook"
     .imagine_header
       .row
         .imagine_logo= link_to "Imagine", ""
