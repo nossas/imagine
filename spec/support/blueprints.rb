@@ -14,6 +14,7 @@ Problem.blueprint do
   image           { "http://www.abeoc.org.br/wp-content/uploads/2012/07/Rio-de-Janeiro.jpg" }
   ideas_deadline  { Time.now + 1.month }
   voting_deadline { Time.now + 2.months }
+  user            { User.make! }
 end
 
 Idea.blueprint do

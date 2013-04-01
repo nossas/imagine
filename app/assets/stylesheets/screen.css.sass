@@ -1,7 +1,108 @@
-/*
-  Welcome to Compass.
-  In this file you should write your main styles. (or centralize your imports)
-  Import this file using the following HTML or equivalent:
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+$sea-buckthorn: #f8a53b
+$cerulean:      #0bbde1
+$lochmara:      #008dcd
+$congress-blue: #054a8b
+$athens-gray:   #f4f5f7
+$bombay:        #d2d3d5
+
+// Foundation variables
+$header-font-family: "Proxima Nova"
+$header-font-color: $cerulean
+$small-font-color: gray
+$small-font-size: 45%
 
 @import compass/reset
+@import compass/css3
+@import foundation
+@import font
+
+body
+  background: $athens-gray
+  font-family: "Proxima Nova"
+
+header
+  .mr_header
+    background: white
+    padding: 5px 0
+    .mr_logo
+      +grid-column(6)
+      a
+        display: inline-block
+        width: 33px
+        height: 0
+        padding-top: 37px
+        overflow: hidden
+        background: url("/assets/meurio.png")
+        float: left
+    .login
+      +grid-column(6)
+      text-align: right
+      font-size: 12px
+      color: gray
+      margin-top: 10px
+      line-height: 20px
+      img
+        width: 20px
+        height: 20px
+        vertical-align: middle
+  .imagine_header
+    padding: 30px 0
+    +box-shadow(rgba(0, 0, 0, .15) 0 10px 5px -5px inset)
+    .imagine_logo
+      +grid-column(6)
+      a
+        display: inline-block
+        width: 142px
+        height: 0
+        padding-top: 66px
+        background: url("/assets/imagine.png")
+        overflow: hidden
+    .menu
+      +grid-column(6)
+      text-align: right
+
+h1
+  small
+    display: block
+    font-weight: normal
+
+hr
+  margin: 0
+
+.row
+  +grid-row
+
+.box
+  background: white
+  padding: 20px
+  margin-bottom: 20px
+  +box-shadow(rgba(0, 0, 0, .15) 0 1px 1px)
+  +border-radius(5px)
+
+body.problems.show
+  .problem_title
+    +grid-column(12)
+  .idea
+    +grid-column(4)
+    .title
+      color: darken(gray, 10%)
+      font-weight: bold
+      font-size: 18px
+    .user, .description
+      color: lightgray
+      margin-bottom: 15px
+      font-size: 14px
+    .description
+      color: gray
+    hr
+      margin-bottom: 15px
+    .icon-thumbs-up, .icon-retweet
+      font-size: 18px
+      color: gray
+      width: 50%
+      display: inline-block
+      &:before
+        color: lightgray
+        font-size: 42px
+        vertical-align: middle
+        margin-right: 5px

@@ -1,9 +1,44 @@
-doctype
-html
-  head
-    title Imagine
-    = stylesheet_link_tag    "application", :media => "all"
-    = javascript_include_tag "application"
-    = csrf_meta_tags
-  body
-    = yield
+doctype html
+== "<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->"
+== "<!--[if lt IE 7 ]> <html class=\"ie6\" lang=\"en\"> <![endif]-->"
+== "<!--[if IE 7 ]>    <html class=\"ie7\" lang=\"en\"> <![endif]-->"
+== "<!--[if IE 8 ]>    <html class=\"ie8\" lang=\"en\"> <![endif]-->"
+== "<!--[if IE 9 ]>    <html class=\"ie9\" lang=\"en\"> <![endif]-->"
+== "<!--[if (gt IE 9)|!(IE)]><!--> <html lang=\"en\"> <!--<![endif]-->"
+
+head
+  meta charset="utf-8"
+  / Uncomment to make IE8 render like IE7
+  / meta http-equiv="X-UA-Compatible" content="IE=7"
+  / Set the viewport width to device width for mobile
+  meta name="viewport" content="width=device-width, initial-scale=1.0"
+  title= content_for?(:title) ? yield(:title) : "Imagine"
+  = stylesheet_link_tag "application"
+  = javascript_include_tag "vendor/custom.modernizr"
+  = csrf_meta_tag
+
+body class="#{controller.controller_name} #{controller.action_name}"
+  header
+    .mr_header
+      .row
+        .mr_logo= link_to "Meu Rio", "http://meurio.org.br/"
+        .login
+          | Entre com a sua conta do 
+          = link_to image_tag("facebook.png"), "#"
+    .imagine_header
+      .row
+        .imagine_logo= link_to "Imagine", ""
+        .menu
+          .fb-like data-href="http://imagine.com.br" data-send="false" data-layout="box_count" data-width="450" data-show-faces="false"
+            
+  = yield
+  = javascript_include_tag "application"
+  #fb-root
+  javascript:
+    (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=305892829539951";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
