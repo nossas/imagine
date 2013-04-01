@@ -31,7 +31,11 @@ body class="#{controller.controller_name} #{controller.action_name}"
         .menu
           .fb-like data-href="http://imagine.com.br" data-send="false" data-layout="box_count" data-width="450" data-show-faces="false"
   = yield
+  
   footer
+    .row
+      .signature © 2013 Imagine
+
   = javascript_include_tag "application"
   #fb-root
   javascript:
