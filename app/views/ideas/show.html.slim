@@ -6,7 +6,7 @@
     .box
       h1= @idea.title
       .idea_details por #{@idea.user.name} há #{distance_of_time_in_words_to_now(@idea.created_at)} atrás, em #{link_to @problem.title, @problem}
-      .idea_description= @idea.description
+      .idea_description= raw @idea.description
   .idea_panel
     = link_to "#", :class => "vote" do
       span.icon-heart votar
