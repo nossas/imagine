@@ -47,21 +47,22 @@ header
         height: 20px
         vertical-align: middle
   .imagine_header
-    padding: 30px 0
+    padding: 15px 0
     +box-shadow(rgba(0, 0, 0, .15) 0 10px 5px -5px inset)
     .imagine_logo
       +grid-column(6)
       a
         display: inline-block
-        width: 142px
+        width: 156px
         height: 0
-        padding-top: 66px
+        padding-top: 82px
         background: url("/assets/imagine.png")
         overflow: hidden
         float: left
     .menu
       +grid-column(6)
       text-align: right
+      padding-top: 10px
 
 footer
   background: lightgray
@@ -90,12 +91,12 @@ a
 .box
   background: white
   padding: 20px
-  +box-shadow(rgba(0, 0, 0, .15) 0 2px 2px)
+  +box-shadow(rgba(0, 0, 0, .15) 0 1px 1px)
   +border-radius(5px)
 
 body.problems.show
   .problem_statement
-    background: $cerulean url("/assets/highlight.png") no-repeat
+    background: $cerulean url("/assets/highlight.png") no-repeat center
     margin-bottom: 40px
     .statement
       +grid-column(12)
@@ -127,7 +128,7 @@ body.problems.show
     .idea_top
       background: white
       padding: 20px
-      +box-shadow(rgba(0, 0, 0, .15) 0 2px 2px)
+      +box-shadow(rgba(0, 0, 0, .15) 0 1px 1px)
       +border-radius(5px 5px 0 0)
       .title
         font-weight: bold
@@ -139,16 +140,11 @@ body.problems.show
         font-size: 14px
       .description
         min-height: 99px
-      &:hover
-        cursor: pointer
-        +scale(1.1)
-        +border-radius(5px)
-        +box-shadow(rgba(0, 0, 0, .15) 0 2px 3px)
     .idea_bottom
       background: white
       border-top: 1px solid lightgray
       +border-radius(0 0 5px 5px)
-      +box-shadow(rgba(0, 0, 0, .15) 0 2px 2px)
+      +box-shadow(rgba(0, 0, 0, .15) 0 1px 1px)
       .icon-heart
         border-right: 1px solid lightgray
       .icon-heart, .icon-retweet
