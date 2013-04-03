@@ -27,7 +27,7 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="icon-"] {
 */
-.icon-thumbs-up, .icon-retweet {
+.icon-retweet, .icon-comment, .icon-clock, .icon-heart {
 	font-family: 'entypo';
 	speak: none;
 	font-style: normal;
@@ -37,9 +37,15 @@ you can use the generic selector below, but it's slower:
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 }
-.icon-thumbs-up:before {
-	content: "\e003";
-}
 .icon-retweet:before {
 	content: "\e094";
+}
+.icon-comment:before {
+	content: "\e000";
+}
+.icon-clock:before {
+	content: "\e001";
+}
+.icon-heart:before {
+	content: "\e002";
 }

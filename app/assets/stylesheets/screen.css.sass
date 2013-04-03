@@ -1,13 +1,11 @@
-$sea-buckthorn: #f8a53b
-$cerulean:      #0bbde1
-$lochmara:      #008dcd
-$congress-blue: #054a8b
-$athens-gray:   #f4f5f7
-$bombay:        #d2d3d5
+$dove-gray:   #666666
+$casablanca:  #f9b93e
+$cerulean:    #0dbde6
+$athens-gray: #f4f5f7
 
 // Foundation variables
 $header-font-family: "Proxima Nova"
-$header-font-color: $cerulean
+$header-font-color: $dove-gray
 $small-font-color: gray
 $small-font-size: 45%
 
@@ -19,6 +17,7 @@ $small-font-size: 45%
 body
   background: $athens-gray
   font-family: "Proxima Nova"
+  color: $dove-gray
 
 header
   .mr_header
@@ -38,7 +37,6 @@ header
       +grid-column(6)
       text-align: right
       font-size: 12px
-      color: gray
       margin-top: 10px
       line-height: 20px
       img
@@ -68,14 +66,15 @@ footer
   margin-top: 40px
   .signature
     text-align: right
-    color: gray
     font-size: 12px
     +grid-column(12)
 
 h1
-  small
+  line-height: 1em
+  small 
     display: block
     font-weight: normal
+    line-height: 1em
 
 hr
   margin: 0
@@ -85,18 +84,32 @@ hr
 
 body.problems.show
   .problem_statement
-    background: $lochmara url("/assets/highlight.png") no-repeat
+    background: $cerulean url("/assets/highlight.png") no-repeat
     margin-bottom: 40px
     .statement
-      +grid-column(6)
+      +grid-column(12)
       span
         font-size: 32px
         color: white
         display: block
         padding: 40px 0
         font-weight: bold
+        text-align: center
   .problem_title
     +grid-column(12)
+    .problem_deadlines
+      padding: 10px 0
+      border-top: lightgray 1px solid
+      border-bottom: lightgray 1px solid
+      margin-bottom: 40px
+      span
+        font-weight: bold
+        &:before
+          font-weight: normal
+          vertical-align: middle
+          margin-right: 5px
+        &:last-child
+          margin-left: 20px
   .idea
     margin-bottom: 20px
     +grid-column(4)
@@ -106,16 +119,14 @@ body.problems.show
       +box-shadow(rgba(0, 0, 0, .15) 0 2px 2px)
       +border-radius(5px 5px 0 0)
       .title
-        color: darken(gray, 10%)
         font-weight: bold
         font-size: 18px
       .user
         margin-bottom: 15px
-      .user, .description
         color: lightgray
+      .user, .description
         font-size: 14px
       .description
-        color: gray
         min-height: 99px
       &:hover
         cursor: pointer
@@ -127,11 +138,10 @@ body.problems.show
       border-top: 1px solid lightgray
       +border-radius(0 0 5px 5px)
       +box-shadow(rgba(0, 0, 0, .15) 0 2px 2px)
-      .icon-thumbs-up
+      .icon-heart
         border-right: 1px solid lightgray
-      .icon-thumbs-up, .icon-retweet
+      .icon-heart, .icon-retweet
         font-size: 18px
-        color: gray
         width: 50%
         padding: 10px 20px
         display: inline-block
