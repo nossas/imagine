@@ -31,3 +31,7 @@ end
 Then(/^I should be in "(.*?)"$/) do |arg1|
   page.current_path.should be_== path(arg1)
 end
+
+When(/^I click on the idea$/) do
+  click_link @idea.title
+end

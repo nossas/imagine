@@ -1,6 +1,6 @@
 .idea
   .idea_top
-    .title= idea.title
+    .title= link_to idea.title, problem_idea_path(idea.problem, idea)
     .user por #{idea.user.name}
     .description= idea.description
   .idea_bottom

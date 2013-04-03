@@ -1,0 +1,9 @@
+- content_for(:title) { @idea.title }
+- content_for(:og_type) { "imaginee:idea" }
+
+.row
+  .idea
+    .box
+      h1= @idea.title
+      .idea_details por #{@idea.user.name} há #{distance_of_time_in_words_to_now(@idea.created_at)} atrás, em #{link_to @problem.title, @problem}
+      .idea_description= @idea.description

@@ -4,10 +4,12 @@ $cerulean:    #0dbde6
 $athens-gray: #f4f5f7
 
 // Foundation variables
-$header-font-family: "Proxima Nova"
-$header-font-color: $dove-gray
-$small-font-color: gray
-$small-font-size: 45%
+$header-font-family:  "Proxima Nova"
+$header-font-color:   $dove-gray
+$header-line-height:  1em
+$h1-font-size:        2em
+$small-font-color:    gray
+$small-font-size:     45%
 
 @import compass/reset
 @import compass/css3
@@ -70,7 +72,6 @@ footer
     +grid-column(12)
 
 h1
-  line-height: 1em
   small 
     display: block
     font-weight: normal
@@ -81,6 +82,12 @@ hr
 
 .row
   +grid-row
+
+.box
+  background: white
+  padding: 20px
+  +box-shadow(rgba(0, 0, 0, .15) 0 2px 2px)
+  +border-radius(5px)
 
 body.problems.show
   .problem_statement
@@ -150,3 +157,7 @@ body.problems.show
           font-size: 42px
           vertical-align: middle
           margin-right: 5px
+
+body.ideas.show
+  .idea
+    +grid-column(8)

@@ -1,5 +1,7 @@
 Imagine::Application.routes.draw do
-  resources :problems, only: [:show]
+  resources :problems, only: [:show] do
+    resources :ideas, only: [:show]
+  end
   match "auth/facebook/callback" => "sessions#create"
 
   # The priority is based upon order of creation:
