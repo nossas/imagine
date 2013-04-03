@@ -3,4 +3,8 @@ class Idea < ActiveRecord::Base
   validates :description, :problem_id, :title, :user_id, :presence => true
   belongs_to :problem
   belongs_to :user
+  
+  def to_param
+    "#{self.id}-#{self.title.parameterize}"
+  end
 end

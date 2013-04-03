@@ -3,4 +3,8 @@ class Problem < ActiveRecord::Base
   validates :description, :title, :user_id, :presence => true
   has_many :ideas
   belongs_to :user
+
+  def to_param
+    "#{self.id}-#{self.title.parameterize}"
+  end
 end
