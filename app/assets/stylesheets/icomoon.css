@@ -28,7 +28,6 @@ you can use the generic selector below, but it's slower:
 [class*="icon-"] {
 */
 .icon-retweet, .icon-comment, .icon-clock, .icon-heart {
-	font-family: 'entypo';
 	speak: none;
 	font-style: normal;
 	font-weight: normal;
@@ -38,14 +37,18 @@ you can use the generic selector below, but it's slower:
 	-webkit-font-smoothing: antialiased;
 }
 .icon-retweet:before {
+  font-family: 'entypo';
 	content: "\e094";
 }
 .icon-comment:before {
+	font-family: 'entypo';
 	content: "\e000";
 }
 .icon-clock:before {
+	font-family: 'entypo';
 	content: "\e001";
 }
 .icon-heart:before {
+	font-family: 'entypo';
 	content: "\e002";
 }

@@ -2,6 +2,7 @@ $dove-gray:   #666666
 $casablanca:  #f9b93e
 $cerulean:    #0dbde6
 $athens-gray: #f4f5f7
+$alabaster:   #fbfbfb
 
 // Foundation variables
 $header-font-family:  "Proxima Nova"
@@ -83,6 +84,9 @@ hr
 .row
   +grid-row
 
+a
+  color: $cerulean
+
 .box
   background: white
   padding: 20px
@@ -161,3 +165,42 @@ body.problems.show
 body.ideas.show
   .idea
     +grid-column(8)
+  .idea_panel
+    +grid-column(4)
+    .box, a
+      background: $alabaster
+      margin-bottom: 20px
+      +box-shadow(none)
+    a.vote, a.remix
+      display: block
+      padding: 10px
+      cursor: pointer
+      color: gray
+      +border-radius(0 0 5px 5px)
+      &:hover
+        background: white
+      &:first-child
+        border-bottom: 1px solid lightgray
+        margin-bottom: 0
+        +border-radius(5px 5px 0 0)
+      span
+        display: inline-block
+        font-weight: bold
+        width: 50%
+        &:before
+          vertical-align: middle
+          margin-right: 10px
+          font-size: 44px
+        &:last-child
+          color: $cerulean
+          text-align: right
+    h3
+      font-weight: normal
+      margin: 0 0 10px 0
+    .idea_share
+      text-align: right
+      overflow: hidden
+      margin-bottom: 10px
+      .fb-like
+        position: relative
+        top: -5px
