@@ -30,3 +30,11 @@ User.blueprint do
   email       { "#{sn}@imagi.ne" }
   image       { "http://userserve-ak.last.fm/serve/_/6773/Paul+McCartney.jpg" }
 end
+
+Vote.blueprint do
+  # Attributes here
+end
+
+Contribution.blueprint do
+  # Attributes here
+end
