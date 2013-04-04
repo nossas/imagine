@@ -16,4 +16,4 @@
       = @problem.ideas_deadline.nil? ? "sem prazo final" : @problem.ideas_deadline < Time.now ? "encerrado" : l(@problem.ideas_deadline, format: :short)
       span.icon-clock votação até: 
       = @problem.voting_deadline.nil? ? "sem prazo final" : @problem.voting_deadline < Time.now ? "encerrado" : l(@problem.voting_deadline, format: :short)
-.row= render @problem.ideas
+.row= render @problem.ideas.order("RANDOM()")
