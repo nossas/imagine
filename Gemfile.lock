@@ -77,6 +77,7 @@ GEM
     fssm (0.2.10)
     gherkin (2.11.6)
       json (>= 1.7.6)
+    google-analytics-rails (0.0.4)
     has_scope (0.5.1)
     hashie (1.2.0)
     hike (1.2.1)
@@ -206,6 +207,7 @@ DEPENDENCIES
   compass-rails
   cucumber-rails
   database_cleaner
+  google-analytics-rails
   inherited_resources
   jquery-rails
   machinist (>= 2.0.0.beta2)
