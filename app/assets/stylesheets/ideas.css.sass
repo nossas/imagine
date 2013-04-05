@@ -2,24 +2,33 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body.ideas.show
-  .idea
+  .idea_title, .idea_details
+    +grid-column(12)
+    h1
+      line-height: normal
+      margin-bottom: 0
+  .idea_details
+    font-size: .9em
+    margin-bottom: 2em
+  .idea_description
     +grid-column(8)
-    .idea_details
-      margin-bottom: 20px
   .idea_panel
     +grid-column(4)
-    .box, a
-      background: $alabaster
-      margin-bottom: 20px
-      +box-shadow(none)
+    a.vote
+      &:hover
+        color: $french-rose
+    a.remix
+      &:hover
+        color: $casablanca
     a.vote, a.remix
+      background: white
       display: block
-      padding: 10px
+      padding: 15px
       cursor: pointer
       color: gray
+      margin-bottom: 20px
+      +box-shadow(lightgray 0 1px 1px)
       +border-radius(0 0 5px 5px)
-      &:hover
-        background: white
       &:first-child
         border-bottom: 1px solid lightgray
         margin-bottom: 0
@@ -35,13 +44,13 @@ body.ideas.show
         &:last-child
           color: $cerulean
           text-align: right
-    h3
-      font-weight: normal
-      margin: 0 0 10px 0
     .idea_share
-      text-align: right
-      overflow: hidden
-      margin-bottom: 10px
-      .fb-like
-        position: relative
-        top: -5px
+      .box
+        text-align: left
+        h3
+          font-weight: normal
+          font-size: 1.5em
+          margin: 0 0 10px 0
+          color: gray
+        .fb-like, iframe
+          float: left

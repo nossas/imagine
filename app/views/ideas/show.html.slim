@@ -2,18 +2,23 @@
 - content_for(:og_type) { "imaginee:idea" }
 
 .row
-  .idea
-    .box
-      h1= @idea.title
-      .idea_details por #{@idea.user.name} há #{distance_of_time_in_words_to_now(@idea.created_at)} atrás, em #{link_to @problem.title, @problem}
-      .idea_description= raw @idea.description_html
+  .idea_title
+    h1= @idea.title
+  .idea_details por #{@idea.user.name} há #{distance_of_time_in_words_to_now(@idea.created_at)} atrás, em #{link_to @problem.title, @problem}
+
+.row
+  .idea_description
+    .box= raw @idea.description_html
   .idea_panel
     = link_to "#", :class => "vote" do
       span.icon-heart votar
-      span 120 votos
+      span= @idea.votes.count
     = link_to "#", :class => "remix" do
-      span.icon-retweet remixar
-      span 3 remixes
+      span.icon-retweet contribuir
+      span= @idea.contributions.count
     .idea_share
-      a href="https://twitter.com/share" class="twitter-share-button" data-lang="pt" Tweetar
-      .fb-like data-href=problem_idea_url(@problem, @idea) data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"
+      .box
+        h3 compartilhe
+        a href="https://twitter.com/share" class="twitter-share-button" data-lang="pt" Tweetar
+        .fb-like data-href=problem_idea_url(@problem, @idea) data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"
+        .clear

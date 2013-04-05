@@ -29,20 +29,19 @@ body
 
 header
   background: white
-  padding: .5em 0
-  margin-bottom: 2em
+  padding: 5px 0
+  margin-bottom: 40px
   +box-shadow(gray 0 0 3px)
   .logo
     +grid-column(2)
     img
       float: left
-      width: 100px
   .menu
     +grid-column(10)
     text-align: right
     .login
       text-align: right
-      line-height: 53px
+      line-height: 72px
       font-size: 14px
       img
         vertical-align: middle
@@ -58,20 +57,29 @@ footer
   .signature
     text-align: right
     +grid-column(12)
-    img
-      width: 20px
 
 .row
   +grid-row
 
 .box
   background: white
-  padding: .75em .5em
+  padding: 20px
   margin: 0 1px 1px 1px
   +box-shadow(rgba(0, 0, 0, .15) 0 1px 1px)
   +border-radius(5px)
+  p
+    &:last-child
+      margin: 0
 
 .icon-retweet, .icon-comment, .icon-clock, .icon-heart
   &:before
     vertical-align: middle
     margin-right: 5px
+
+a
+  color: $cerulean
+  &:hover
+    color: lighten($cerulean, 10%)
+
+.clear
+  clear: both

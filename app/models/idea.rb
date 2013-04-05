@@ -12,5 +12,6 @@ class Idea < ActiveRecord::Base
 
   auto_html_for :description do
     image
+    simple_format
   end
 end

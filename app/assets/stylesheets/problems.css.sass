@@ -11,32 +11,33 @@ body.problems.show
         font-size: .6em
         font-weight: normal
         line-height: normal
-        margin-bottom: .25em
+        margin-bottom: 5px
     .problem_deadlines
       overflow: hidden
-      margin-bottom: 2em
+      margin-bottom: 20px
       .box
         float: left
-        margin-right: 1em
-        margin-bottom: 1em
+        margin-right: 20px
+        margin-bottom: 20px
+        padding: 10px
   .idea
-    margin-bottom: 2em
+    margin-bottom: 20px
     +grid-column(4)
     .idea_top
       background: white
-      padding: 1em
+      padding: 20px
       +box-shadow(rgba(0, 0, 0, .15) 0 1px 1px)
       +border-radius(5px 5px 0 0)
       .title
         a
           color: $dove-gray
           font-weight: bold
-          font-size: 1.25em
+          font-size: 18px
           &:hover
             color: $cerulean
             text-decoration: underline
       .user
-        color: gray
+        color: #BEBFC1
       .user, .description
         font-size: .9em
       .description
@@ -51,18 +52,11 @@ body.problems.show
       .icon-heart, .icon-retweet
         font-size: 1.25em
         width: 50%
-        padding: .25em 1em
+        padding: 10px 20px
         display: inline-block
         &:before
           color: lightgray
           font-size: 2em
-    &:hover
-      .icon-heart
-        &:before
-          color: $french-rose
-      .icon-retweet
-        &:before
-          color: $casablanca
 
 @media screen and (max-width: 750px)
   body.problems.show
