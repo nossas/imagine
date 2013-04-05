@@ -28,6 +28,9 @@ body.problems.show
       padding: 20px
       +box-shadow(rgba(0, 0, 0, .15) 0 1px 1px)
       +border-radius(5px 5px 0 0)
+      .title, .user
+        white-space: nowrap
+        overflow: hidden
       .title
         a
           color: $dove-gray
@@ -58,7 +61,7 @@ body.problems.show
           color: lightgray
           font-size: 2em
 
-@media screen and (max-width: 750px)
+@media screen and (max-width: 800px)
   body.problems.show
     .idea
       +grid-column(6)
