@@ -1,6 +1,6 @@
 .idea
   .idea_top
-    .title= link_to truncate(idea.title, :length => 26), problem_idea_path(idea.problem, idea), title: idea.title
+    .title= link_to truncate(idea.title, :length => 29), problem_idea_path(idea.problem, idea), title: idea.title
     .user por #{idea.user.name}
   .idea_bottom
     span.icon-heart= idea.votes.count
