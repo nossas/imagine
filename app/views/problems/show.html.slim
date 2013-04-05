@@ -1,19 +1,16 @@
 - content_for(:title) { @problem.title }
 - content_for(:og_type) { "imaginee:problem" }
-
-.problem_statement
-  .row
-    .statement
-      span Vote nas ideias que contribuirão para um Rio cada vez melhor.
-  
+ 
 .row
   .problem_title
     h1
       small= "#{@problem.user.name} quer saber..."
       = @problem.title
     .problem_deadlines
-      span.icon-comment envio de ideias até: 
-      = @problem.ideas_deadline.nil? ? "sem prazo final" : @problem.ideas_deadline < Time.now ? "encerrado" : l(@problem.ideas_deadline, format: :short)
-      span.icon-clock votação até: 
-      = @problem.voting_deadline.nil? ? "sem prazo final" : @problem.voting_deadline < Time.now ? "encerrado" : l(@problem.voting_deadline, format: :short)
+      .box
+        span.icon-comment envio de ideias: 
+        = @problem.ideas_deadline.nil? ? "sem prazo final" : @problem.ideas_deadline < Time.now ? "encerrado" : l(@problem.ideas_deadline, format: :short)
+      .box
+        span.icon-clock votação: 
+        = @problem.voting_deadline.nil? ? "sem prazo final" : @problem.voting_deadline < Time.now ? "encerrado" : l(@problem.voting_deadline, format: :short)
 .row= render @problem.ideas.order("RANDOM()")

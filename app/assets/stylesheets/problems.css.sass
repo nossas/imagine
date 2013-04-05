@@ -1,3 +1,75 @@
 // Place all the styles related to the problems controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body.problems.show
+  .problem_title
+    +grid-column(12)
+    h1
+      small
+        display: block
+        font-size: .6em
+        font-weight: normal
+        line-height: normal
+        margin-bottom: .25em
+    .problem_deadlines
+      overflow: hidden
+      margin-bottom: 2em
+      .box
+        float: left
+        margin-right: 1em
+        margin-bottom: 1em
+  .idea
+    margin-bottom: 2em
+    +grid-column(4)
+    .idea_top
+      background: white
+      padding: 1em
+      +box-shadow(rgba(0, 0, 0, .15) 0 1px 1px)
+      +border-radius(5px 5px 0 0)
+      .title
+        a
+          color: $dove-gray
+          font-weight: bold
+          font-size: 1.25em
+          &:hover
+            color: $cerulean
+            text-decoration: underline
+      .user
+        color: gray
+      .user, .description
+        font-size: .9em
+      .description
+        min-height: 99px
+    .idea_bottom
+      background: white
+      border-top: 1px solid lightgray
+      +border-radius(0 0 5px 5px)
+      +box-shadow(rgba(0, 0, 0, .15) 0 1px 1px)
+      .icon-heart
+        border-right: 1px solid lightgray
+      .icon-heart, .icon-retweet
+        font-size: 1.25em
+        width: 50%
+        padding: .25em 1em
+        display: inline-block
+        &:before
+          color: lightgray
+          font-size: 2em
+    &:hover
+      .icon-heart
+        &:before
+          color: $french-rose
+      .icon-retweet
+        &:before
+          color: $casablanca
+
+@media screen and (max-width: 750px)
+  body.problems.show
+    .idea
+      +grid-column(6)
+
+@media screen and (max-width: 500px)
+  body.problems.show
+    .idea
+      +grid-column(12)

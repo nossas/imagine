@@ -26,27 +26,23 @@ head
   = csrf_meta_tag
 
 body class="#{controller.controller_name} #{controller.action_name}"
-  header
-    .mr_header
+  .sticky_footer
+    header
       .row
-        .mr_logo= link_to "Meu Rio", "http://meurio.org.br/"
-        .login
-          - if current_user
-            | #{current_user.name} 
-            = image_tag current_user.image
-          - else
-            | Entre com a sua conta do 
-            = link_to image_tag("facebook.png"), "/auth/facebook", :id => "auth-facebook"
-    .imagine_header
-      .row
-        .imagine_logo= link_to "Imagine", ""
+        .logo= link_to image_tag("imagine.png"), root_path
         .menu
-          .fb-like data-href="http://imagine.meurio.org.br/" data-send="false" data-layout="box_count" data-width="450" data-show-faces="false"
-  = yield
+          .login
+            - if current_user
+              | #{current_user.name} 
+              = image_tag current_user.image, class: "user_image"
+            - else
+              = link_to image_tag("facebook.png"), "/auth/facebook", :id => "auth-facebook"
+    = yield
+    .sticky_footer_push
   
   footer
     .row
-      .signature © 2013 Imagine
+      .signature= link_to image_tag("meurio.png"), "http://meurio.org.br/"
 
   = javascript_include_tag "application"
   #fb-root
