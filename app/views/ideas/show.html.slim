@@ -19,7 +19,7 @@
         span.icon-heart você já votou
         span= @idea.votes.count
     = link_to "#", :class => "remix" do
-      span.icon-retweet contribuir
+      span.icon-retweet contribuições encerradas
       span= @idea.contributions.count
     - if flash[:notice]
       .thanks_for_voting
