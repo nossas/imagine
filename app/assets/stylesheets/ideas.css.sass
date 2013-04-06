@@ -36,9 +36,9 @@ body.ideas.show
       span
         display: inline-block
         font-weight: bold
-        width: 40%
+        width: 20%
         &.icon-heart, &.icon-retweet
-          width: 60%
+          width: 80%
         &:before
           vertical-align: middle
           margin-right: 10px
@@ -59,3 +59,24 @@ body.ideas.show
           color: gray
         .fb-like, iframe
           float: left
+
+@media screen and (max-width: 800px)
+  body.ideas.show
+    .idea_share
+      iframe
+        margin-bottom: 10px
+
+@media screen and (max-width: 750px)
+  body.ideas.show
+    .idea_description, .idea_panel
+      +grid-column(6)
+
+@media screen and (max-width: 640px)
+  body.ideas.show
+    .idea_description, .idea_panel
+      +grid-column(12)
+    .idea_description
+      margin-bottom: 20px
+    .idea_share
+      iframe
+        margin-bottom: 0
