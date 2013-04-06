@@ -10,12 +10,22 @@
   .idea_description
     .box= raw @idea.description_html
   .idea_panel
-    = link_to "#", :class => "vote" do
-      span.icon-heart votar
-      span= @idea.votes.count
+    - if current_user && current_user.can_vote_for?(@idea) || current_user.nil?
+      = link_to problem_idea_votes_path(@problem, @idea), class: "vote", id: "vote", method: :post do
+        span.icon-heart votar
+        span= @idea.votes.count
+    - else
+      = link_to "#", class: "vote already_voted", id: "vote" do
+        span.icon-heart você já votou
+        span= @idea.votes.count
     = link_to "#", :class => "remix" do
       span.icon-retweet contribuir
       span= @idea.contributions.count
+    - if flash[:notice]
+      .thanks_for_voting
+        | Valeu por votar nessa idéia.
+        br
+        | Agora compartilhe com seus amigos!
     .idea_share
       .box
         h3 compartilhe

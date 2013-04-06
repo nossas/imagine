@@ -36,7 +36,9 @@ body.ideas.show
       span
         display: inline-block
         font-weight: bold
-        width: 50%
+        width: 40%
+        &.icon-heart, &.icon-retweet
+          width: 60%
         &:before
           vertical-align: middle
           margin-right: 10px
@@ -44,6 +46,9 @@ body.ideas.show
         &:last-child
           color: $cerulean
           text-align: right
+    .thanks_for_voting
+      text-align: center
+      margin-bottom: 20px
     .idea_share
       .box
         text-align: left

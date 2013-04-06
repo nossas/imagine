@@ -4,8 +4,8 @@ Given(/^there is a problem$/) do
   @problem = Problem.make!
 end
 
-Then(/^I should see that problem$/) do
-  page.should have_css(".problem .title", :text => @problem.title)
+Given(/^there is an idea$/) do
+  @idea = Idea.make!
 end
 
 Given(/^there is an idea for this problem$/) do
@@ -14,6 +14,10 @@ end
 
 Then(/^I should see that idea$/) do
   page.should have_css(".idea .title", :text => @idea.title)
+end
+
+Then(/^I should see that problem$/) do
+  page.should have_css(".problem .title", :text => @problem.title)
 end
 
 When(/^I'm in "(.*?)"$/) do |arg1|
@@ -34,4 +38,28 @@ end
 
 When(/^I click on the idea$/) do
   click_link @idea.title
+end
+
+Given(/^I'm logged in$/) do
+  visit "/auth/facebook"
+end
+
+When(/^click to vote for this idea$/) do
+  click_link "vote"
+end
+
+Then(/^I should see the message of thanks for voting$/) do
+  page.should have_css(".thanks_for_voting")
+end
+
+Then(/^I should have one vote for this idea$/) do
+  User.find_by_email("nicolas@engage.is").votes.where(:idea_id => @idea.id).count.should be_== 1
+end
+
+Given(/^I already voted for this idea$/) do
+  Vote.make! idea_id: @idea.id, user_id: User.find_by_email("nicolas@engage.is").id
+end
+
+Then(/^I should see you alredy voted for this idea$/) do
+  page.should have_css("a.vote.already_voted")
 end

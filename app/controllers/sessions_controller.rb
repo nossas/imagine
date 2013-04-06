@@ -8,6 +8,11 @@ class SessionsController < ApplicationController
       :first_name => hash[:info][:first_name], 
       :last_name  => hash[:info][:last_name],
       :image      => hash[:info][:image]).id
-    redirect_to session[:url]
+    if session[:idea_id]
+      idea = Idea.find(session.delete(:idea_id))
+      redirect_to create_from_session_problem_idea_votes_path(problem_id: idea.problem.id, idea_id: idea.id)
+    else
+      redirect_to session[:url]
+    end
   end
 end

@@ -1,7 +1,11 @@
 Imagine::Application.routes.draw do
   root :to => redirect('/problems/1-que-intervencao-urbana-voce-faria-para-simplificar-a-vida-de-quem-mora-no-rio')
   resources :problems, only: [:show] do
-    resources :ideas, only: [:show]
+    resources :ideas, only: [:show] do
+      resource :votes, only: [:create] do
+        get :create_from_session, :to => "votes#create"
+      end
+    end
   end
   match "auth/facebook/callback" => "sessions#create"
 
