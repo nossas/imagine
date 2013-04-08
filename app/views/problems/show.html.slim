@@ -9,8 +9,18 @@
     .problem_deadlines
       .box
         span.icon-comment envio de ideias: 
-        = @problem.ideas_deadline.nil? ? "sem prazo final" : @problem.ideas_deadline < Time.now ? "encerrado" : l(@problem.ideas_deadline, format: :short)
+        - if @problem.ideas_deadline.nil?
+          span.open sem prazo final
+        - elsif @problem.ideas_deadline < Time.now
+          span.close encerrado
+        - else
+          span.open= l(@problem.ideas_deadline, format: :short)
       .box
         span.icon-clock votação: 
-        = @problem.voting_deadline.nil? ? "sem prazo final" : @problem.voting_deadline < Time.now ? "encerrado" : l(@problem.voting_deadline, format: :short)
+        - if @problem.voting_deadline.nil?
+          span.open sem prazo final
+        - elsif @problem.voting_deadline < Time.now
+          span.close encerrado
+        - else
+          span.open= l(@problem.voting_deadline, format: :short)
 .row= render @problem.ideas.order("RANDOM()")
