@@ -63,3 +63,11 @@ end
 Then(/^I should see you alredy voted for this idea$/) do
   page.should have_css("a.vote.already_voted")
 end
+
+Given(/^there is a problem with a expired voting deadline$/) do
+  @problem = Problem.make! voting_deadline: Time.now
+end
+
+Then(/^the voting button should be disabled$/) do
+  page.should have_css("a.vote[href='#']", text: "votações encerradas")
+end

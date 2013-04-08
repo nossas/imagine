@@ -10,7 +10,11 @@
   .idea_description
     .box= raw @idea.description_html
   .idea_panel
-    - if current_user && current_user.can_vote_for?(@idea) || current_user.nil?
+    - if @problem.voting_closed?
+      = link_to "#", class: "vote", id: "vote" do
+        span.icon-heart votações encerradas
+        span= @idea.votes.count
+    - elsif current_user && current_user.can_vote_for?(@idea) || current_user.nil?
       = link_to problem_idea_votes_path(@problem, @idea), class: "vote", id: "vote", method: :post do
         span.icon-heart votar
         span= @idea.votes.count

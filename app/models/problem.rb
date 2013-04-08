@@ -4,6 +4,10 @@ class Problem < ActiveRecord::Base
   has_many :ideas
   belongs_to :user
 
+  def voting_closed?
+    self.voting_deadline <= Time.now
+  end
+
   def to_param
     "#{self.id}-#{self.title.parameterize}"
   end
