@@ -101,6 +101,7 @@ GEM
     mime-types (1.21)
     multi_json (1.7.2)
     multipart-post (1.2.0)
+    newrelic_rpm (3.5.8.72)
     nokogiri (1.5.9)
     oauth2 (0.8.1)
       faraday (~> 0.8)
@@ -211,6 +212,7 @@ DEPENDENCIES
   inherited_resources
   jquery-rails
   machinist (>= 2.0.0.beta2)
+  newrelic_rpm
   omniauth-facebook
   pg
   rails (= 3.2.13)
