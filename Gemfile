@@ -37,7 +37,6 @@ gem 'jquery-rails'
 
 group :test, :development do
   gem "rspec-rails", "~> 2.0"
-  gem 'machinist', '>= 2.0.0.beta2'
 end
 
 group :test do
@@ -52,3 +51,4 @@ gem 'auto_html'
 gem 'google-analytics-rails'
 gem 'newrelic_rpm'
 gem 'faker'
+gem 'machinist', '>= 2.0.0.beta2'
