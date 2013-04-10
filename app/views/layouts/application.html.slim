@@ -56,3 +56,9 @@ body class="#{controller.controller_name} #{controller.action_name}"
     }(document, 'script', 'facebook-jssdk'));
   javascript:
     !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+  javascript:
+    (function() {
+    var mf = document.createElement("script"); mf.type = "text/javascript"; mf.async = true;
+    mf.src = "//cdn.mouseflow.com/projects/6ed67b9f-ea3c-4aac-aff8-62cd6342bf3c.js";
+    document.getElementsByTagName("head")[0].appendChild(mf);
+    })();
