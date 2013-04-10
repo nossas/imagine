@@ -4,9 +4,9 @@
     .user_name 
       strong #{problem.user.name} 
       |  quer saber...
-    .title= link_to problem.title, problem
+    .title= link_to truncate(problem.title, length: 88), problem, title: problem.title
     .icon-clock
       strong ideias: 
-      | #{distance_of_time_in_words_to_now(problem.ideas_deadline)} |  
-      strong votação: 
-      | #{distance_of_time_in_words_to_now(problem.voting_deadline)}
+      span #{distance_of_time_in_words_to_now(problem.ideas_deadline)} 
+      strong | votação: 
+      span #{distance_of_time_in_words_to_now(problem.voting_deadline)}

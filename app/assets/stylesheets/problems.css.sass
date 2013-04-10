@@ -64,30 +64,43 @@ body.problems.show
           color: lightgray
           font-size: 2em
 
-@media screen and (max-width: 800px)
+body.problems.index
+  .problem
+    +grid-column(6)
+    img
+      width: 155px
+      height: 155px
+      float: left
+      margin: -20px 20px -20px -20px
+    .user_name
+      margin-bottom: 10px
+      font-size: 14px
+    .title
+      font-weight: bold
+      font-size: 18px
+      margin-bottom: 20px
+      height: 54px
+      overflow: hidden
+    .icon-clock
+      font-size: 14px
+      &:before
+        color: $casablanca
+      span
+        color: lighten(green, 10%)
+
+@media screen and (max-width: 900px)
   body.problems.show
     .idea
       +grid-column(6)
+  body.problems.index
+    .problem
+      +grid-column(12)
 
 @media screen and (max-width: 500px)
   body.problems.show
     .idea
       +grid-column(12)
-
-body.problems.index
-  .problem
-    +grid-column(6)
-    img
-      width: 150px
-      height: 150px
-      float: left
-      margin-right: 20px
-    .user_name
-      margin-bottom: 10px
-    .title
-      font-weight: bold
-      font-size: 18px
-      margin-bottom: 20px
-    .icon-clock
-      &:before
-        color: $casablanca
+  body.problems.index
+    .problem
+      .icon-clock
+        display: none
