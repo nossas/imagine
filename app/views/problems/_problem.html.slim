@@ -5,5 +5,4 @@
       strong #{problem.user.name} 
       |  quer saber...
     .title= link_to problem.title, problem
-    .icon-comment #{distance_of_time_in_words_to_now(problem.ideas_deadline)} para sugerir idéias
-    .icon-clock #{distance_of_time_in_words_to_now(problem.voting_deadline)} para votar
+    .icon-clock ideias: #{distance_of_time_in_words_to_now(problem.ideas_deadline)} | votação: #{distance_of_time_in_words_to_now(problem.voting_deadline)}
