@@ -1,5 +1,5 @@
 Imagine::Application.routes.draw do
-  root :to => redirect('/problems/1-que-intervencao-urbana-voce-faria-para-simplificar-a-vida-de-quem-mora-no-rio')
+  root :to => "problems#index"
   resources :problems, only: [:show] do
     resources :ideas, only: [:show] do
       resource :votes, only: [:create] do

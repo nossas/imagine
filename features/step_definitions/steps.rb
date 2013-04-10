@@ -71,3 +71,11 @@ end
 Then(/^the voting button should be disabled$/) do
   page.should have_css("a.vote[href='#']", text: "votações encerradas")
 end
+
+Given(/^there are some problems$/) do
+  (rand*10).to_i.times { Problem.make! }
+end
+
+Then(/^I should see all the problems$/) do
+  page.should have_css(".problem", count: Problem.count)
+end

@@ -9,26 +9,26 @@ require 'machinist/active_record'
 #   end
 
 Problem.blueprint do
-  title           { "Title #{sn}" }
-  description     { "Description" }
-  image           { "http://www.abeoc.org.br/wp-content/uploads/2012/07/Rio-de-Janeiro.jpg" }
+  title           { Faker::Lorem.sentence(10) }
+  description     { Faker::Lorem.paragraphs(3).join("\n\n") }
+  image           { "http://lorempixum.com/150/150/city/#{sn.to_i}" }
   ideas_deadline  { Time.now + 1.month }
   voting_deadline { Time.now + 2.months }
   user            { User.make! }
 end
 
 Idea.blueprint do
-  title       { "Title #{sn}" }
-  description { "Description" }
+  title       { Faker::Lorem.sentence(5) }
+  description { Faker::Lorem.paragraphs(5).join("\n\n") }
   problem     { Problem.make! }
   user        { User.make! }
 end
 
 User.blueprint do
-  first_name  { "First Name #{sn}" }
-  last_name   { "Last Name #{sn}" }
-  email       { "#{sn}@imagi.ne" }
-  image       { "http://userserve-ak.last.fm/serve/_/6773/Paul+McCartney.jpg" }
+  first_name  { Faker::Name.first_name }
+  last_name   { Faker::Name.last_name }
+  email       { Faker::Internet.email }
+  image       { "http://lorempixel.com/50/50/people/#{sn.to_i}" }
 end
 
 Vote.blueprint do

@@ -19,8 +19,6 @@ body.problems.show
       .box
         float: left
         margin-right: 20px
-        margin-bottom: 20px
-        padding: 10px
       span.close
         color: red
       span.open
@@ -75,3 +73,18 @@ body.problems.show
   body.problems.show
     .idea
       +grid-column(12)
+
+body.problems.index
+  .problem
+    +grid-column(6)
+    img
+      width: 150px
+      height: 150px
+      float: left
+      margin-right: 20px
+    .user_name
+      margin-bottom: 10px
+    .title
+      font-weight: bold
+      font-size: 18px
+      margin-bottom: 20px
