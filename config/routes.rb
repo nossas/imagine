@@ -5,6 +5,7 @@ Imagine::Application.routes.draw do
       resource :votes, only: [:create] do
         get :create_from_session, :to => "votes#create"
       end
+      resource :contributions, only: [:create]
     end
   end
   match "auth/facebook/callback" => "sessions#create"

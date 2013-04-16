@@ -84,3 +84,32 @@ a
 
 .clear
   clear: both
+
+.notice
+  background: lighten(green, 10%)
+  color: white
+  padding: 5px 5px 3px 5px
+  margin-bottom: 20px
+  text-align: center
+  font-weight: bold
+  +border-radius(20px)
+
+textarea
+  +border-radius(5px)
+  resize: none
+
+a.submit
+  background: $casablanca
+  border: none
+  color: white
+  font-size: 15px
+  text-transform: uppercase
+  font-family: "Proxima Nova"
+  font-weight: bold
+  padding: 10px 15px 7px 15px
+  margin: 0 1px 1px 1px
+  letter-spacing: 1px
+  cursor: pointer
+  +background-image(linear-gradient(lighten($casablanca, 10%), darken($casablanca, 10%)))
+  +border-radius(5px)
+  +box-shadow(rgba(0, 0, 0, .15) 0 1px 1px)

@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       idea = Idea.find(session.delete(:idea_id))
       redirect_to create_from_session_problem_idea_votes_path(problem_id: idea.problem.id, idea_id: idea.id)
     else
-      redirect_to session[:url]
+      redirect_to session[:url] || root_path
     end
   end
 end

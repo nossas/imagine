@@ -1,6 +1,11 @@
 - content_for(:title) { @idea.title }
 - content_for(:og_type) { "imaginee:idea" }
 
+- if flash[:contribution_notice]
+  .row
+    .contribution_notice
+      .notice Assim que o criador desta idéia aceitar a sua contribuição nós te avisaremos. Obrigado por contribuir!
+
 .row
   .idea_title
     h1= @idea.title
@@ -36,3 +41,10 @@
         a href="https://twitter.com/share" class="twitter-share-button" data-lang="pt" data-width="300px" Tweetar
         .fb-like data-href=problem_idea_url(@problem, @idea) data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"
         .clear
+
+.row
+  = form_for [@problem, @idea, @contribution] do |form|
+    = form.label :body, "Contribua com referências e mais informações para o desenvolvimento da ideia. Ajude a elaborar as necessidades e próximos passos."
+    = form.text_area :body 
+    = link_to "#new_contribution", class: "submit icon-retweet", id: "submit_contribution" do
+      span Contribuir

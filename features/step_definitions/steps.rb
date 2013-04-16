@@ -13,7 +13,7 @@ Given(/^there is an idea for this problem$/) do
 end
 
 Then(/^I should see that idea$/) do
-  page.should have_css(".idea .title", :text => @idea.title)
+  page.should have_css(".idea .title", :text => @idea.title[0..25])
 end
 
 Then(/^I should see that problem$/) do
@@ -78,4 +78,20 @@ end
 
 Then(/^I should see all the problems$/) do
   page.should have_css(".problem", count: Problem.count)
+end
+
+Given(/^I fill the contribution form$/) do
+  within(".new_contribution") do
+    fill_in "contribution_body", with: Faker::Lorem.paragraph
+  end
+end
+
+When(/^I submit the contribution form$/) do
+  within(".new_contribution") do
+    click_link "submit_contribution"
+  end
+end
+
+Then(/^I should be warned to wait for the idea's owner approval$/) do
+  page.should have_css(".contribution_notice")
 end

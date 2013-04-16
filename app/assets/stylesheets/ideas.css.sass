@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body.ideas.show
+  .contribution_notice
+    +grid-column(12)
   .idea_title, .idea_details
     +grid-column(12)
     h1
@@ -12,6 +14,8 @@ body.ideas.show
     margin-bottom: 2em
   .idea_description
     +grid-column(8)
+    .box
+      margin-bottom: 40px
   .idea_panel
     +grid-column(4)
     a.vote
@@ -59,6 +63,19 @@ body.ideas.show
           color: gray
         .fb-like, iframe
           float: left
+  form.new_contribution
+    +grid-column(12)
+    textarea
+      height: 100px
+    a.submit
+      float: right
+      padding: 6px 15px 5px 15px
+      &:before
+        font-size: 28px
+        color: rgba(255, 255, 255, .5)
+      span
+        position: relative
+        top: 1px
 
 @media screen and (max-width: 800px)
   body.ideas.show
