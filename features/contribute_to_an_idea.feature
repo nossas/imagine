@@ -13,6 +13,7 @@ Feature: contribute to an idea
     Then I should be in "this idea page"
     And I should be warned to wait for the idea's owner approval
     And I should have one contribution
+    And an email should be send to the idea's owner
 
   @omniauth_test @javascript
   Scenario: when I'm not logged in
@@ -23,6 +24,7 @@ Feature: contribute to an idea
     Then I should be in "this idea page"
     And I should be warned to wait for the idea's owner approval
     And I should have one contribution
+    And an email should be send to the idea's owner
 
   @javascript
   Scenario: when I leave the contribution blank

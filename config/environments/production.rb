@@ -66,4 +66,16 @@ Imagine::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   GA.tracker = "UA-26278513-13"
+
+  default_url_options[:host] = "imagine.meurio.org.br"
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    :user_name => ENV["SENDGRID_USERNAME"],
+    :password => ENV["SENDGRID_PASSWORD"],
+    :domain => "imagine.meurio.org.br",
+    :address => "smtp.sendgrid.net",
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
 end

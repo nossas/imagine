@@ -36,5 +36,7 @@ Vote.blueprint do
 end
 
 Contribution.blueprint do
-  # Attributes here
+  body  { Faker::Lorem.paragraphs(3).join("\n\n") }
+  idea  { Idea.make! }
+  user  { User.make! }
 end

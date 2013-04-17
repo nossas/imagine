@@ -119,3 +119,7 @@ end
 Then(/^I should not see the contribution form$/) do
   page.should_not have_css("form#new_contribution")
 end
+
+Then(/^an email should be send to the idea's owner$/) do
+  ActionMailer::Base.deliveries.select{|m| m.to.index(@idea.user.email) > -1}.should_not be_empty
+end
