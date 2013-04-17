@@ -12,3 +12,14 @@ Feature: contribute to an idea
     When I submit the contribution form
     Then I should be in "this idea page"
     And I should be warned to wait for the idea's owner approval
+    And I should have one contribution
+
+  @omniauth_test @javascript
+  Scenario: when I'm not logged in
+    Given there is an idea
+    And I'm in "this idea page"
+    And I fill the contribution form
+    When I submit the contribution form
+    Then I should be in "this idea page"
+    And I should be warned to wait for the idea's owner approval
+    And I should have one contribution

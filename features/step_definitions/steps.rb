@@ -95,3 +95,11 @@ end
 Then(/^I should be warned to wait for the idea's owner approval$/) do
   page.should have_css(".contribution_notice")
 end
+
+Then(/^I should have one contribution$/) do
+  User.find_by_email("nicolas@engage.is").contributions.count.should_not be_zero
+end
+
+Then(/^show me the page$/) do
+  save_and_open_page
+end

@@ -46,5 +46,6 @@
   = form_for [@problem, @idea, @contribution] do |form|
     = form.label :body, "Contribua com referências e mais informações para o desenvolvimento da ideia. Ajude a elaborar as necessidades e próximos passos."
     = form.text_area :body 
+    = form.hidden_field :idea_id, value: @idea.id
     = link_to "#new_contribution", class: "submit icon-retweet", id: "submit_contribution" do
       span Contribuir

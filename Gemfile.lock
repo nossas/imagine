@@ -28,6 +28,7 @@ GEM
     activesupport (3.2.13)
       i18n (= 0.6.1)
       multi_json (~> 1.0)
+    addressable (2.3.3)
     arel (3.0.2)
     auto_html (1.6.0)
       redcarpet (~> 2.0)
@@ -95,6 +96,8 @@ GEM
     json (1.7.7)
     jwt (0.1.8)
       multi_json (>= 1.5)
+    launchy (2.2.0)
+      addressable (~> 2.3)
     machinist (2.0)
     mail (2.5.3)
       i18n (>= 0.4.0)
@@ -214,6 +217,7 @@ DEPENDENCIES
   google-analytics-rails
   inherited_resources
   jquery-rails
+  launchy
   machinist (>= 2.0.0.beta2)
   newrelic_rpm
   omniauth-facebook

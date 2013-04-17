@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   validates :email, :first_name, :presence => true
   validates :email, :uniqueness => true
   has_many :votes
+  has_many :contributions
 
   def name
     "#{first_name} #{last_name}"
