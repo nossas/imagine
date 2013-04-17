@@ -85,8 +85,10 @@ body.problems.index
       font-size: 14px
       &:before
         color: $casablanca
-      span
+      span.open
         color: lighten(green, 10%)
+      span.closed
+        color: red
 
 @media screen and (max-width: 900px)
   body.problems.show

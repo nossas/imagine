@@ -15,5 +15,6 @@
 //= require foundation
 //= require rails.validations
 //= require app
+//= require ideas
 
 $(document).foundation();

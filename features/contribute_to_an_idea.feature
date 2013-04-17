@@ -31,3 +31,8 @@ Feature: contribute to an idea
     When I submit the contribution form
     Then I should be in "this idea page"
     And I should see the error message for contribution field
+
+  Scenario: when the deadline to contribute expired
+    Given there is an idea with an expired deadline for contribution
+    When I'm in "this idea page"
+    Then I should not see the contribution form

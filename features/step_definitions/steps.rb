@@ -111,3 +111,11 @@ end
 Then(/^I should have no contribution$/) do
   User.find_by_email("nicolas@engage.is").contributions.count.should be_zero
 end
+
+Given(/^there is an idea with an expired deadline for contribution$/) do
+  @idea = Idea.make!(problem: Problem.make!(ideas_deadline: Time.now))
+end
+
+Then(/^I should not see the contribution form$/) do
+  page.should_not have_css("form#new_contribution")
+end

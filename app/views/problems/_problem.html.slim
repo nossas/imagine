@@ -7,6 +7,12 @@
     .title= link_to truncate(problem.title, length: 88), problem, title: problem.title
     .icon-clock
       strong ideias: 
-      span #{distance_of_time_in_words_to_now(problem.ideas_deadline)} 
+      - if problem.contribution_closed?
+        span.closed encerrado 
+      - else
+        span.open #{distance_of_time_in_words_to_now(problem.ideas_deadline)} 
       strong | votação: 
-      span #{distance_of_time_in_words_to_now(problem.voting_deadline)}
+      - if problem.voting_closed?
+        span.closed encerrado 
+      - else
+        span.open #{distance_of_time_in_words_to_now(problem.voting_deadline)}

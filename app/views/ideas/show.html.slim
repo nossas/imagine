@@ -15,6 +15,7 @@
   .idea_description
     .box= raw @idea.description_html
   .idea_panel
+    
     - if @problem.voting_closed?
       = link_to "#", class: "vote", id: "vote" do
         span.icon-heart votações encerradas
@@ -27,9 +28,11 @@
       = link_to "#", class: "vote already_voted", id: "vote" do
         span.icon-heart você já votou
         span= @idea.votes.count
-    = link_to "#", :class => "remix" do
-      span.icon-retweet contribuições encerradas
+
+    = link_to "#new_contribution", :class => "remix" do
+      span.icon-retweet #{@problem.contribution_closed? ? "contribuições encerradas" : "contribuir"}
       span= @idea.contributions.count
+
     - if flash[:notice]
       .thanks_for_voting
         | Valeu por votar nessa idéia.
@@ -42,10 +45,11 @@
         .fb-like data-href=problem_idea_url(@problem, @idea) data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"
         .clear
 
-.row
-  = form_for [@problem, @idea, @contribution], validate: true do |form|
-    = form.label :body, "Contribua com referências e mais informações para o desenvolvimento da ideia. Ajude a elaborar as necessidades e próximos passos."
-    = form.text_area :body 
-    = form.hidden_field :idea_id, value: @idea.id
-    = link_to "#new_contribution", class: "submit icon-retweet", id: "submit_contribution" do
-      span Contribuir
+- if !@problem.contribution_closed?
+  .row
+    = form_for [@problem, @idea, @contribution], validate: true do |form|
+      = form.label :body, "Contribua com referências e mais informações para o desenvolvimento da ideia. Ajude a elaborar as necessidades e próximos passos."
+      = form.text_area :body 
+      = form.hidden_field :idea_id, value: @idea.id
+      = link_to "#new_contribution", class: "submit icon-retweet", id: "submit_contribution" do
+        span Contribuir
