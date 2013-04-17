@@ -103,3 +103,11 @@ end
 Then(/^show me the page$/) do
   save_and_open_page
 end
+
+Then(/^I should see the error message for contribution field$/) do
+  page.should have_css(".field_with_errors label.message[for='contribution_body']")
+end
+
+Then(/^I should have no contribution$/) do
+  User.find_by_email("nicolas@engage.is").contributions.count.should be_zero
+end

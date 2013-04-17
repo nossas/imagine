@@ -43,7 +43,7 @@
         .clear
 
 .row
-  = form_for [@problem, @idea, @contribution] do |form|
+  = form_for [@problem, @idea, @contribution], validate: true do |form|
     = form.label :body, "Contribua com referências e mais informações para o desenvolvimento da ideia. Ajude a elaborar as necessidades e próximos passos."
     = form.text_area :body 
     = form.hidden_field :idea_id, value: @idea.id

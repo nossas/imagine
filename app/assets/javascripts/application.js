@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require rails.validations
 //= require app
 
 $(document).foundation();

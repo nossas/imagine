@@ -23,3 +23,11 @@ Feature: contribute to an idea
     Then I should be in "this idea page"
     And I should be warned to wait for the idea's owner approval
     And I should have one contribution
+
+  @javascript
+  Scenario: when I leave the contribution blank
+    Given there is an idea
+    And I'm in "this idea page"
+    When I submit the contribution form
+    Then I should be in "this idea page"
+    And I should see the error message for contribution field
