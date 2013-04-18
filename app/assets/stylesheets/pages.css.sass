@@ -1,0 +1,23 @@
+body.pages.about
+  h2
+    font-family: 'Londrina Solid', cursive
+    text-transform: uppercase
+    font-weight: normal
+  .about_item, .about_image
+    +grid-column(6)
+  .about_image
+    text-align: center
+  .about
+    padding: 40px 0
+    &:nth-child(odd)
+      background: #EDEDED
+  .row, .about
+    margin-bottom: 40px
+    &:last-child
+      margin-bottom: 0
+
+@media screen and (max-width: 640px)
+  body.pages.about
+    .about_item, .about_image
+      +grid-column(12)
+      margin-bottom: 20px

@@ -16,6 +16,8 @@ Imagine::Application.routes.draw do
     resources :contributions, only: [:index]
   end
 
+  match "about" => "pages#about", as: "about"
+
   match "auth/facebook/callback" => "sessions#create"
 
   # The priority is based upon order of creation:

@@ -21,6 +21,7 @@ $small-font-size:     45%
 @import icomoon
 @import problems
 @import ideas
+@import pages
 
 body
   background: $athens-gray
@@ -39,7 +40,27 @@ header
   .menu
     +grid-column(6)
     text-align: right
+    .links
+      float: right
+      padding-top: 2px
+      a
+        padding: 15px 20px 15px 0
+        margin-right: 20px
+        color: $casablanca
+        text-align: left
+        display: inline-block
+        font-size: 1.1em
+        font-family: "Proxima Nova"
+        border-right: 1px lightgray solid
+        &:hover
+          span
+            text-decoration: underline
+        span
+          display: block
+          color: lighten(gray, 10%)
+          font-size: .8em
     .login
+      float: right
       text-align: right
       line-height: 67px
       font-size: 14px
@@ -50,6 +71,47 @@ header
           +opacity(.9)
       img.user_image
         width: 25px
+        +border-radius(25px)
+  .menu_mobile
+    position: relative
+    .icon-list
+      float: right
+      margin-top: 16px
+      color: gray
+      cursor: pointer
+      +border-radius(5px 5px 0 0)
+      &:before
+        font-size: 36px
+      &.selected
+        background: $cerulean
+        color: white
+    .links
+      z-index: 999
+      width: 200px
+      right: 14px
+      top: 50px
+      position: absolute
+      .box
+        background: $cerulean
+        color: white
+        .user
+          border-bottom: 1px solid white
+          padding-bottom: 5px
+          margin-bottom: 20px
+          font-size: 12px
+          img
+            width: 25px
+            height: 25px
+            vertical-align: middle
+            +border-radius(25px)
+        a
+          color: white
+          display: block
+          margin-bottom: 10px
+          &:last-child
+            margin-bottom: 0
+          &:hover
+            text-decoration: underline
 
 footer
   background: $cerulean
@@ -121,3 +183,21 @@ a.submit
     color: red
   textarea
     border-color: lighten(red, 40%)
+
+p
+  &:last-child
+    margin-bottom: 0
+
+@media screen and (max-width: 640px)
+  header
+    .menu
+      display: none
+    .logo
+      +grid-column(11)
+    .menu_mobile
+      +grid-column(1)
+
+@media screen and (min-width: 641px)
+  header
+    .menu_mobile
+      display: none

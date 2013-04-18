@@ -19,6 +19,7 @@ head
   meta property="og:image"  content="#{content_for?(:og_image) ? yield(:og_image) : "http://i.imgur.com/Na1ulko.png"}"
   meta property="og:type"   content="#{content_for?(:og_type) ? yield(:og_type) : "imaginee"}"
   title= content_for?(:title) ? yield(:title) : "Imagine"
+  link href='http://fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'
   = favicon_link_tag "favicon.png", :type => "image/png"
   = stylesheet_link_tag "application"
   = javascript_include_tag "vendor/custom.modernizr"
@@ -37,6 +38,21 @@ body class="#{controller.controller_name} #{controller.action_name}"
               = image_tag current_user.image, class: "user_image"
             - else
               = link_to image_tag("facebook.png"), "/auth/facebook", :id => "auth-facebook"
+          .links
+            = link_to about_path, id: "about" do
+              | Como funciona
+              span o Imagine?
+        .menu_mobile
+          = link_to "", "#", class: "icon-list"
+          .links style="display: none"
+            .box
+              - if current_user
+                .user
+                  = image_tag current_user.image, class: "user_image"
+                  |  #{current_user.name} 
+              - else
+                = link_to "Entrar", "/auth/facebook"
+              = link_to "Como funciona?", about_path
     = yield
     .sticky_footer_push
   

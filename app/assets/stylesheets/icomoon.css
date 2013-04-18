@@ -40,3 +40,7 @@ you can use the generic selector below, but it's slower:
 	font-family: 'entypo';
 	content: "\e002";
 }
+.icon-list:before {
+	font-family: 'entypo';
+	content: "\e003";
+}

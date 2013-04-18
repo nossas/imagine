@@ -9,12 +9,16 @@ window.onload = function() {
 			'icon-retweet' : '&#xe094;',
 			'icon-comment' : '&#xe000;',
 			'icon-clock' : '&#xe001;',
-			'icon-heart' : '&#xe002;'
+			'icon-heart' : '&#xe002;',
+			'icon-list' : '&#xe003;'
 		},
 		els = document.getElementsByTagName('*'),
 		i, attr, html, c, el;
-	for (i = 0; i < els.length; i += 1) {
+	for (i = 0; ; i += 1) {
 		el = els[i];
+		if(!el) {
+			break;
+		}
 		attr = el.getAttribute('data-icon');
 		if (attr) {
 			addIcon(el, attr);

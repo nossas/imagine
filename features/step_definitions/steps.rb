@@ -123,3 +123,7 @@ end
 Then(/^an email should be send to the idea's owner$/) do
   ActionMailer::Base.deliveries.select{|m| m.to.index(@idea.user.email) > -1}.should_not be_empty
 end
+
+When(/^I click in the about page link$/) do
+  click_link("about")
+end
