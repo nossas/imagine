@@ -19,7 +19,6 @@ head
   meta property="og:image"  content="#{content_for?(:og_image) ? yield(:og_image) : "http://i.imgur.com/Na1ulko.png"}"
   meta property="og:type"   content="#{content_for?(:og_type) ? yield(:og_type) : "imaginee"}"
   title= content_for?(:title) ? yield(:title) : "Imagine"
-  link href='http://fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'
   = favicon_link_tag "favicon.png", :type => "image/png"
   = stylesheet_link_tag "application"
   = javascript_include_tag "vendor/custom.modernizr"
