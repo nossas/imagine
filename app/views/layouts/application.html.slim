@@ -29,7 +29,9 @@ body class="#{controller.controller_name} #{controller.action_name}"
   .sticky_footer
     header
       .row
-        .logo= link_to image_tag("imagine.png"), root_path
+        .logo
+          = link_to image_tag("imagine.png"), root_path
+          = link_to image_tag("meurio2.png"), "http://meurio.org.br/"
         .menu
           .login
             - if current_user

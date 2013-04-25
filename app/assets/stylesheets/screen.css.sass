@@ -37,6 +37,15 @@ header
     +grid-column(6)
     img
       float: left
+    a
+      &:first-child
+        img
+          padding-right: 20px
+          border-right: 1px solid lightgray
+          margin-right: 20px
+      &:last-child
+        img
+          margin-top: 14px
   .menu
     +grid-column(6)
     text-align: right
