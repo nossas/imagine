@@ -82,13 +82,17 @@ body.problems.index
       height: 54px
       overflow: hidden
     .icon-clock
-      font-size: 14px
+      font-size: 14px      
       &:before
         color: $casablanca
+        position: relative
+        top: -1px
       span.open
         color: lighten(green, 10%)
       span.closed
         color: red
+    .box
+      overflow: visible
 
 @media screen and (max-width: 900px)
   body.problems.show
