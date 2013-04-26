@@ -15,7 +15,7 @@
           span.close encerrado
         - else
           span.open= l(@problem.ideas_deadline, format: :short)
-        = link_to "Crie sua ideia!", new_problem_idea_path(@problem), id: "new_idea", class: "btn"
+        = link_to_if !@problem.contribution_closed?, "Crie sua ideia!", new_problem_idea_path(@problem), id: "new_idea", class: "btn"
       .box
         span.icon-clock votação: 
         - if @problem.voting_deadline.nil?

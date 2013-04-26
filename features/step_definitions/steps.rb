@@ -68,6 +68,10 @@ Given(/^there is a problem with a expired voting deadline$/) do
   @problem = Problem.make! voting_deadline: Time.now
 end
 
+Given(/^there is a problem with a expired contribution deadline$/) do
+  @problem = Problem.make! ideas_deadline: Time.now
+end
+
 Then(/^the voting button should be disabled$/) do
   page.should have_css("a.vote[href='#']", text: "votações encerradas")
 end
@@ -113,7 +117,8 @@ Then(/^I should have no contribution$/) do
 end
 
 Given(/^there is an idea with an expired deadline for contribution$/) do
-  @idea = Idea.make!(problem: Problem.make!(ideas_deadline: Time.now))
+  @idea = Idea.make!
+  @idea.problem.update_attributes ideas_deadline: Time.now
 end
 
 Then(/^I should not see the contribution form$/) do
@@ -156,4 +161,8 @@ end
 
 Then(/^I should see the preview of my new idea$/) do
   page.should have_css("#idea_preview .idea_description")
+end
+
+Then(/^I should not see the new idea link$/) do
+  page.should_not have_css("a#new_idea")
 end

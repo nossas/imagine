@@ -32,3 +32,10 @@ Feature: create an idea for a problem
     And I click on the new idea button
     When I submit the new idea form
     Then I should see the error messages for idea
+
+  @omniauth_test @javascript
+  Scenario: when the problem is closed for contributions
+    Given I'm logged in
+    And there is a problem with a expired contribution deadline
+    When I'm in "this problem page"
+    Then I should not see the new idea link
