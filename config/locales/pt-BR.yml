@@ -208,3 +208,6 @@ pt-BR:
     attributes:
       contribution:
         body: "Contribuição"
+      idea:
+        title: "Título"
+        description: "Descrição"

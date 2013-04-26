@@ -166,11 +166,11 @@ a
   font-weight: bold
   +border-radius(20px)
 
-textarea
+textarea, input[type='text']
   +border-radius(5px)
   resize: none
 
-a.submit
+a.submit, a.btn, input[type='submit']
   background: $casablanca
   border: none
   color: white
@@ -191,8 +191,10 @@ a.submit
 .field_with_errors
   label.message
     color: red
-  textarea
+    margin-bottom: 20px
+  textarea, input[type='text']
     border-color: lighten(red, 40%)
+    margin-bottom: 5px
 
 p
   &:last-child

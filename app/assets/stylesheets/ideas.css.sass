@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body.ideas.show
-  .contribution_notice
+  .contribution_notice, .share_new_idea
     +grid-column(12)
   .idea_title, .idea_details
     +grid-column(12)
@@ -81,6 +81,42 @@ body.ideas.show
     .field_with_errors
       label
         float: left
+
+body.ideas.new
+  .formatting_tips
+    +grid-column(3, false, false, 1)
+    h2
+      font-size: 16px
+      text-transform: uppercase
+    .tip
+      font-size: 13px
+      padding-bottom: 10px
+      border-bottom: 1px lightgray solid
+      margin-bottom: 10px
+      &:last-child
+        padding-bottom: 0
+        border-bottom: 0
+        margin-bottom: 0
+  form
+    +grid-column(7)
+    textarea
+      height: 300px
+    h1
+      margin-bottom: 0
+    a.problem_title
+      display: block
+      margin-bottom: 20px 
+    h4
+      margin-top: 30px
+      img
+        width: 20px
+    #idea_preview
+      .box
+        border: 1px dashed lightgray
+        +border-radius(0)
+        +box-shadow(none)
+    #idea_preview_title
+      display: none
 
 @media screen and (max-width: 800px)
   body.ideas.show

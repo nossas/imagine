@@ -7,13 +7,16 @@
       .notice Assim que o criador desta idéia aceitar a sua contribuição nós te avisaremos. Obrigado por contribuir!
 
 .row
+  .share_new_idea
+    | Agora que a sua ideia está criada, compartilhe ela para que ganhe votos e contribuições!
+
+.row
   .idea_title
     h1= @idea.title
   .idea_details por #{@idea.user.name} há #{distance_of_time_in_words_to_now(@idea.created_at)} atrás, em #{link_to @problem.title, @problem}
 
 .row
-  .idea_description
-    .box= raw @idea.description_html
+  = render partial: "description"
   .idea_panel
     
     - if @problem.voting_closed?

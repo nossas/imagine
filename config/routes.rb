@@ -2,7 +2,8 @@ Imagine::Application.routes.draw do
   root :to => "problems#index"
 
   resources :problems, only: [:show] do
-    resources :ideas, only: [:show] do
+    get :idea_preview, :to => "ideas#preview"
+    resources :ideas, only: [:show, :new, :create] do
       resource :votes, only: [:create] do
         get :create_from_session, :to => "votes#create"
       end

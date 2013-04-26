@@ -1,8 +1,12 @@
 class ContributionsController < InheritedResources::Base
   belongs_to :idea
+  authorize_resource
 
-  before_filter only: [:create] do
+  prepend_before_filter only: [:create] do
     session[:contribution] = params[:contribution] and redirect_to("/auth/facebook") and return if current_user.nil?
+  end
+  
+  before_filter only: [:create] do
     params[:contribution] = session.delete(:contribution) if session[:contribution]
     params[:contribution][:user_id] = current_user.id
   end

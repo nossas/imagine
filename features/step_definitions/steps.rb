@@ -127,3 +127,33 @@ end
 When(/^I click in the about page link$/) do
   click_link("about")
 end
+
+Given(/^I click on the new idea button$/) do
+  click_link("new_idea")
+end
+
+Given(/^I fill the form for the new idea$/) do
+  within "form.new_idea" do
+    fill_in "idea_title", with: Faker::Lorem.sentence
+    fill_in "idea_description", with: Faker::Lorem.paragraph
+  end
+end
+
+When(/^I submit the new idea form$/) do
+  within "form.new_idea" do
+    find("input[type='submit']").click
+  end
+end
+
+Then(/^I should be invited to share my new idea$/) do
+  page.should have_css(".share_new_idea")
+end
+
+Then(/^I should see the error messages for idea$/) do
+  page.should have_css(".field_with_errors label.message[for='idea_title']")
+  page.should have_css(".field_with_errors label.message[for='idea_description']")
+end
+
+Then(/^I should see the preview of my new idea$/) do
+  page.should have_css("#idea_preview .idea_description")
+end
