@@ -84,7 +84,7 @@ body.ideas.show
 
 body.ideas.new
   .formatting_tips
-    +grid-column(3, false, false, 1)
+    +grid-column(3)
     h2
       font-size: 16px
       text-transform: uppercase
@@ -98,7 +98,7 @@ body.ideas.new
         border-bottom: 0
         margin-bottom: 0
   form
-    +grid-column(7)
+    +grid-column(7, false, false, 1)
     textarea
       height: 300px
     h1
@@ -123,6 +123,11 @@ body.ideas.new
     .idea_share
       iframe
         margin-bottom: 10px
+  body.ideas.new
+    form
+      +grid-column(8, false, false, 2)
+    .formatting_tips
+      +grid-column(8, false, false, 2)
 
 @media screen and (max-width: 750px)
   body.ideas.show
@@ -138,3 +143,8 @@ body.ideas.new
     .idea_share
       iframe
         margin-bottom: 0
+  body.ideas.new
+    form
+      +grid-column(12, false, false, 0)
+    .formatting_tips
+      +grid-column(12, false, false, 0)

@@ -1,16 +1,4 @@
 .row
-  .formatting_tips
-    .box
-      h2 Dicas de formatação
-      .tip
-        | Você pode inserir um título na sua descrição, basta fazer assim #Meu Título
-      .tip 
-        | Para formatar o seu texto em negrito faça assim: **negrito**
-      .tip
-        | Para formatar o seu texto em itálico faça assim: _italico_
-      .tip 
-        | Se você colar uma url de imagem, mapa do Google Maps, vídeo do Vimeo ou do Youtube. Experimente!
-
   = form_for [@problem, @idea], validate: true do |form|
     .box
       h1 Uma nova ideia para...
@@ -24,3 +12,15 @@
         = image_tag "ajax-loader.gif"
       #idea_preview data-preview-url=problem_idea_preview_url(@problem)
       = form.submit 
+
+  .formatting_tips
+    .box
+      h2 Dicas de formatação
+      .tip
+        | Você pode inserir um título na sua descrição, basta fazer assim #Meu Título
+      .tip 
+        | Para formatar o seu texto em negrito faça assim: **negrito**
+      .tip
+        | Para formatar o seu texto em itálico faça assim: _italico_
+      .tip 
+        | Se você colar uma url de imagem, mapa do Google Maps, vídeo do Vimeo ou do Youtube. Experimente!
