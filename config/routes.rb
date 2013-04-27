@@ -14,7 +14,8 @@ Imagine::Application.routes.draw do
   end
 
   resources :users, only: [:show] do
-    resources :contributions, only: [:index]
+    resources :contributions, only: [:create]
+    get :pending_contributions, to: "contributions#pending_contributions"
   end
 
   match "about" => "pages#about", as: "about"

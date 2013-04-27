@@ -35,6 +35,7 @@ body class="#{controller.controller_name} #{controller.action_name}"
         .menu
           .login
             - if current_user
+              = link_to "", user_pending_contributions_path(current_user), id: "contributions", class: "icon-retweet"
               | #{current_user.name} 
               = image_tag current_user.image, class: "user_image"
             - else

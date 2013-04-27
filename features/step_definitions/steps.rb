@@ -166,3 +166,11 @@ end
 Then(/^I should not see the new idea link$/) do
   page.should_not have_css("a#new_idea")
 end
+
+When(/^I click on the contributions link$/) do
+  click_link "contributions"
+end
+
+Then(/^I should see no pending contributions$/) do
+  page.should have_css(".no_pending_contribution")
+end

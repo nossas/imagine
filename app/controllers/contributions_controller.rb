@@ -1,5 +1,5 @@
 class ContributionsController < InheritedResources::Base
-  belongs_to :idea
+  belongs_to :idea, :optional => true
   authorize_resource
 
   prepend_before_filter only: [:create] do
@@ -16,5 +16,9 @@ class ContributionsController < InheritedResources::Base
       success.html { redirect_to problem_idea_path(@idea.problem, @idea), flash: { contribution_notice: true } }
       failure.html { raise "Fail to create contribution" }
     end
+  end
+
+  def pending_contributions
+    @user = User.find(params[:user_id])
   end
 end

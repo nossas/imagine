@@ -11,14 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130404203029) do
+ActiveRecord::Schema.define(:version => 20130427233745) do
 
   create_table "contributions", :force => true do |t|
     t.integer  "user_id"
     t.integer  "idea_id"
     t.text     "body"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.datetime "accepted_at"
+    t.datetime "rejected_at"
   end
 
   create_table "ideas", :force => true do |t|
