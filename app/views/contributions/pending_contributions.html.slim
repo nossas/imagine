@@ -9,7 +9,7 @@
         .box
           .user
             = image_tag contribution.user.image, class: "user_image"
-            = contribution.user.name
+            strong= contribution.user.name
             |  contribuiu dia 
             = l contribution.created_at, format: :short
             |  para a ideia 
