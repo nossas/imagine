@@ -174,3 +174,13 @@ end
 Then(/^I should see no pending contributions$/) do
   page.should have_css(".no_pending_contribution")
 end
+
+Given(/^I have some pending contributions$/) do
+  user = User.find_by_email("nicolas@engage.is")
+  idea = Idea.make! user: user
+  @contribution = Contribution.make! idea: idea
+end
+
+Then(/^I should see these contributions$/) do
+  page.should have_css(".contribution .body")
+end

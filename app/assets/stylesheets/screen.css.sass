@@ -80,9 +80,24 @@ header
       a#auth-facebook
         &:hover
           +opacity(.9)
-      img.user_image
-        width: 25px
-        +border-radius(25px)
+      span
+        line-height: normal
+        position: relative
+        margin-right: 10px
+        &:before, &:after
+          left: 0
+        a.icon-retweet
+          font-size: 20px
+          color: gray
+          span.counter
+            background: red
+            color: white
+            position: absolute
+            left: 0
+            top: 0
+            font-size: 8px
+            padding: 0 3px
+            font-weight: bold
   .menu_mobile
     position: relative
     .icon-list
@@ -98,7 +113,7 @@ header
         color: white
     .links
       z-index: 999
-      width: 200px
+      width: 250px
       right: 14px
       top: 50px
       position: absolute
@@ -200,6 +215,10 @@ a.submit, a.btn, input[type='submit']
 p
   &:last-child
     margin-bottom: 0
+
+img.user_image
+  width: 25px
+  +border-radius(25px)
 
 @media screen and (max-width: 640px)
   header

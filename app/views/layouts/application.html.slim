@@ -35,7 +35,12 @@ body class="#{controller.controller_name} #{controller.action_name}"
         .menu
           .login
             - if current_user
-              = link_to "", user_pending_contributions_path(current_user), id: "contributions", class: "icon-retweet"
+              span.hint.hint--bottom data-hint=t("pending_contributions", count: current_user.pending_contributions.count)
+                = link_to user_pending_contributions_path(current_user), id: "contributions", class: "icon-retweet" do
+                  - if current_user.pending_contributions.any?
+                    span.counter= current_user.pending_contributions.count
+                  - else
+                    |  
               | #{current_user.name} 
               = image_tag current_user.image, class: "user_image"
             - else
@@ -52,6 +57,7 @@ body class="#{controller.controller_name} #{controller.action_name}"
                 .user
                   = image_tag current_user.image, class: "user_image"
                   |  #{current_user.name} 
+                = link_to "Contribuições pendentes", user_pending_contributions_path(current_user)
               - else
                 = link_to "Entrar", "/auth/facebook"
               = link_to "Como funciona?", about_path

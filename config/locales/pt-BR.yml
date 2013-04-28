@@ -211,3 +211,7 @@ pt-BR:
       idea:
         title: "Título"
         description: "Descrição"
+  pending_contributions:
+    zero: 'Nenhuma contribuição pendente'
+    one: '1 contribuição pendente'
+    other: '%{count} contribuições pendentes'

@@ -1,5 +1,5 @@
 class Contribution < ActiveRecord::Base
-  attr_accessible :body, :idea_id, :user_id
+  attr_accessible :body, :idea_id, :user_id, :accepted_at, :rejected_at
   validates :idea_id, :user_id, :body, :presence => true
   belongs_to :idea
   belongs_to :user
