@@ -8,4 +8,8 @@ class Contribution < ActiveRecord::Base
   def accepted?
     !accepted_at.nil?
   end
+  
+  def rejected?
+    !rejected_at.nil?
+  end
 end

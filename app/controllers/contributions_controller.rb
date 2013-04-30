@@ -26,4 +26,9 @@ class ContributionsController < InheritedResources::Base
     Contribution.find(params[:contribution_id]).update_attributes accepted_at: Time.now
     redirect_to user_pending_contributions_path(current_user)
   end
+
+  def reject
+    Contribution.find(params[:contribution_id]).update_attributes rejected_at: Time.now
+    redirect_to user_pending_contributions_path(current_user)
+  end
 end

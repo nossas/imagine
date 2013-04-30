@@ -17,3 +17,4 @@
           .body= simple_format contribution.body
       .accept_or_reject
         = link_to "Aceitar", contribution_accept_path(contribution), method: :post, class: ["accept", "btn"]
+        = link_to "Rejeitar", contribution_reject_path(contribution), method: :put, class: ["reject", "btn"]

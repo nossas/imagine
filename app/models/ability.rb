@@ -14,6 +14,9 @@ class Ability
       can :accept, Contribution do |contribution|
         contribution.idea.user == user
       end
+      can :reject, Contribution do |contribution|
+        contribution.idea.user == user
+      end
     end
   end
 end

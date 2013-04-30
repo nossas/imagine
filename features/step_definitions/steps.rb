@@ -194,3 +194,13 @@ end
 Then(/^the contribution should be accepted$/) do
   @contribution.reload.should be_accepted
 end
+
+When(/^I reject the pending contribution$/) do
+  within ".accept_or_reject" do
+    find("a.reject").click
+  end
+end
+
+Then(/^the contribution should be rejected$/) do
+  @contribution.reload.should be_rejected
+end

@@ -20,6 +20,7 @@ Imagine::Application.routes.draw do
 
   resources :contributions, only: [] do
     post :accept, :to => "contributions#accept"
+    put :reject, :to => "contributions#reject"
   end
 
   match "about" => "pages#about", as: "about"
