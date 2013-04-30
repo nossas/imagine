@@ -86,6 +86,7 @@ body.ideas.new, body.ideas.create
   .title
     +grid-column(12)
     margin-bottom: 20px
+    font-size: 18px
   .formatting_tips
     +grid-column(3)
     .box
@@ -109,8 +110,16 @@ body.ideas.new, body.ideas.create
         margin-bottom: 0
   form
     +grid-column(9)
+    label
+      font-weight: bold
+      font-size: 22px
+      margin-bottom: 10px
+    input[type="text"]
+      margin-bottom: 40px
+      font-size: 22px
     textarea
       height: 150px
+      margin-bottom: 40px
     h1
       margin-bottom: 0
     a.problem_title
@@ -120,6 +129,9 @@ body.ideas.new, body.ideas.create
       margin-top: 30px
       img
         width: 20px
+    input[type='submit']
+      padding: 10px 40px 7px 40px
+      font-size: 20px
     #idea_preview
       .box
         border: 1px dashed lightgray
