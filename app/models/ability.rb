@@ -11,6 +11,9 @@ class Ability
       can :create, Idea
       can :create, Contribution
       can :create, Vote
+      can :accept, Contribution do |contribution|
+        contribution.idea.user == user
+      end
     end
   end
 end

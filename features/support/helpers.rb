@@ -5,6 +5,7 @@ def path route
   return about_path                                       if route == "the about page"
   return problem_idea_path(last_idea.problem, last_idea)  if route == "the new idea page"
   return new_problem_idea_path(@problem)                  if route == "the new idea page for this problem"
+  return user_pending_contributions_path(current_user)    if route == "the pending contributions page"
   raise "I don't know what '#{route}' means"
 end
 
@@ -14,4 +15,8 @@ end
 
 def last_idea
   Idea.order("id DESC").first
+end
+
+def current_user
+  User.find_by_email("nicolas@engage.is")
 end

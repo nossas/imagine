@@ -4,4 +4,8 @@ class Contribution < ActiveRecord::Base
   belongs_to :idea
   belongs_to :user
   before_create { ContributionMailer.new_contribution(self).deliver }
+
+  def accepted?
+    !accepted_at.nil?
+  end
 end

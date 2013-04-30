@@ -184,3 +184,13 @@ end
 Then(/^I should see these contributions$/) do
   page.should have_css(".contribution .body")
 end
+
+When(/^I accept the pending contribution$/) do
+  within ".accept_or_reject" do
+    find("a.accept").click
+  end
+end
+
+Then(/^the contribution should be accepted$/) do
+  @contribution.reload.should be_accepted
+end

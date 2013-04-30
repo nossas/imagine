@@ -18,6 +18,10 @@ Imagine::Application.routes.draw do
     get :pending_contributions, to: "contributions#pending_contributions"
   end
 
+  resources :contributions, only: [] do
+    post :accept, :to => "contributions#accept"
+  end
+
   match "about" => "pages#about", as: "about"
 
   match "auth/facebook/callback" => "sessions#create"
