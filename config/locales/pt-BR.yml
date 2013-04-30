@@ -209,8 +209,10 @@ pt-BR:
       contribution:
         body: "Contribuição"
       idea:
-        title: "Título"
-        description: "Descrição"
+        title: "Título da ideia"
+        description: "Explique sua ideia"
+    models:
+      idea: "Ideia"
   pending_contributions:
     zero: 'Nenhuma contribuição pendente'
     one: '1 contribuição pendente'

@@ -1,17 +1,18 @@
 .row
+  .title
+    | Uma nova ideia para...
+    = link_to @problem.title, @problem, class: "problem_title"
+.row
   = form_for [@problem, @idea], validate: true do |form|
-    .box
-      h1 Uma nova ideia para...
-      = link_to @problem.title, @problem, class: "problem_title"
-      = form.label :title
-      = form.text_field :title
-      = form.label :description
-      = form.text_area :description
-      h4#idea_preview_title
-        | Como vai ficar a sua ideia...
-        = image_tag "ajax-loader.gif"
-      #idea_preview data-preview-url=problem_idea_preview_url(@problem)
-      = form.submit 
+    = form.label :title
+    = form.text_field :title
+    = form.label :description
+    = form.text_area :description
+    h4#idea_preview_title
+      | Como vai ficar a sua ideia...
+      = image_tag "ajax-loader.gif"
+    #idea_preview data-preview-url=problem_idea_preview_url(@problem)
+    = form.submit 
 
   .formatting_tips
     .box
