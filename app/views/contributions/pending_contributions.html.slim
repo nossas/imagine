@@ -16,4 +16,4 @@
             = link_to contribution.idea.title, [contribution.idea.problem, contribution.idea]
           .body= simple_format contribution.body
       .accept_or_reject
-        = link_to "Aceitar contribuição", contribution_accept_path(contribution), method: :post, class: "accept"
+        = link_to "Aceitar", contribution_accept_path(contribution), method: :post, class: ["accept", "btn"]

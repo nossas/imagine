@@ -15,3 +15,11 @@ body.contributions.pending_contributions
         margin-right: 5px
         position: relative
         top: -2px
+  .accept_or_reject
+    +grid-column(2)
+    .accept, .reject
+      display: block
+      text-align: center
+      +background-image(linear-gradient(lighten(#3ACA32, 10%), darken(#3ACA32, 10%)))
+    .reject
+      +background-image(linear-gradient(lighten(#F73D42, 10%), darken(#F73D42, 10%)))
