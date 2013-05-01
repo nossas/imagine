@@ -4,6 +4,22 @@
 body.ideas.show
   .contribution_notice, .share_new_idea
     +grid-column(12)
+  .share_new_idea
+    .box
+      padding: 10px 15px 15px 15px
+      overflow: visible
+      background: $cerulean
+      color: white
+      text-align: center
+      iframe.twitter-share-button
+        top: 5px
+        position: relative
+        margin-left: 20px
+        width: 100px !important
+      .fb-like
+        top: 5px
+        position: relative
+      
   .idea_title, .idea_details
     +grid-column(12)
     h1
@@ -56,6 +72,7 @@ body.ideas.show
     .idea_share
       .box
         text-align: left
+        overflow: visible
         h3
           font-weight: normal
           font-size: 1.5em
@@ -110,16 +127,18 @@ body.ideas.new, body.ideas.create
         margin-bottom: 0
   form
     +grid-column(9)
+    .field
+      margin-bottom: 40px
     label
       font-weight: bold
       font-size: 22px
       margin-bottom: 10px
+    label.message
+      font-size: 16px
     input[type="text"]
-      margin-bottom: 40px
       font-size: 22px
     textarea
       height: 150px
-      margin-bottom: 40px
     h1
       margin-bottom: 0
     a.problem_title

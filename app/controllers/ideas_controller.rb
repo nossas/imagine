@@ -8,4 +8,10 @@ class IdeasController < InheritedResources::Base
     @idea = Idea.new(params[:idea])
     render partial: "description"
   end
+
+  def create
+    create! do |format|
+      format.html { redirect_to problem_idea_path(@problem, @idea), flash: {new_idea: true} }
+    end
+  end
 end

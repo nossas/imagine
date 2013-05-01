@@ -6,9 +6,13 @@
     .contribution_notice
       .notice Assim que o criador desta idéia aceitar a sua contribuição nós te avisaremos. Obrigado por contribuir!
 
-.row
-  .share_new_idea
-    | Agora que a sua ideia está criada, compartilhe ela para que ganhe votos e contribuições!
+- if flash[:new_idea]
+  .row
+    .share_new_idea
+      .box
+        | Agora só falta compartilhar a sua ideia! 
+        a href="https://twitter.com/share" class="twitter-share-button" data-lang="pt" data-width="100px" Tweetar
+        .fb-like data-href=problem_idea_url(@problem, @idea) data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"
 
 .row
   .idea_title
