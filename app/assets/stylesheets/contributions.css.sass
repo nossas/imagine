@@ -24,3 +24,8 @@ body.contributions.pending_contributions
       +background-image(linear-gradient(lighten(#3ACA32, 10%), darken(#3ACA32, 10%)))
     .reject
       +background-image(linear-gradient(lighten(#F73D42, 10%), darken(#F73D42, 10%)))
+
+@media screen and (max-width: 800px)
+  body.contributions.pending_contributions
+    .contribution, .accept_or_reject
+      +grid-column(12)
