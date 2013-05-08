@@ -215,3 +215,13 @@ end
 Then(/^I should see a successful message$/) do
   page.should have_css(".notice")
 end
+
+Then(/^I should not see remove idea button$/) do
+  page.should_not have_css("#remove_idea")
+end
+
+Given(/^I'm a logged kickass admin$/) do
+  visit "/auth/facebook"
+  current_user.admin = true
+  current_user.save
+end

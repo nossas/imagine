@@ -19,5 +19,5 @@ def last_idea
 end
 
 def current_user
-  User.find_by_email("nicolas@engage.is")
+  @current_user ||= User.find_by_email("nicolas@engage.is")
 end

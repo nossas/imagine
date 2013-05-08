@@ -6,10 +6,12 @@ class Ability
     can :preview, Idea
     can :read, Problem
     can :pending_contributions, Contribution
-    can :destroy, Idea
 
     if user
       can :create, Idea
+      can :destroy, Idea do |idea|
+        idea.user == user
+      end
       can :create, Contribution
       can :create, Vote
       can :accept, Contribution do |contribution|
@@ -17,6 +19,9 @@ class Ability
       end
       can :reject, Contribution do |contribution|
         contribution.idea.user == user
+      end
+      if user.admin?
+        can :destroy, Idea
       end
     end
   end

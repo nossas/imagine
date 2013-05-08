@@ -23,7 +23,8 @@
   = render partial: "description"
   .idea_panel
 
-    = link_to "Remover ideia", [@idea.problem, @idea], method: :delete, id: "remove_idea", class: ["btn", "icon-cross"]
+    - if can? :destroy, @idea
+      = link_to "Remover ideia", [@idea.problem, @idea], method: :delete, id: "remove_idea", class: ["btn", "icon-cross"]
     - if @problem.voting_closed?
       = link_to "#", class: "vote", id: "vote" do
         span.icon-heart votações encerradas
