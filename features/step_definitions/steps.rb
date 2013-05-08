@@ -53,11 +53,11 @@ Then(/^I should see the message of thanks for voting$/) do
 end
 
 Then(/^I should have one vote for this idea$/) do
-  User.find_by_email("nicolas@engage.is").votes.where(:idea_id => @idea.id).count.should be_== 1
+  current_user.votes.where(:idea_id => @idea.id).count.should be_== 1
 end
 
 Given(/^I already voted for this idea$/) do
-  Vote.make! idea_id: @idea.id, user_id: User.find_by_email("nicolas@engage.is").id
+  Vote.make! idea_id: @idea.id, user_id: current_user.id
 end
 
 Then(/^I should see you alredy voted for this idea$/) do
@@ -101,7 +101,7 @@ Then(/^I should be warned to wait for the idea's owner approval$/) do
 end
 
 Then(/^I should have one contribution$/) do
-  User.find_by_email("nicolas@engage.is").contributions.count.should_not be_zero
+  current_user.contributions.count.should_not be_zero
 end
 
 Then(/^show me the page$/) do
@@ -113,7 +113,7 @@ Then(/^I should see the error message for contribution field$/) do
 end
 
 Then(/^I should have no contribution$/) do
-  User.find_by_email("nicolas@engage.is").contributions.count.should be_zero
+  current_user.contributions.count.should be_zero
 end
 
 Given(/^there is an idea with an expired deadline for contribution$/) do
@@ -176,8 +176,7 @@ Then(/^I should see no pending contributions$/) do
 end
 
 Given(/^I have some pending contributions$/) do
-  user = User.find_by_email("nicolas@engage.is")
-  idea = Idea.make! user: user
+  idea = Idea.make! user: current_user
   @contribution = Contribution.make! idea: idea
 end
 
@@ -203,4 +202,16 @@ end
 
 Then(/^the contribution should be rejected$/) do
   @contribution.reload.should be_rejected
+end
+
+Given(/^I own an idea$/) do
+  @idea = Idea.make!(:user => current_user)
+end
+
+When(/^I click on remove idea$/) do
+  click_link "remove_idea"
+end
+
+Then(/^I should see a successful message$/) do
+  page.should have_css(".notice")
 end

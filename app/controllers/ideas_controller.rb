@@ -1,3 +1,5 @@
+#coding: utf-8
+
 class IdeasController < InheritedResources::Base
   belongs_to :problem
   before_filter only: [:show] { @contribution = Contribution.new }
@@ -13,5 +15,9 @@ class IdeasController < InheritedResources::Base
     create! do |format|
       format.html { redirect_to problem_idea_path(@problem, @idea), flash: {new_idea: true} }
     end
+  end
+
+  def destroy
+    destroy!(notice: "A ideia nem era tão boa assim") { problem_path(@problem) }
   end
 end

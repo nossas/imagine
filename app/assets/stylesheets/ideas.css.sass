@@ -34,6 +34,20 @@ body.ideas.show
       margin-bottom: 40px
   .idea_panel
     +grid-column(4)
+    a#remove_idea
+      display: block
+      text-align: center
+      text-transform: none
+      font-weight: normal
+      font-size: 18px
+      padding-top: 17px
+      padding-bottom: 13px
+      margin-bottom: 20px
+      &:before
+        font-size: 28px
+        line-height: 0
+        position: relative
+        top: 6px
     a.vote
       &:hover
         color: $french-rose

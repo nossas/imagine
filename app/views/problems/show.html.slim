@@ -1,6 +1,11 @@
 - content_for(:title) { @problem.title }
 - content_for(:og_type) { "imaginee:problem" }
 
+- if flash[:notice]
+  .row
+    .problem_notice
+      .notice= flash[:notice]
+
 .row
   .problem_title
     h1

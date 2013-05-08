@@ -6,6 +6,7 @@ def path route
   return problem_idea_path(last_idea.problem, last_idea)  if route == "the new idea page"
   return new_problem_idea_path(@problem)                  if route == "the new idea page for this problem"
   return user_pending_contributions_path(current_user)    if route == "the pending contributions page"
+  return problem_path(@idea.problem)                      if route == "the idea's problem page"
   raise "I don't know what '#{route}' means"
 end
 
