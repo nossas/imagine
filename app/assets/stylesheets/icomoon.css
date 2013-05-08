@@ -26,30 +26,34 @@ you can use the generic selector below, but it's slower:
 }
 
 .icon-retweet:before {
-	font-family: 'entypo';
 	content: "\e094";
+	font-family: 'entypo';
 }
 .icon-comment:before {
-	font-family: 'entypo';
 	content: "\e000";
+	font-family: 'entypo';
 }
 .icon-clock:before {
-	font-family: 'entypo';
 	content: "\e001";
+	font-family: 'entypo';
 }
 .icon-heart:before {
-	font-family: 'entypo';
 	content: "\e002";
+	font-family: 'entypo';
 }
 .icon-checkmark:before {
-	font-family: 'entypo';
 	content: "\e003";
+	font-family: 'entypo';
 }
 .icon-cross:before {
-	font-family: 'entypo';
 	content: "\e004";
+	font-family: 'entypo';
 }
 .icon-list:before {
-	font-family: 'entypo';
 	content: "\e005";
+	font-family: 'entypo';
+}
+.icon-pencil:before {
+	content: "\e006";
+	font-family: 'entypo';
 }

@@ -23,6 +23,8 @@
   = render partial: "description"
   .idea_panel
 
+    - if can? :edit, @idea
+      = link_to "Editar ideia", edit_problem_idea_path(@idea.problem, @idea), id: "edit_idea", class: ["btn", "icon-pencil"]
     - if can? :destroy, @idea
       = link_to "Remover ideia", [@idea.problem, @idea], method: :delete, id: "remove_idea", class: ["btn", "icon-cross"]
     - if @problem.voting_closed?

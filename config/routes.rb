@@ -3,7 +3,7 @@ Imagine::Application.routes.draw do
 
   resources :problems, only: [:show] do
     get :idea_preview, :to => "ideas#preview"
-    resources :ideas, only: [:show, :new, :create, :destroy] do
+    resources :ideas, only: [:show, :new, :create, :destroy, :edit, :update] do
       resource :votes, only: [:create] do
         get :create_from_session, :to => "votes#create"
       end

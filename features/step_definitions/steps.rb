@@ -225,3 +225,25 @@ Given(/^I'm a logged kickass admin$/) do
   current_user.admin = true
   current_user.save
 end
+
+Given(/^I click on edit idea$/) do
+  click_link "edit_idea"
+end
+
+Given(/^I fill in idea's title with "(.*?)"$/) do |arg1|
+  fill_in "idea_title", with: arg1
+end
+
+When(/^I submit the edit idea form$/) do
+  within "form.edit_idea" do
+    find("input[type='submit']").click
+  end
+end
+
+Then(/^I should see "(.*?)" on the idea's title$/) do |arg1|
+  page.should have_css(".idea_title h1", text: arg1)
+end
+
+Then(/^I should not see edit idea button$/) do
+  page.should_not have_css("#edit_idea")
+end

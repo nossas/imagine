@@ -10,7 +10,11 @@ $(function(){
   });
 
   function load_preview(){
-    var params = $("form.new_idea").serialize();
+    if($("form.new_idea").length)
+      var params = $("form.new_idea").serialize();
+    else
+      var params = $("form.edit_idea").serialize();
+
     $.get($("#idea_preview").data("preview-url") + "?" + params, function(data) {
       $('#idea_preview').html(data); 
       $('#idea_preview_title img').hide();

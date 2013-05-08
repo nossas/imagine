@@ -12,7 +12,8 @@ window.onload = function() {
 			'icon-heart' : '&#xe002;',
 			'icon-checkmark' : '&#xe003;',
 			'icon-cross' : '&#xe004;',
-			'icon-list' : '&#xe005;'
+			'icon-list' : '&#xe005;',
+			'icon-pencil' : '&#xe006;'
 		},
 		els = document.getElementsByTagName('*'),
 		i, attr, html, c, el;

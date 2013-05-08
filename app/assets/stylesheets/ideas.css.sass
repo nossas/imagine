@@ -34,7 +34,7 @@ body.ideas.show
       margin-bottom: 40px
   .idea_panel
     +grid-column(4)
-    a#remove_idea
+    a#remove_idea, a#edit_idea
       display: block
       text-align: center
       text-transform: none
@@ -48,6 +48,10 @@ body.ideas.show
         line-height: 0
         position: relative
         top: 6px
+        margin-right: 5px
+        color: rgba(255, 255, 255, .5)
+    a#edit_idea
+      margin-bottom: 10px
     a.vote
       &:hover
         color: $french-rose
@@ -113,7 +117,7 @@ body.ideas.show
       label
         float: left
 
-body.ideas.new, body.ideas.create
+body.ideas.new, body.ideas.create, body.ideas.edit, body.ideas.update
   .title
     +grid-column(12)
     margin-bottom: 20px

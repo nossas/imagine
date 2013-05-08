@@ -2,28 +2,5 @@
   .title
     | Uma nova ideia para 
     = link_to @problem.title, @problem, class: "problem_title"
-.row
-  = form_for [@problem, @idea], validate: true do |form|
-    .field
-      = form.label :title
-      = form.text_field :title
-    .field
-      = form.label :description
-      = form.text_area :description
-    h4#idea_preview_title
-      | Como vai ficar a sua ideia...
-      = image_tag "ajax-loader.gif"
-    #idea_preview data-preview-url=problem_idea_preview_url(@problem)
-    = form.submit 
 
-  .formatting_tips
-    .box
-      h2 Dicas de formatação
-      .tip
-        | Você pode inserir um título na sua descrição, basta fazer assim #Meu Título
-      .tip 
-        | Para formatar o seu texto em negrito faça assim: **negrito**
-      .tip
-        | Para formatar o seu texto em itálico faça assim: _italico_
-      .tip 
-        | Experimente colar uma url de imagem, mapa do Google Maps, vídeo do Vimeo ou do Youtube
+= render partial: "form"

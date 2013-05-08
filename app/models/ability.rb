@@ -9,9 +9,14 @@ class Ability
 
     if user
       can :create, Idea
+
+      can :update, Idea do |idea|
+        idea.user == user
+      end
       can :destroy, Idea do |idea|
         idea.user == user
       end
+
       can :create, Contribution
       can :create, Vote
       can :accept, Contribution do |contribution|
@@ -22,6 +27,7 @@ class Ability
       end
       if user.admin?
         can :destroy, Idea
+        can :update, Idea
       end
     end
   end
