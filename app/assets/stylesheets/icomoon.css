@@ -24,8 +24,9 @@ you can use the generic selector below, but it's slower:
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 }
+
 .icon-retweet:before {
-  font-family: 'entypo';
+	font-family: 'entypo';
 	content: "\e094";
 }
 .icon-comment:before {
@@ -40,7 +41,15 @@ you can use the generic selector below, but it's slower:
 	font-family: 'entypo';
 	content: "\e002";
 }
-.icon-list:before {
+.icon-checkmark:before {
 	font-family: 'entypo';
 	content: "\e003";
+}
+.icon-cross:before {
+	font-family: 'entypo';
+	content: "\e004";
+}
+.icon-list:before {
+	font-family: 'entypo';
+	content: "\e005";
 }

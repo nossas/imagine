@@ -10,7 +10,9 @@ window.onload = function() {
 			'icon-comment' : '&#xe000;',
 			'icon-clock' : '&#xe001;',
 			'icon-heart' : '&#xe002;',
-			'icon-list' : '&#xe003;'
+			'icon-checkmark' : '&#xe003;',
+			'icon-cross' : '&#xe004;',
+			'icon-list' : '&#xe005;'
 		},
 		els = document.getElementsByTagName('*'),
 		i, attr, html, c, el;
