@@ -32,6 +32,30 @@ body.ideas.show
     +grid-column(8)
     .box
       margin-bottom: 40px
+    span.contributions
+      background: $cerulean
+      color: white
+      font-size: 24px
+      margin-bottom: 10px
+      display: inline-block
+      padding: 5px
+    .contribution
+      padding-top: 20px
+      margin-bottom: 20px
+      border-top: 1px solid lightgray
+      .user
+        margin-bottom: 10px
+        img
+          margin-right: 5px
+          position: relative
+          top: -2px
+          width: 25px
+          vertical-align: middle
+          +border-radius(25px)
+      .body
+        font-size: 14px
+        p
+          line-height: normal
   .idea_panel
     +grid-column(4)
     a#remove_idea, a#edit_idea
