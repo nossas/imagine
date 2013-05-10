@@ -1,10 +1,11 @@
 .idea_description
   .box
     = raw @idea.description_html
-    span.contributions contribuições
-    - @idea.contributions.accepted.each do |contribution|
-      .contribution
-        .user
-          = image_tag contribution.user.image
-          | #{contribution.user.name}, #{l contribution.accepted_at, format: :short}
-        .body= simple_format contribution.body
+    - if @idea.contributions.accepted.any?
+      span.contributions contribuições
+      - @idea.contributions.accepted.each do |contribution|
+        .contribution
+          .user
+            = image_tag contribution.user.image
+            | #{contribution.user.name}, #{l contribution.accepted_at, format: :short}
+          .body= simple_format contribution.body
