@@ -42,7 +42,7 @@
 
     = link_to "#new_contribution", :class => "remix" do
       span.icon-retweet #{@problem.contribution_closed? ? "contribuições encerradas" : "contribuir"}
-      span= @idea.contributions.count
+      span= @idea.contributions.accepted.count
 
     - if flash[:notice]
       .thanks_for_voting

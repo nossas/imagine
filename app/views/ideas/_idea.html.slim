@@ -4,5 +4,11 @@
     .user por #{idea.user.name}
     .description= simple_format truncate(idea.description, :length => 140)
   .idea_bottom
-    span.icon-heart= idea.votes.count
-    span.icon-retweet= idea.contributions.count
+    - if current_user && current_user.voted_on?(idea)
+      span.icon-heart.colored= idea.votes.count
+    - else
+      span.icon-heart= idea.votes.count
+    - if current_user && current_user.contributed_to?(idea)
+      span.icon-retweet.colored= idea.contributions.accepted.count
+    - else
+      span.icon-retweet= idea.contributions.accepted.count

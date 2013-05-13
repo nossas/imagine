@@ -16,4 +16,12 @@ class User < ActiveRecord::Base
   def pending_contributions
     Contribution.joins(:idea).where("accepted_at IS NULL AND rejected_at IS NULL AND ideas.user_id = ?", self.id)
   end
+
+  def voted_on? idea
+    self.votes.where(idea_id: idea.id).any?
+  end
+  
+  def contributed_to? idea
+    self.contributions.where(idea_id: idea.id).any?
+  end
 end
