@@ -2,7 +2,7 @@
   .box
     = raw @idea.description_html
     - if @idea.contributions.accepted.any?
-      span.contributions contribuições
+      = image_tag "balloon-contribuicoes.png"
       - @idea.contributions.accepted.each do |contribution|
         .contribution
           .user

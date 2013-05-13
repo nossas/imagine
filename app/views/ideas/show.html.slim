@@ -59,6 +59,7 @@
 - if !@problem.contribution_closed?
   .row
     = form_for [@problem, @idea, @contribution], validate: true do |form|
+      = image_tag "balloon-contribua.png"
       = form.label :body, "Contribua com referências e mais informações para o desenvolvimento da ideia. Ajude a elaborar as necessidades e próximos passos."
       = form.text_area :body 
       = form.hidden_field :idea_id, value: @idea.id
