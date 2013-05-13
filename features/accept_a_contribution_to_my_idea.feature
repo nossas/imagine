@@ -11,3 +11,4 @@ Feature: accept a contribution to my idea
     When I accept the pending contribution
     Then I should be in "the pending contributions page"
     And the contribution should be accepted
+    And an email should be sent to the contributor

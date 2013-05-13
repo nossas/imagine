@@ -13,4 +13,9 @@ class Contribution < ActiveRecord::Base
   def rejected?
     !rejected_at.nil?
   end
+
+  def accept!
+    self.update_attributes accepted_at: Time.now
+    ContributionMailer.accept_contribution(self).deliver
+  end
 end

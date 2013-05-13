@@ -247,3 +247,7 @@ end
 Then(/^I should not see edit idea button$/) do
   page.should_not have_css("#edit_idea")
 end
+
+Then(/^an email should be sent to the contributor$/) do
+  ActionMailer::Base.deliveries.should_not be_empty
+end

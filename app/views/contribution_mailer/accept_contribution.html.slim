@@ -1,0 +1,8 @@
+- content_for(:title) { "Aceitaram a sua contribuição" }
+
+p Olá #{@user.name},
+p 
+  | O criador da ideia 
+  strong #{link_to @contribution.idea.title, problem_idea_path(@contribution.idea.problem, @contribution.idea)} 
+  | acaba de aceitar a sua contribuição.
+p Equipe Imagine
