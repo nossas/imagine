@@ -15,7 +15,7 @@ $(function(){
     else
       var params = $("form.edit_idea").serialize();
 
-    $.post($("#idea_preview").data("preview-url") + "?" + params, function(data) {
+    $.post($("#idea_preview").data("preview-url"), params, function(data) {
       $('#idea_preview').html(data); 
       $('#idea_preview_title img').hide();
     });
