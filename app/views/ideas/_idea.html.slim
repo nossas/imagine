@@ -2,6 +2,7 @@
   .idea_top
     .title= link_to truncate(idea.title, :length => 29), problem_idea_path(idea.problem, idea), title: idea.title
     .user por #{idea.user.name}
+    .description= simple_format truncate(idea.description, :length => 140)
   .idea_bottom
     span.icon-heart= idea.votes.count
     span.icon-retweet= idea.contributions.count
