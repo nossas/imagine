@@ -1,1 +1,5 @@
-.row= render Problem.all
+.row
+  = render Problem.all
+  - if can? :create, Problem
+    .new_problem
+      .box= link_to "Novo Problema", new_problem_path, class: ["btn"], id: "new_problem"

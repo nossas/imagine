@@ -3,6 +3,7 @@ class Problem < ActiveRecord::Base
   validates :description, :title, :user_id, :presence => true
   has_many :ideas
   belongs_to :user
+  mount_uploader :image, ProblemImageUploader
 
   def voting_closed?
     self.voting_deadline <= Time.now

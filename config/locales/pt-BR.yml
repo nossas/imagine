@@ -211,8 +211,15 @@ pt-BR:
       idea:
         title: "Título da ideia"
         description: "Explique sua ideia"
+      problem:
+        title: "Título do problema"
+        description: "Explique o problema"
+        image: "Imagem"
+        ideas_deadline: "Prazo para novas ideais"
+        voting_deadline: "Prazo para a votação"
     models:
       idea: "Ideia"
+      problem: "Problema"
   pending_contributions:
     zero: 'Nenhuma contribuição pendente'
     one: '1 contribuição pendente'

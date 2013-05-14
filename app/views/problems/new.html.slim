@@ -1,0 +1,20 @@
+.row
+  = form_for @problem, validate: true do |form|
+    .box
+      .field
+        = form.label :title
+        = form.text_field :title
+      .field
+        = form.label :description
+        = form.text_area :description
+      .field
+        = form.label :image
+        = form.file_field :image
+      .field
+        = form.label :ideas_deadline
+        = form.datetime_select :ideas_deadline
+      .field
+        = form.label :voting_deadline
+        = form.datetime_select :voting_deadline
+    .action
+      = form.submit

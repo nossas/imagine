@@ -251,3 +251,25 @@ end
 Then(/^an email should be sent to the contributor$/) do
   ActionMailer::Base.deliveries.should_not be_empty
 end
+
+Given(/^I click on the new problem button$/) do
+  click_link "new_problem"
+end
+
+Given(/^I fill the problem form$/) do
+  within(".new_problem") do
+    fill_in "problem_title", with: Faker::Lorem.sentence
+    fill_in "problem_description", with: Faker::Lorem.paragraph
+    attach_file "problem_image", "#{Rails.root}/features/support/problem.jpeg"
+  end
+end
+
+When(/^I submit the problem form$/) do
+  within "form.new_problem" do
+    find("input[type='submit']").click
+  end
+end
+
+Then(/^I should not see the new problem button$/) do
+  page.should_not have_css("a#new_problem")
+end

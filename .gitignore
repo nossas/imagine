@@ -18,3 +18,4 @@ config/database.yml
 .DS_Store
 *.swo
 config/initializers/01_envvars.rb
+public/uploads

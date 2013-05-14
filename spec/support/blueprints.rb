@@ -11,7 +11,7 @@ require 'machinist/active_record'
 Problem.blueprint do
   title           { Faker::Lorem.sentence(10) }
   description     { Faker::Lorem.paragraphs(3).join("\n\n") }
-  image           { "http://lorempixum.com/150/150/city/#{sn.to_i}" }
+  image           { File.open("#{Rails.root}/features/support/problem.jpeg") }
   ideas_deadline  { Time.now + 1.month }
   voting_deadline { Time.now + 2.months }
   user            { User.make! }

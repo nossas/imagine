@@ -108,13 +108,33 @@ body.problems.index
         color: red
     .box
       overflow: visible
+  .new_problem
+    +grid-column(6)
+    .box
+      height: 154px
+      background: none
+      border: gray 2px dashed
+      text-align: center
+      +box-shadow(none)
+      .btn
+        margin-top: 40px
+        display: inline-block
+
+body.problems.new, body.problems.create
+  form
+    +grid-column(6, 0, 4)
+    .action
+      text-align: center
 
 @media screen and (max-width: 900px)
   body.problems.show
     .idea
       +grid-column(6)
   body.problems.index
-    .problem
+    .problem, .new_problem
+      +grid-column(12)
+  body.problems.new, body.problems.create
+    form
       +grid-column(12)
 
 @media screen and (max-width: 500px)

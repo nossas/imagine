@@ -28,6 +28,7 @@ class Ability
       if user.admin?
         can :destroy, Idea
         can :update, Idea
+        can :create, Problem
       end
     end
   end
