@@ -11,6 +11,8 @@
     h1
       small= "#{@problem.user.name} quer saber..."
       = @problem.title
+    - if can? :edit, @problem
+      = link_to "Editar problema", edit_problem_path(@problem), id: "edit_problem", class: "btn"
     .problem_deadlines
       .box
         span.icon-comment envio de ideias: 
@@ -30,6 +32,5 @@
           span.close encerrado
         - else
           span.open= l(@problem.voting_deadline, format: :short)
-      = link_to "Editar problema", edit_problem_path(@problem), id: "edit_problem", class: "btn"
 
 .row= render @problem.ideas.order("RANDOM()")

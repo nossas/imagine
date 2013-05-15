@@ -160,6 +160,7 @@ Then(/^I should see the error messages for idea$/) do
 end
 
 Then(/^I should see the preview of my new idea$/) do
+  sleep(2)
   page.should have_css("#idea_preview .idea_description")
 end
 
@@ -274,10 +275,6 @@ Then(/^I should not see the new problem button$/) do
   page.should_not have_css("a#new_problem")
 end
 
-Given(/^I've created a problem$/) do
-  @problem = Problem.make!(user: current_user)
-end
-
 Given(/^I click on the edit problem button$/) do
   click_link "edit_problem"
 end
@@ -296,4 +293,8 @@ end
 
 Then(/^the problem's title should be "(.*?)"$/) do |arg1|
   page.should have_css(".problem_title h1", text: arg1)
+end
+
+Then(/^I should not see the edit problem button$/) do
+  page.should_not have_css("a#edit_problem")
 end
