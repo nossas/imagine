@@ -11,9 +11,9 @@
     h1
       small= "#{@problem.user.name} quer saber..."
       = @problem.title
-    - if can? :edit, @problem
+    - if can? :manage, @problem
       = link_to "Editar problema", edit_problem_path(@problem), id: "edit_problem", class: "btn"
-    = link_to "Remover problema", @problem, id: "remove_problem", class: "btn", method: :delete
+      = link_to "Remover problema", @problem, id: "remove_problem", class: "btn", method: :delete
     .problem_deadlines
       .box
         span.icon-comment envio de ideias: 
