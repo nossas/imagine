@@ -30,5 +30,6 @@
           span.close encerrado
         - else
           span.open= l(@problem.voting_deadline, format: :short)
+      = link_to "Editar problema", edit_problem_path(@problem), id: "edit_problem", class: "btn"
 
 .row= render @problem.ideas.order("RANDOM()")

@@ -26,9 +26,8 @@ class Ability
         contribution.idea.user == user
       end
       if user.admin?
-        can :destroy, Idea
-        can :update, Idea
-        can :create, Problem
+        can :manage, Idea
+        can :manage, Problem
       end
     end
   end

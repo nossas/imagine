@@ -1,7 +1,7 @@
 Imagine::Application.routes.draw do
   root :to => "problems#index"
 
-  resources :problems, only: [:show, :new, :create] do
+  resources :problems, only: [:show, :new, :create, :edit, :update] do
     post :idea_preview, :to => "ideas#preview"
     put :idea_preview, :to => "ideas#preview"
     resources :ideas, only: [:show, :new, :create, :destroy, :edit, :update] do

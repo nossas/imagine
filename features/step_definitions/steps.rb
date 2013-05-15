@@ -273,3 +273,27 @@ end
 Then(/^I should not see the new problem button$/) do
   page.should_not have_css("a#new_problem")
 end
+
+Given(/^I've created a problem$/) do
+  @problem = Problem.make!(user: current_user)
+end
+
+Given(/^I click on the edit problem button$/) do
+  click_link "edit_problem"
+end
+
+Given(/^I change the problem's title to "(.*?)"$/) do |arg1|
+  within(".edit_problem") do
+    fill_in "problem_title", with: arg1
+  end
+end
+
+When(/^I submit the edit problem form$/) do
+  within "form.edit_problem" do
+    find("input[type='submit']").click
+  end
+end
+
+Then(/^the problem's title should be "(.*?)"$/) do |arg1|
+  page.should have_css(".problem_title h1", text: arg1)
+end
