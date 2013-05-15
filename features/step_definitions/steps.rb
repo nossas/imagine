@@ -298,3 +298,11 @@ end
 Then(/^I should not see the edit problem button$/) do
   page.should_not have_css("a#edit_problem")
 end
+
+When(/^I click on remove problem button$/) do
+  click_link "remove_problem"
+end
+
+Then(/^I should not see the remove problem button$/) do
+  page.should_not have_css("remove_problem")
+end

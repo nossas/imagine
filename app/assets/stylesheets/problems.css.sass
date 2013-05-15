@@ -28,9 +28,10 @@ body.problems.show
         color: red
       span.open
         color: lighten(green, 10%)
-    #edit_problem
+    #edit_problem, #remove_problem
       display: inline-block
       margin-bottom: 20px
+      margin-right: 10px
   .idea
     margin-bottom: 20px
     +grid-column(4)
@@ -82,6 +83,8 @@ body.problems.show
             color: $casablanca
 
 body.problems.index
+  .problem_notice
+    +grid-column(12)
   .problem
     +grid-column(6)
     img
@@ -123,7 +126,7 @@ body.problems.index
         margin-top: 40px
         display: inline-block
 
-body.problems.new, body.problems.create
+body.problems.new, body.problems.create, body.problems.edit, body.problems.update
   form
     +grid-column(6, 0, 4)
     .action
@@ -136,7 +139,7 @@ body.problems.new, body.problems.create
   body.problems.index
     .problem, .new_problem
       +grid-column(12)
-  body.problems.new, body.problems.create
+  body.problems.new, body.problems.create, body.problems.edit, body.problems.update
     form
       +grid-column(12)
 

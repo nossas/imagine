@@ -1,3 +1,8 @@
+- if flash[:notice]
+  .row
+    .problem_notice
+      .notice= flash[:notice]
+
 .row
   = render Problem.all
   - if can? :create, Problem
