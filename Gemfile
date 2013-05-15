@@ -57,3 +57,4 @@ gem 'client_side_validations', :git => 'git://github.com/bcardarella/client_side
 gem 'cancan'
 gem 'carrierwave'
 gem 'mini_magick'
+gem "fog", "~> 1.3.1"
