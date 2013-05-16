@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130508201739) do
+ActiveRecord::Schema.define(:version => 20130516162456) do
 
   create_table "contributions", :force => true do |t|
     t.integer  "user_id"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20130508201739) do
     t.datetime "updated_at",  :null => false
     t.datetime "accepted_at"
     t.datetime "rejected_at"
+    t.text     "body_html"
   end
 
   create_table "ideas", :force => true do |t|

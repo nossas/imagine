@@ -19,4 +19,4 @@
               = link_to "", contribution_accept_path(contribution), method: :post, class: ["accept", "btn", "icon-checkmark"]
               = link_to "", contribution_reject_path(contribution), method: :put, class: ["reject", "btn", "icon-cross"]
             .clear
-          .body= simple_format contribution.body
+          .body= raw contribution.body_html

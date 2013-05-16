@@ -18,4 +18,15 @@ class Contribution < ActiveRecord::Base
     self.update_attributes accepted_at: Time.now
     ContributionMailer.accept_contribution(self).deliver
   end
+
+  auto_html_for :body do
+    html_escape
+    image
+    youtube(:width => "100%")
+    vimeo(:width => "100%")
+    google_map(:width => "100%")
+    link :target => "_blank"
+    redcarpet { Redcarpet::Markdown.new(Redcarpet::Render::HTML, :no_intra_emphasis => true) }
+  end
+
 end

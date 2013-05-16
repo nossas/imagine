@@ -8,4 +8,4 @@
           .user
             = image_tag contribution.user.image
             | #{contribution.user.name}, #{l contribution.accepted_at, format: :short}
-          .body= simple_format contribution.body
+          .body= raw contribution.body_html
