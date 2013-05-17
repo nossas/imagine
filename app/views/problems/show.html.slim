@@ -47,7 +47,7 @@
 - if params[:section] == "updates"
   .row
     - if @problem.updates.empty?
-      .no_updates_yet Este problema ainda não tem atualizações
+      .no_updates_yet Este problema ainda não tem atualizações...
     - else
       = render @problem.updates
 
