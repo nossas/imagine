@@ -40,3 +40,10 @@ Contribution.blueprint do
   idea  { Idea.make! }
   user  { User.make! }
 end
+
+Update.blueprint do
+  title   { Faker::Lorem.sentence }
+  body    { Faker::Lorem.paragraphs(3).join("\n\n") }
+  image   { File.open("#{Rails.root}/features/support/problem.jpeg") }
+  problem { Problem.make! }
+end

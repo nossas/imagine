@@ -306,3 +306,19 @@ end
 Then(/^I should not see the remove problem button$/) do
   page.should_not have_css("remove_problem")
 end
+
+When(/^I click on the updates button$/) do
+  click_link "updates"
+end
+
+Then(/^I should see no updates yet$/) do
+  page.should have_css(".no_updates_yet")
+end
+
+Given(/^there is an update$/) do
+  @update = Update.make!
+end
+
+Then(/^I should see this update$/) do
+  page.should have_css(".update .title", text: @update.title)
+end

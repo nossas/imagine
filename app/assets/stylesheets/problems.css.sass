@@ -32,6 +32,36 @@ body.problems.show
       display: inline-block
       margin-bottom: 20px
       margin-right: 10px
+  .ideas_and_updates
+    +grid-column(12)
+    margin-bottom: 40px
+    .btn
+      text-transform: none
+      background: lightgray
+      letter-spacing: normal
+      display: inline-block
+      margin-right: 10px
+      span
+        margin-left: 15px
+      &.selected, &:hover
+        background: $cerulean
+  .update
+    +grid-column(12)
+    .image
+      float: left
+      margin-right: 20px
+    .info
+      .created_at, .body
+        font-size: 14px
+        color: gray
+      .body
+        line-height: 1.4em
+      .title
+        font-size: 24px
+        font-weight: bold
+        margin-bottom: 10px
+    hr
+      margin: 30px 0
   .idea
     margin-bottom: 20px
     +grid-column(4)
@@ -147,6 +177,9 @@ body.problems.new, body.problems.create, body.problems.edit, body.problems.updat
   body.problems.show
     .idea
       +grid-column(12)
+    .update
+      .image
+        display: none
   body.problems.index
     .problem
       .icon-clock

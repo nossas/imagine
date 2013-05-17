@@ -9,6 +9,7 @@ def path route
   return problem_path(@idea.problem)                      if route == "the idea's problem page"
   return problem_path(last_problem)                       if route == "the new problem page"
   return problems_path                                    if route == "the problems page"
+  return problem_path(@update.problem)                    if route == "the problem page of this update"
   raise "I don't know what '#{route}' means"
 end
 

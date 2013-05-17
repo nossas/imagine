@@ -1,0 +1,8 @@
+.update
+  .image= image_tag update.image.thumb.url
+  .info
+    .created_at= l update.created_at, format: :short
+    .title= update.title
+    .body= truncate(update.body, length: 450)
+  .clear    
+  hr

@@ -4,6 +4,9 @@ Imagine::Application.routes.draw do
   resources :problems do
     post :idea_preview, :to => "ideas#preview"
     put :idea_preview, :to => "ideas#preview"
+    member do
+      get :updates, defaults: { section: "updates" }, as: :updates, to: "problems#show"
+    end
     resources :ideas do
       resource :votes, only: [:create] do
         get :create_from_session, :to => "votes#create"
