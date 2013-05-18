@@ -3,6 +3,7 @@
   - content_for(:og_type) { "imaginee:problem" }
 - else
   - content_for(:title)           { @featured_update.title }
+  - content_for(:og_url)          { updates_problem_url(@problem, anchor: "update_#{@featured_update.id}", update_id: @featured_update.id) }
   - content_for(:image)           { @featured_update.image.url }
   - content_for(:og_description)  { truncate(@featured_update.body, length: 140) }
 
