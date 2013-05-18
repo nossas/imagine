@@ -1,5 +1,10 @@
-- content_for(:title) { @problem.title }
-- content_for(:og_type) { "imaginee:problem" }
+- if @featured_update.nil?
+  - content_for(:title) { @problem.title }
+  - content_for(:og_type) { "imaginee:problem" }
+- else
+  - content_for(:title)           { @featured_update.title }
+  - content_for(:image)           { @featured_update.image.url }
+  - content_for(:og_description)  { truncate(@featured_update.body, length: 140) }
 
 - if flash[:notice]
   .row

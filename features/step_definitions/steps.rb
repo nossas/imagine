@@ -322,3 +322,11 @@ end
 Then(/^I should see this update$/) do
   page.should have_css(".update .title", text: @update.title)
 end
+
+When(/^I click on the update$/) do
+  click_link("update_#{@update.id}_btn")
+end
+
+Then(/^I should see the update in a lightbox$/) do
+  page.should have_css("#facebox .update_facebox")
+end

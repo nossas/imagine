@@ -4,4 +4,7 @@ $(function(){
     $(".menu_mobile .links").toggle(); 
     $(e.target).toggleClass("selected");
   });
+
+  $('a[rel*=facebox]').facebox()
+  $(document.location.hash + "_btn").click();
 });

@@ -13,11 +13,12 @@ head
   / meta http-equiv="X-UA-Compatible" content="IE=7"
   / Set the viewport width to device width for mobile
   meta name="viewport" content="width=device-width, initial-scale=1.0"
-  meta property="fb:app_id" content="#{ENV['FACEBOOK_KEY']}"
-  meta property="og:url"    content=request.url
-  meta property="og:title"  content="#{content_for?(:title) ? yield(:title) : "Imagine"}"
-  meta property="og:image"  content="#{content_for?(:og_image) ? yield(:og_image) : "http://i.imgur.com/Na1ulko.png"}"
-  meta property="og:type"   content="#{content_for?(:og_type) ? yield(:og_type) : "imaginee"}"
+  meta property="fb:app_id"       content="#{ENV['FACEBOOK_KEY']}"
+  meta property="og:url"          content=request.url
+  meta property="og:title"        content="#{content_for?(:title) ? yield(:title) : "Imagine"}"
+  meta property="og:image"        content="#{content_for?(:og_image) ? yield(:og_image) : "http://i.imgur.com/Na1ulko.png"}"
+  meta property="og:type"         content="#{content_for?(:og_type) ? yield(:og_type) : "imaginee"}"
+  meta property="og:description"  content="#{content_for?(:og_description) ? yield(:og_description) : "O Imagine é uma plataforma de produção colaborativa de idéias para os principais problemas da sua cidade"}"
   title= content_for?(:title) ? yield(:title) : "Imagine"
   = favicon_link_tag "favicon.png", :type => "image/png"
   = stylesheet_link_tag "application"

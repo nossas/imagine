@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require rails.validations
+//= require jquery.facebox
 //= require app
 //= require ideas
 
