@@ -1,5 +1,5 @@
 - content_for(:title) { @idea.title }
-- content_for(:og_type) { "#{ENV["FB_NAMESPACE"]}:idea" }
+- content_for(:og_type) { "#{ENV["FACEBOOK_NAMESPACE"]}:idea" }
 
 - if flash[:contribution_notice]
   .row

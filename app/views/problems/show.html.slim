@@ -1,12 +1,12 @@
 - if @featured_update.nil?
   - content_for(:title) { @problem.title }
-  - content_for(:og_type) { "#{ENV["FB_NAMESPACE"]}:problem" }
+  - content_for(:og_type) { "#{ENV["FACEBOOK_NAMESPACE"]}:problem" }
 - else
   - content_for(:title)           { @featured_update.title }
   - content_for(:og_url)          { updates_problem_url(@problem, anchor: "update_#{@featured_update.id}", update_id: @featured_update.id) }
   - content_for(:image)           { @featured_update.image.url }
   - content_for(:og_description)  { truncate(@featured_update.body, length: 140) }
-  - content_for(:og_type)         { "#{ENV["FB_NAMESPACE"]}:update" }
+  - content_for(:og_type)         { "#{ENV["FACEBOOK_NAMESPACE"]}:update" }
 
 - if flash[:notice]
   .row

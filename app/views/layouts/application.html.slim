@@ -17,7 +17,7 @@ head
   meta property="og:url"          content="#{content_for?(:og_url) ? yield(:og_url) : request.url}"
   meta property="og:title"        content="#{content_for?(:title) ? yield(:title) : "Imagine"}"
   meta property="og:image"        content="#{content_for?(:og_image) ? yield(:og_image) : "http://i.imgur.com/Na1ulko.png"}"
-  meta property="og:type"         content="#{content_for?(:og_type) ? yield(:og_type) : "#{ENV["FB_NAMESPACE"]}"}"
+  meta property="og:type"         content="#{content_for?(:og_type) ? yield(:og_type) : "#{ENV["FACEBOOK_NAMESPACE"]}"}"
   meta property="og:description"  content="#{content_for?(:og_description) ? yield(:og_description) : "O Imagine é uma plataforma de produção colaborativa de idéias para os principais problemas da sua cidade"}"
   title= content_for?(:title) ? yield(:title) : "Imagine"
   = favicon_link_tag "favicon.png", :type => "image/png"
