@@ -6,6 +6,7 @@ class Ability
     can :preview, Idea
     can :read, Problem
     can :pending_contributions, Contribution
+    can :read, Update
 
     if user
       can :create, Idea

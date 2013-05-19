@@ -7,4 +7,8 @@ $(function(){
 
   $('a[rel*=facebox]').facebox()
   $(document.location.hash + "_btn").click();
+  $(document).bind('reveal.facebox', function() {
+    FB.XFBML.parse();
+    $.getScript('http://platform.twitter.com/widgets.js');
+  });
 });

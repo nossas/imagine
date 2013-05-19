@@ -2,17 +2,7 @@
   .image= image_tag update.image.thumb.url
   .info
     .created_at= l update.created_at, format: :short
-    .title= link_to update.title, "#update_#{update.id}", id: "update_#{update.id}_btn", rel: "facebox[.update_facebox]"
+    .title= link_to update.title, problem_update_path(@problem, update), id: "update_#{update.id}_btn", rel: "facebox[.update_facebox]"
     .body= truncate(update.body, length: 450)
   .clear    
   hr
-
-div id="update_#{update.id}" style="display: none"
-  .created_at= l update.created_at, format: :short
-  .title= update.title
-  .image= image_tag update.image
-  .body= simple_format update.body
-  hr
-  .share
-    a href="https://twitter.com/share" class="twitter-share-button" data-lang="pt" data-width="100px" data-url=updates_problem_url(@problem, anchor: "update_#{update.id}", update_id: update.id) Tweetar
-    .fb-like data-href="#{updates_problem_url(@problem, anchor: "update_#{update.id}", update_id: update.id)}" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"
