@@ -362,3 +362,7 @@ Then(/^I should see errors for the update fields$/) do
   page.should have_css(".field_with_errors label.message[for='update_image']")
   page.should have_css(".field_with_errors label.message[for='update_body']")
 end
+
+Then(/^I should see the new update on the Facebook page$/) do
+  last_update.facebook_post_id.should_not be_nil
+end

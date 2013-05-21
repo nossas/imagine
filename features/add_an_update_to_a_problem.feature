@@ -13,6 +13,7 @@ Feature: add an update to a problem
     When I submit the update form
     Then I should be in "the updates page of this problem"
     And I should see the new update
+    And I should see the new update on the Facebook page
   
   @omniauth_test @javascript @koala
   Scenario: when there are errors in the form
