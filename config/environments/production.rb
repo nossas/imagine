@@ -67,7 +67,7 @@ Imagine::Application.configure do
 
   GA.tracker = "UA-26278513-13"
 
-  default_url_options[:host] = "imagine.meurio.org.br"
+  default_url_options[:host] = ENV["HOST"]
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
     :user_name => ENV["SENDGRID_USERNAME"],
