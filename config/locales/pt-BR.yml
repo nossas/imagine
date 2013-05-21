@@ -221,6 +221,7 @@ pt-BR:
         title: "Título da atualização"
         image: "Imagem"
         body: "Texto"
+        message: "Mensagem de compartilhamento"
     models:
       idea: "Ideia"
       problem: "Problema"
