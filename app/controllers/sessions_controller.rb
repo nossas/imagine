@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
       :email      => hash[:info][:email],
       :first_name => hash[:info][:first_name], 
       :last_name  => hash[:info][:last_name],
+      :token      => hash[:credentials][:token],
       :image      => hash[:info][:image]).id
     if session[:idea_id]
       idea = Idea.find(session.delete(:idea_id))

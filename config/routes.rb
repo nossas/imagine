@@ -15,7 +15,7 @@ Imagine::Application.routes.draw do
         get :create_from_session, :to => "contributions#create"
       end
     end
-    resources :updates, only: [:show]
+    resources :updates, only: [:show, :new, :create]
   end
 
   resources :users, only: [:show] do

@@ -10,6 +10,7 @@ def path route
   return problem_path(last_problem)                       if route == "the new problem page"
   return problems_path                                    if route == "the problems page"
   return problem_path(@update.problem)                    if route == "the problem page of this update"
+  return updates_problem_path(@problem)                   if route == "the updates page of this problem"
   raise "I don't know what '#{route}' means"
 end
 
@@ -23,6 +24,10 @@ end
 
 def last_problem
   Problem.order("id DESC").first
+end
+
+def last_update
+  Update.order("id DESC").first
 end
 
 def current_user

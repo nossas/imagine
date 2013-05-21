@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :first_name, :image, :last_name, :uid
+  attr_accessible :email, :first_name, :image, :last_name, :uid, :token
   validates :email, :first_name, :presence => true
   validates :email, :uniqueness => true
   has_many :votes

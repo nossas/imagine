@@ -29,6 +29,7 @@ class Ability
       if user.admin?
         can :manage, Idea
         can :manage, Problem
+        can :manage, Update
       end
     end
   end

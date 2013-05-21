@@ -330,3 +330,35 @@ end
 Then(/^I should see the update in a lightbox$/) do
   page.should have_css("#facebox .update_facebox")
 end
+
+Given(/^I click on add update button$/) do
+  click_link "new_update"
+end
+
+Given(/^I fill the update form$/) do
+  within "form.new_update" do
+    fill_in "update_title", with: Faker::Lorem.sentence
+    attach_file "update_image", "#{Rails.root}/features/support/problem.jpeg"
+    fill_in "update_body", with: Faker::Lorem.paragraph
+  end
+end
+
+When(/^I submit the update form$/) do
+  within "form.new_update" do
+    find("input[type='submit']").click
+  end
+end
+
+Then(/^I should see the new update$/) do
+  page.should have_css(".update .title", text: last_update.title)
+end
+
+Then(/^I should not see add update button$/) do
+  page.should_not have_css("a#new_update")
+end
+
+Then(/^I should see errors for the update fields$/) do
+  page.should have_css(".field_with_errors label.message[for='update_title']")
+  page.should have_css(".field_with_errors label.message[for='update_image']")
+  page.should have_css(".field_with_errors label.message[for='update_body']")
+end

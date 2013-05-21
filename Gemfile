@@ -59,3 +59,4 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem "fog", "~> 1.3.1"
 gem 'facebox-rails'
+gem "koala", "~> 1.7.0rc1"

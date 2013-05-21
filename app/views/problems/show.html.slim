@@ -30,8 +30,6 @@
           span.close encerrado
         - else
           span.open= l(@problem.ideas_deadline, format: :short)
-        - if !@problem.contribution_closed?
-          = link_to "Crie sua ideia!", new_problem_idea_path(@problem), id: "new_idea", class: "btn"
       .box
         span.icon-clock votação: 
         - if @problem.voting_deadline.nil?
@@ -44,12 +42,16 @@
 .row
   .ideas_and_updates
     hr
-    = link_to @problem, class: "btn #{if params[:section].nil? then "selected" else "" end}" do
+    = link_to @problem, id: "ideas", class: "btn #{if params[:section].nil? then "selected" else "" end}" do
       | Ideias
       span= @problem.ideas.count
     = link_to updates_problem_path(@problem), id: "updates", class: "btn #{if params[:section] == "updates" then "selected" else "" end}" do
       | Atualizações
       span= @problem.updates.count
+    - if params[:section] == "updates" && can?(:create, Update)
+      = link_to "Nova atualização", new_problem_update_path(@problem), id: "new_update", class: "btn", rel: "facebox[.new_update_facebox]"
+    - if params[:section].nil? && !@problem.contribution_closed?
+      = link_to "Crie sua ideia!", new_problem_idea_path(@problem), id: "new_idea", class: "btn"
 
 - if params[:section] == "updates"
   .row

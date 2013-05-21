@@ -217,9 +217,14 @@ pt-BR:
         image: "Imagem"
         ideas_deadline: "Prazo para novas ideais"
         voting_deadline: "Prazo para a votação"
+      update:
+        title: "Título da atualização"
+        image: "Imagem"
+        body: "Texto"
     models:
       idea: "Ideia"
       problem: "Problema"
+      update: "Atualização"
   pending_contributions:
     zero: 'Nenhuma contribuição pendente'
     one: '1 contribuição pendente'

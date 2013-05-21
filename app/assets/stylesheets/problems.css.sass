@@ -35,7 +35,7 @@ body.problems.show
   .ideas_and_updates
     +grid-column(12)
     margin-bottom: 40px
-    .btn
+    #ideas, #updates
       text-transform: none
       background: lightgray
       letter-spacing: normal
@@ -45,6 +45,9 @@ body.problems.show
         margin-left: 15px
       &.selected, &:hover
         background: $cerulean
+    #new_update, #new_idea
+      float: right
+      margin-right: 0
   .no_updates_yet
     +grid-column(12)
   .update
@@ -122,6 +125,17 @@ body.problems.show
         &.icon-retweet.colored
           &:before
             color: $casablanca
+  .new_update_facebox
+    textarea
+      height: 200px
+    form
+      margin-bottom: 0
+    label
+      font-weight: bold
+      font-size: 18px
+      &.message
+        font-size: 12px
+        font-weight: normal
 
 body.problems.index
   .problem_notice

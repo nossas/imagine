@@ -3,4 +3,5 @@ class Update < ActiveRecord::Base
   validates :title, :body, :image, :problem_id, :presence => true
   belongs_to :problem
   mount_uploader :image, UpdateImageUploader
+  default_scope order("created_at DESC")
 end

@@ -122,6 +122,10 @@ GEM
     json (1.7.7)
     jwt (0.1.8)
       multi_json (>= 1.5)
+    koala (1.7.0rc1)
+      addressable
+      faraday
+      multi_json
     launchy (2.2.0)
       addressable (~> 2.3)
     machinist (2.0)
@@ -255,6 +259,7 @@ DEPENDENCIES
   google-analytics-rails
   inherited_resources
   jquery-rails
+  koala (~> 1.7.0rc1)
   launchy
   machinist (>= 2.0.0.beta2)
   mini_magick
