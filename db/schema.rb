@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130521120443) do
+ActiveRecord::Schema.define(:version => 20130521130128) do
 
   create_table "contributions", :force => true do |t|
     t.integer  "user_id"
@@ -50,8 +50,11 @@ ActiveRecord::Schema.define(:version => 20130521120443) do
     t.string   "title"
     t.text     "body"
     t.integer  "problem_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.integer  "user_id"
+    t.string   "facebook_post_id"
+    t.text     "message"
   end
 
   create_table "users", :force => true do |t|

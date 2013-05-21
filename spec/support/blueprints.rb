@@ -29,6 +29,7 @@ User.blueprint do
   last_name   { Faker::Name.last_name }
   email       { Faker::Internet.email }
   image       { "http://lorempixel.com/50/50/people/#{sn.to_i}" }
+  token       { "ASFGHJGHFGDSFDFGHDGF" }
 end
 
 Vote.blueprint do
@@ -46,4 +47,5 @@ Update.blueprint do
   body    { Faker::Lorem.paragraphs(3).join("\n\n") }
   image   { File.open("#{Rails.root}/features/support/problem.jpeg") }
   problem { Problem.make! }
+  user    { User.make! }
 end

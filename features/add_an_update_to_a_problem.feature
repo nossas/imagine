@@ -3,7 +3,7 @@ Feature: add an update to a problem
   As an admin
   I want to add an update to a problem
 
-  @omniauth_test @javascript
+  @omniauth_test @javascript @koala
   Scenario: when I'm a logged admin
     Given I'm a logged kickass admin
     And there is a problem
@@ -14,7 +14,7 @@ Feature: add an update to a problem
     Then I should be in "the updates page of this problem"
     And I should see the new update
   
-  @omniauth_test @javascript
+  @omniauth_test @javascript @koala
   Scenario: when there are errors in the form
     Given I'm a logged kickass admin
     And there is a problem

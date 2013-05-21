@@ -3,7 +3,7 @@ Feature: view an update of a problem
   As a visitor
   I want to view an update of a problem
 
-  @javascript
+  @javascript @koala
   Scenario: when there is an update for a problem
     Given there is an update
     And I'm in "the problem page of this update"

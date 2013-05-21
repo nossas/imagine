@@ -9,6 +9,7 @@ Feature: view all updates of a problem
     When I click on the updates button
     Then I should see no updates yet
 
+  @koala
   Scenario: when there is an update
     Given there is an update
     And I'm in "the problem page of this update"
