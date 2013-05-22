@@ -8,7 +8,7 @@ class Update < ActiveRecord::Base
   after_create :post_on_facebook
 
   def post_on_facebook
-    raise self.image.url.inspect
+    raise self.reload.image.url.inspect
     user_graph = Koala::Facebook::API.new(self.user.token)
     page_token = user_graph.get_page_access_token(ENV["FACEBOOK_PAGE_ID"])
     page_graph = Koala::Facebook::API.new(page_token)
