@@ -8,6 +8,7 @@ class Update < ActiveRecord::Base
   after_save :post_on_facebook
 
   def post_on_facebook
+    raise Rails.application.routes.url_helpers.updates_problem_url(self.problem, anchor: "update_#{self.id}", update_id: self.id).inspect
     user_graph = Koala::Facebook::API.new(self.user.token)
     page_token = user_graph.get_page_access_token(ENV["FACEBOOK_PAGE_ID"])
     page_graph = Koala::Facebook::API.new(page_token)
