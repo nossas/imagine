@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
         :image      => hash[:info][:image]
       )
     else
-       user = User.create(
+       user = User.create!(
         :uid        => hash[:uid],
         :email      => hash[:info][:email],
         :first_name => hash[:info][:first_name], 
