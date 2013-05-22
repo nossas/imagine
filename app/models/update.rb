@@ -5,6 +5,7 @@ class Update < ActiveRecord::Base
   belongs_to :user
   mount_uploader :image, UpdateImageUploader
   default_scope order("created_at DESC")
+  before_create :post_on_facebook
 
   def post_on_facebook
     user_graph = Koala::Facebook::API.new(self.user.token)
@@ -14,7 +15,10 @@ class Update < ActiveRecord::Base
       ENV["FACEBOOK_PAGE_ID"], 
       'feed', 
       :message => self.message, 
-      :link => Rails.application.routes.url_helpers.updates_problem_url(self.problem, anchor: "update_#{self.id}", update_id: self.id)
+      :link => Rails.application.routes.url_helpers.updates_problem_url(self.problem, anchor: "update_#{self.id}", update_id: self.id),
+      :picture => self.image.thumb,
+      :name => self.title,
+      :description => self.body
     )
     self.update_attributes facebook_post_id: facebook_post["id"]
   end

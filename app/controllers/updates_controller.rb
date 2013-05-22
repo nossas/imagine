@@ -5,8 +5,6 @@ class UpdatesController < InheritedResources::Base
   before_filter only: [:create] { params[:update][:user_id] = current_user.id }
 
   def create
-    create! do |format|
-      format.html { @update.post_on_facebook and redirect_to updates_problem_path(@problem) }
-    end
+    create! { updates_problem_path(@problem) }
   end
 end
