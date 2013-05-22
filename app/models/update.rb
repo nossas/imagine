@@ -16,7 +16,7 @@ class Update < ActiveRecord::Base
       'feed', 
       :message => self.message, 
       :link => Rails.application.routes.url_helpers.updates_problem_url(self.problem, anchor: "update_#{self.id}", update_id: self.id),
-      :picture => self.image.thumb,
+      :picture => self.image.thumb.url,
       :name => self.title,
       :description => self.body
     )
