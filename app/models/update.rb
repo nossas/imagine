@@ -5,10 +5,10 @@ class Update < ActiveRecord::Base
   belongs_to :user
   mount_uploader :image, UpdateImageUploader
   default_scope order("created_at DESC")
-  after_create :post_on_facebook
+  after_save :post_on_facebook
 
   def post_on_facebook
-    raise self.reload.image.url.inspect
+    raise self.image.thumb.url.inspect
     user_graph = Koala::Facebook::API.new(self.user.token)
     page_token = user_graph.get_page_access_token(ENV["FACEBOOK_PAGE_ID"])
     page_graph = Koala::Facebook::API.new(page_token)
