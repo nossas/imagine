@@ -15,10 +15,7 @@ class Update < ActiveRecord::Base
       ENV["FACEBOOK_PAGE_ID"], 
       'feed', 
       :message => self.message, 
-      :link => Rails.application.routes.url_helpers.updates_problem_url(self.problem, anchor: "update_#{self.id}", update_id: self.id),
-      :picture => self.image.url,
-      :name => self.title,
-      :description => self.body
+      :link => Rails.application.routes.url_helpers.updates_problem_url(self.problem, anchor: "update_#{self.id}", update_id: self.id)
     )
     self.update_attributes facebook_post_id: facebook_post["id"]
   end
