@@ -5,7 +5,6 @@ class Update < ActiveRecord::Base
   belongs_to :user
   mount_uploader :image, UpdateImageUploader
   default_scope order("created_at DESC")
-  after_create :post_on_facebook
 
   def post_on_facebook
     user_graph = Koala::Facebook::API.new(self.user.token)
