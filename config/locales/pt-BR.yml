@@ -222,6 +222,7 @@ pt-BR:
         image: "Imagem"
         body: "Texto"
         message: "Mensagem de compartilhamento"
+        video: "Link do Youtube"
     models:
       idea: "Ideia"
       problem: "Problema"

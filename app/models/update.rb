@@ -1,6 +1,6 @@
 class Update < ActiveRecord::Base
-  attr_accessible :body, :image, :problem_id, :title, :user_id, :message, :facebook_post_id
-  validates :title, :body, :image, :problem_id, :user_id, :presence => true
+  attr_accessible :body, :image, :problem_id, :title, :user_id, :message, :facebook_post_id, :video
+  validates :title, :body, :problem_id, :user_id, :presence => true
   belongs_to :problem
   belongs_to :user
   mount_uploader :image, UpdateImageUploader
@@ -18,5 +18,17 @@ class Update < ActiveRecord::Base
       :link => Rails.application.routes.url_helpers.updates_problem_url(self.problem, anchor: "update_#{self.id}", update_id: self.id)
     )
     self.update_attributes facebook_post_id: facebook_post["id"]
+  end
+
+  def thumb
+    if self.video
+      "http://img.youtube.com/vi/#{self.video[/(?<=[?&]v=)[^&$]+/]}/0.jpg"
+    else
+      self.image.thumb.url
+    end
+  end
+
+  auto_html_for :video do
+    youtube(:width => "100%")
   end
 end

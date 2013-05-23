@@ -359,7 +359,6 @@ end
 
 Then(/^I should see errors for the update fields$/) do
   page.should have_css(".field_with_errors label.message[for='update_title']")
-  page.should have_css(".field_with_errors label.message[for='update_image']")
   page.should have_css(".field_with_errors label.message[for='update_body']")
 end
 

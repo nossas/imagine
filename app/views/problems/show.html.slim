@@ -4,7 +4,7 @@
 - else
   - content_for(:title)           { @featured_update.title }
   - content_for(:og_url)          { updates_problem_url(@problem, anchor: "update_#{@featured_update.id}", update_id: @featured_update.id) }
-  - content_for(:og_image)        { @featured_update.image.thumb.url }
+  - content_for(:og_image)        { @featured_update.thumb }
   - content_for(:og_description)  { truncate(@featured_update.body, length: 140) }
   - content_for(:og_type)         { "#{ENV["FACEBOOK_NAMESPACE"]}:update" }
 

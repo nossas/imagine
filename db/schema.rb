@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130522212834) do
+ActiveRecord::Schema.define(:version => 20130523172353) do
 
   create_table "contributions", :force => true do |t|
     t.integer  "user_id"
@@ -71,6 +71,8 @@ ActiveRecord::Schema.define(:version => 20130522212834) do
     t.integer  "user_id"
     t.string   "facebook_post_id"
     t.text     "message"
+    t.text     "video_html"
+    t.string   "video"
   end
 
   create_table "users", :force => true do |t|
