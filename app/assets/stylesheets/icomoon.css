@@ -49,11 +49,15 @@ you can use the generic selector below, but it's slower:
 	content: "\e004";
 	font-family: 'entypo';
 }
-.icon-list:before {
+.icon-trash:before {
 	content: "\e005";
 	font-family: 'entypo';
 }
 .icon-pencil:before {
 	content: "\e006";
+	font-family: 'entypo';
+}
+.icon-list:before {
+	content: "\e007";
 	font-family: 'entypo';
 }

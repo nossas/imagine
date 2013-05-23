@@ -366,3 +366,25 @@ end
 Then(/^I should see the new update on the Facebook page$/) do
   last_update.facebook_post_id.should_not be_nil
 end
+
+Given(/^there is an update for this problem$/) do
+  @update = Update.make!(problem: @problem)
+end
+
+Then(/^I should see the update with a trash button$/) do
+  page.should have_css(".update .icon-trash")
+end
+
+When(/^I click on the trash button$/) do
+  within ".update" do
+    find("a[class='icon-trash']").click
+  end
+end
+
+Then(/^I should not see the update anymore$/) do
+  page.should_not have_css(".update .title", text: @update.title)
+end
+
+Then(/^I should not see the update with a trash button$/) do
+  page.should_not have_css(".update .icon-trash")
+end
