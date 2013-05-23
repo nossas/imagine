@@ -57,11 +57,15 @@ body.problems.show
       margin-right: 20px
     .info
       position: relative
-      .icon-trash
-        color: red
+      .remove_and_edit
         position: absolute
         top: 0
         right: 0
+        .icon-trash
+          color: red
+        .icon-pencil
+          color: $casablanca
+          margin-right: 5px
   .update, .update_facebox
     .created_at, .body
       font-size: 14px
@@ -132,7 +136,7 @@ body.problems.show
         &.icon-retweet.colored
           &:before
             color: $casablanca
-  .new_update_facebox
+  .new_update_facebox, .edit_update_facebox
     textarea#update_body
       height: 200px
     form

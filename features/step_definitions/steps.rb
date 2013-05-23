@@ -320,7 +320,7 @@ Given(/^there is an update$/) do
 end
 
 Then(/^I should see this update$/) do
-  page.should have_css(".update .title", text: @update.title)
+  page.should have_css(".update .title", text: @update.reload.title)
 end
 
 When(/^I click on the update$/) do
@@ -387,4 +387,34 @@ end
 
 Then(/^I should not see the update with a trash button$/) do
   page.should_not have_css(".update .icon-trash")
+end
+
+Then(/^I should see the edit update button$/) do
+  page.should have_css(".update .icon-pencil")
+end
+
+When(/^I click on the edit update button$/) do
+  within ".update" do
+    find("a[class='icon-pencil']").click
+  end
+end
+
+Then(/^I should see the edit update form$/) do
+  page.should have_css("form.edit_update")
+end
+
+Given(/^I fill in title with "(.*?)"$/) do |arg1|
+  within("form.edit_update") do
+    fill_in "update_title", with: arg1
+  end
+end
+
+When(/^I submit the edit update form$/) do
+  within("form.edit_update") do
+    find("input[type='submit']").click
+  end
+end
+
+Then(/^I should not see the edit update button$/) do
+  page.should_not have_css(".update .icon-pencil")
 end

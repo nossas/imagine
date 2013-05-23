@@ -1,8 +1,10 @@
 .update
   .image= link_to image_tag(update.image.thumb.url), problem_update_path(@problem, update), rel: "facebox[.update_facebox]"
   .info
-    - if can?(:delete, update)
-      = link_to "", problem_update_path(@problem, update), method: :delete, class: "icon-trash"
+    .remove_and_edit
+      - if can?(:manage, update)
+        = link_to "", edit_problem_update_path(@problem, update), class: "icon-pencil", rel: "facebox[.edit_update_facebox]"
+        = link_to "", problem_update_path(@problem, update), method: :delete, class: "icon-trash"
     .created_at= l update.created_at, format: :short
     .title= link_to update.title, problem_update_path(@problem, update), id: "update_#{update.id}_btn", rel: "facebox[.update_facebox]"
     .body= truncate(update.body, length: 450)

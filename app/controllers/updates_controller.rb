@@ -7,4 +7,8 @@ class UpdatesController < InheritedResources::Base
   def create
     create! { updates_problem_path(@problem) }
   end
+
+  def update
+    update! { updates_problem_path(@problem, anchor: "update_#{@update.id}", update_id: @update.id) }
+  end
 end
