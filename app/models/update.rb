@@ -1,6 +1,6 @@
 class Update < ActiveRecord::Base
-  attr_accessible :body, :image, :problem_id, :title, :user_id, :message, :facebook_post_id, :video
-  validates :title, :body, :problem_id, :user_id, :presence => true
+  attr_accessible :body, :image, :problem_id, :title, :user_id, :message, :facebook_post_id, :video, :lead
+  validates :title, :body, :problem_id, :user_id, :lead, :presence => true
   belongs_to :problem
   belongs_to :user
   mount_uploader :image, UpdateImageUploader

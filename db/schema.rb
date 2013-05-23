@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130523172353) do
+ActiveRecord::Schema.define(:version => 20130523200943) do
 
   create_table "contributions", :force => true do |t|
     t.integer  "user_id"
@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(:version => 20130523172353) do
     t.text     "message"
     t.text     "video_html"
     t.string   "video"
+    t.text     "lead"
   end
 
   create_table "users", :force => true do |t|

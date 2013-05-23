@@ -45,6 +45,7 @@ end
 Update.blueprint do
   title   { Faker::Lorem.sentence }
   body    { Faker::Lorem.paragraphs(3).join("\n\n") }
+  lead    { Faker::Lorem.paragraphs(3).join("\n\n") }
   image   { File.open("#{Rails.root}/features/support/problem.jpeg") }
   problem { Problem.make! }
   user    { User.make! }

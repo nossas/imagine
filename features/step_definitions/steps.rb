@@ -340,6 +340,7 @@ Given(/^I fill the update form$/) do
     fill_in "update_title", with: Faker::Lorem.sentence
     attach_file "update_image", "#{Rails.root}/features/support/problem.jpeg"
     fill_in "update_body", with: Faker::Lorem.paragraph
+    fill_in "update_lead", with: Faker::Lorem.paragraph
   end
 end
 
