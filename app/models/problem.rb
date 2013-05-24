@@ -1,6 +1,6 @@
 class Problem < ActiveRecord::Base
-  attr_accessible :description, :ideas_deadline, :image, :title, :voting_deadline, :user_id
-  validates :description, :title, :user_id, :presence => true
+  attr_accessible :description, :ideas_deadline, :image, :title, :voting_deadline, :user_id, :objectives
+  validates :description, :title, :user_id, :objectives, :presence => true
   has_many :ideas
   has_many :updates
   belongs_to :user

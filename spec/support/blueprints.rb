@@ -15,6 +15,7 @@ Problem.blueprint do
   ideas_deadline  { Time.now + 1.month }
   voting_deadline { Time.now + 2.months }
   user            { User.make! }
+  objectives      { Faker::Lorem.paragraph }
 end
 
 Idea.blueprint do

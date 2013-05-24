@@ -14,13 +14,15 @@
       .notice= flash[:notice]
 
 .row
+  .problem_user #{@problem.user.name} quer saber...
+
+.row
   .problem_title
-    h1
-      small= "#{@problem.user.name} quer saber..."
-      = @problem.title
+    h1= @problem.title
     - if can? :manage, @problem
       = link_to "Editar problema", edit_problem_path(@problem), id: "edit_problem", class: "btn"
       = link_to "Remover problema", @problem, id: "remove_problem", class: "btn", method: :delete
+    .problem_description= simple_format @problem.description
     .problem_deadlines
       .box
         span.icon-comment envio de ideias: 
@@ -38,6 +40,10 @@
           span.close encerrado
         - else
           span.open= l(@problem.voting_deadline, format: :short)
+  .problem_objectives
+    .box
+      h2 O que será feito com as ideias?
+      = simple_format @problem.objectives
 
 .row
   .ideas_and_updates
