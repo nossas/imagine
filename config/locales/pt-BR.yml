@@ -217,6 +217,7 @@ pt-BR:
         image: "Imagem"
         ideas_deadline: "Prazo para novas ideais"
         voting_deadline: "Prazo para a votação"
+        objectives: "O que será feito com as ideias?"
       update:
         title: "Título da atualização"
         image: "Imagem"
