@@ -25,8 +25,13 @@ class SessionsController < ApplicationController
     end
     session[:user_id] = user.id
     if session[:idea_id]
-      idea = Idea.find(session.delete(:idea_id))
-      redirect_to create_from_session_problem_idea_votes_path(problem_id: idea.problem.id, idea_id: idea.id)
+      begin
+        idea = Idea.find(session.delete(:idea_id))
+        redirect_to create_from_session_problem_idea_votes_path(problem_id: idea.problem.id, idea_id: idea.id)
+      rescue Exception => e
+        puts e
+        redirect_to root_path
+      end
     elsif session[:contribution]
       idea = Idea.find(session[:contribution][:idea_id])
       redirect_to create_from_session_problem_idea_contributions_path(problem_id: idea.problem.id, idea_id: idea.id)
