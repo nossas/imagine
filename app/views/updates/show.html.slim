@@ -1,9 +1,9 @@
 .created_at= l @update.created_at, format: :short
 .title= @update.title
-- if @update.video
-  .video= raw @update.video_html
-- else
+- if @update.video.blank?
   .image= image_tag @update.image
+- else
+  .video= raw @update.video_html
 .body= simple_format @update.body
 hr
 .share
