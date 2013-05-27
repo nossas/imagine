@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     hash = request.env['omniauth.auth']
     user = User.find_by_uid(hash[:uid])
     if user
-      user.update_attributes(
+      user.update_attributes!(
         :uid        => hash[:uid],
         :email      => hash[:info][:email],
         :first_name => hash[:info][:first_name], 
