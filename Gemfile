@@ -46,7 +46,7 @@ end
 
 gem 'inherited_resources'
 gem 'slim-rails'
-gem 'omniauth-facebook'
+gem "omniauth-facebook", "~> 1.3.0"
 gem 'auto_html'
 gem 'google-analytics-rails'
 gem 'newrelic_rpm'
