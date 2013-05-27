@@ -14,14 +14,15 @@ class SessionsController < ApplicationController
         :image      => hash[:info][:image]
       )
     else
-       user = User.create!(
+      raise hash.inspect
+      user = User.create!(
         :uid        => hash[:uid],
         :email      => hash[:info][:email],
         :first_name => hash[:info][:first_name], 
         :last_name  => hash[:info][:last_name],
         :token      => hash[:credentials][:token],
         :image      => hash[:info][:image]
-      )   
+      )
     end
     session[:user_id] = user.id
     if session[:idea_id]
