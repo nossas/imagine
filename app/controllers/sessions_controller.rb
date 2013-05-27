@@ -14,7 +14,6 @@ class SessionsController < ApplicationController
         :image      => hash[:info][:image]
       )
     else
-      raise hash.inspect
       user = User.create!(
         :uid        => hash[:uid],
         :email      => hash[:info][:email],
