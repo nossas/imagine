@@ -21,10 +21,10 @@ class Update < ActiveRecord::Base
   end
 
   def thumb
-    if self.video
-      "http://img.youtube.com/vi/#{self.video[/(?<=[?&]v=)[^&$]+/]}/0.jpg"
-    else
+    if self.video.blank?
       self.image.thumb.url
+    else
+      "http://img.youtube.com/vi/#{self.video[/(?<=[?&]v=)[^&$]+/]}/0.jpg"
     end
   end
 
