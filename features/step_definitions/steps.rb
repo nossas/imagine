@@ -262,6 +262,7 @@ Given(/^I fill the problem form$/) do
     fill_in "problem_title", with: Faker::Lorem.sentence
     fill_in "problem_description", with: Faker::Lorem.paragraph
     attach_file "problem_image", "#{Rails.root}/features/support/problem.jpeg"
+    fill_in "problem_objectives", with: Faker::Lorem.paragraph
   end
 end
 
