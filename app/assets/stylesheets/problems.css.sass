@@ -231,9 +231,32 @@ body.problems.index
 
 body.problems.new, body.problems.create, body.problems.edit, body.problems.update
   form
-    +grid-column(6, 0, 4)
-    .action
-      text-align: center
+    +grid-column(8, 0, 2)
+    .field
+      margin-bottom: 40px
+    label
+      font-weight: bold
+      font-size: 22px
+      margin-bottom: 10px
+    label.message
+      font-size: 16px
+    input[type="text"]
+      font-size: 22px
+    textarea
+      height: 150px
+    h1
+      margin-bottom: 0
+    a.problem_title
+      display: block
+      margin-bottom: 20px 
+    h4
+      margin-top: 30px
+      img
+        width: 20px
+    input[type='submit']
+      padding: 10px 40px 7px 40px
+      font-size: 20px
+
 
 @media screen and (max-width: 900px)
   body.problems.show
