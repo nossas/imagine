@@ -7,5 +7,5 @@
 .body= simple_format @update.body
 hr
 .share
-  = link_to image_tag("bt-share-twitter.png"), "https://twitter.com/share?url=#{updates_problem_url(@problem, anchor: "update_#{@update.id}", update_id: @update.id)}&text=#{@update.title}", class: "share"
   = link_to image_tag("bt-share-face.png"), "https://www.facebook.com/sharer.php?u=#{updates_problem_url(@problem, anchor: "update_#{@update.id}", update_id: @update.id)}", class: "share"
+  = link_to image_tag("bt-share-twitter.png"), "https://twitter.com/share?text=#{@update.title}&url=#{updates_problem_url(@problem, anchor: "update_#{@update.id}", update_id: @update.id)}", class: "share"
