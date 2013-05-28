@@ -173,6 +173,19 @@ body.problems.show
         font-weight: normal
 
 body.problems.index
+  .banner_bg
+    background: $cerulean url("banner-home-imagine.png") center 20px no-repeat
+    padding-top: 320px
+    padding-bottom: 20px
+    margin-top: -40px
+    margin-bottom: 40px
+    text-align: center
+    .banner
+      +grid-column(12)
+      a
+        display: inline-block
+        &:hover
+          +opacity(.9)
   .problem_notice
     +grid-column(12)
   .problem

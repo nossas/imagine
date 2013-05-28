@@ -3,6 +3,12 @@
     .problem_notice
       .notice= flash[:notice]
 
+.banner_bg
+  .row
+    .banner
+      - if current_user.nil?
+        = link_to image_tag("bt-facebook.png"), "/auth/facebook"
+
 .row
   = render Problem.all
   - if can? :create, Problem
