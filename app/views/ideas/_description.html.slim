@@ -1,11 +1,16 @@
 .idea_description
   .box
     = raw @idea.description_html
-    - if @idea.contributions.accepted.any?
-      = image_tag "balloon-contribuicoes.png"
-      - @idea.contributions.accepted.each do |contribution|
-        .contribution
-          .user
-            = image_tag contribution.user.image
-            | #{contribution.user.name}, #{l contribution.accepted_at, format: :short}
-          .body= raw contribution.body_html
+    .contributions
+      = image_tag "balloon-contribuicoes.png", class: "contributions_title"
+      - if @idea.contributions.accepted.any?
+        - @idea.contributions.accepted.each do |contribution|
+          .contribution
+            .user
+              = image_tag contribution.user.image
+              | #{contribution.user.name}, #{l contribution.accepted_at, format: :short}
+            .body= raw contribution.body_html
+      - else
+        .empty 
+          | Nenhuma contribuição foi dada a essa ideia ainda.
+          = link_to "Seja o primeiro a contribuir", "#new_contribution", class: "btn"

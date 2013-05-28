@@ -1,5 +1,5 @@
 $(function(){
-  $("a.remix").click(function(){ $("#contribution_body").focus(); })
+  $("a[href='#new_contribution']").click(function(){ $("#contribution_body").focus(); })
 
   var preview_timer
   $("#idea_description").keyup(function(){
