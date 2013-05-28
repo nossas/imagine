@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
         :image      => hash[:info][:image]
       )
     end
-    session[:user_id] = user.id
+    session[:user_id] = user.id.to_s
     if session[:idea_id]
       begin
         idea = Idea.find(session.delete(:idea_id))
