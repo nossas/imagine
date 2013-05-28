@@ -11,5 +11,23 @@ $(function(){
     FB.XFBML.parse();
     $.getScript('http://platform.twitter.com/widgets.js');
     $("form.new_update").enableClientSideValidations();
+    loadShareButtons();
   });
+  
+  loadShareButtons();
+
+  function loadShareButtons(){
+    $("a.share").click(function(event, target){
+      event.preventDefault();
+      var obj = $(event.target);
+      var url = null;
+
+      url = obj.attr('href');
+      if (url == undefined) {
+        url = obj.parent('a').attr('href');
+      }
+
+      window.open(url, '', 'width=600,height=300');
+    });
+  }
 });
