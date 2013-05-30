@@ -19,3 +19,4 @@ config/database.yml
 *.swo
 config/initializers/01_envvars.rb
 public/uploads
+logfile
