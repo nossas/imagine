@@ -5,7 +5,6 @@ doctype html
 == "<!--[if IE 8 ]>    <html class=\"ie8\" lang=\"en\"> <![endif]-->"
 == "<!--[if IE 9 ]>    <html class=\"ie9\" lang=\"en\"> <![endif]-->"
 == "<!--[if (gt IE 9)|!(IE)]><!--> <html lang=\"en\"> <!--<![endif]-->"
-== "<!--[if lt IE 7 ]>#{javascript_include_tag "ie"}<![endif]-->"
 
 head
   meta charset="utf-8"
@@ -51,7 +50,7 @@ body class="#{controller.controller_name} #{controller.action_name}"
               | Como funciona
               span o Imagine?
         .menu_mobile
-          = link_to "", "#", class: "icon-list"
+          = link_to "", "#", class: "icon-list-24"
           .links style="display: none"
             .box
               - if current_user

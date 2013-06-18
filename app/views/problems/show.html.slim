@@ -13,19 +13,23 @@
     .problem_notice
       .notice= flash[:notice]
 
+- if can? :manage, @problem
+  .manage
+    .row
+      .manage_problem
+        = link_to "Editar", edit_problem_path(@problem), id: "edit_problem", class: "icon-new-24"
+        = link_to "Remover", @problem, id: "remove_problem", class: "icon-trash-24", method: :delete
+
 .row
   .problem_user #{@problem.user.name} quer saber...
 
 .row
   .problem_title
     h1= @problem.title
-    - if can? :manage, @problem
-      = link_to "Editar problema", edit_problem_path(@problem), id: "edit_problem", class: "btn"
-      = link_to "Remover problema", @problem, id: "remove_problem", class: "btn", method: :delete
     .problem_description= simple_format @problem.description
     .problem_deadlines
       .box
-        span.icon-comment envio de ideias: 
+        span.icon-bubble-24 envio de ideias: 
         - if @problem.ideas_deadline.nil?
           span.open sem prazo final
         - elsif @problem.ideas_deadline < Time.now

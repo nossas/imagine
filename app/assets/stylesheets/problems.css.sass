@@ -3,6 +3,28 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body.problems.show
+  .manage
+    a
+      display: inline-block
+      font-size: 1.1em
+      &.icon-new-24, &.icon-trash-24
+        color: $casablanca
+        margin-right: 2em
+        &:before
+          font-size: 1.4em
+          top: 5px
+          position: relative
+          margin-right: .25em
+        &:hover
+          color: darken($casablanca, 10%)
+      &.icon-trash-24
+        color: red
+        &:before
+          top: 3px
+        &:hover
+          color: darken(red, 5%)
+    .manage_problem
+      +grid-column(12)
   .problem_notice, .problem_user
     +grid-column(12)
   .problem_title
@@ -27,9 +49,9 @@ body.problems.show
         a.btn
           margin-left: 20px
           font-size: 12px
-      span.icon-comment, span.icon-clock
+      span.icon-bubble-24, span.icon-clock
         &:before
-          font-size: 24px
+          font-size: 20px
       span.icon-clock
         &:before
           top: -1px
@@ -80,9 +102,12 @@ body.problems.show
         position: absolute
         top: 0
         right: 0
-        .icon-trash
+        .icon-trash-24
           color: red
-        .icon-pencil
+          &:before
+            top: -1px
+            position: relative
+        .icon-new-24
           color: $casablanca
           margin-right: 5px
   .update, .update_facebox
@@ -144,17 +169,17 @@ body.problems.show
       border-top: 1px solid lightgray
       +border-radius(0 0 5px 5px)
       +box-shadow(rgba(0, 0, 0, .15) 0 1px 1px)
-      .icon-heart
+      .icon-heart-24
         border-right: 1px solid lightgray
-      .icon-heart, .icon-retweet
+      .icon-heart-24, .icon-retweet
         font-size: 1.25em
         width: 50%
         padding: 10px 20px
         display: inline-block
         &:before
           color: lightgray
-          font-size: 2em
-        &.icon-heart.colored
+          font-size: 1.5em
+        &.icon-heart-24.colored
           &:before
             color: $french-rose
         &.icon-retweet.colored

@@ -3,8 +3,8 @@
   .info
     .remove_and_edit
       - if can?(:manage, update)
-        = link_to "", edit_problem_update_path(@problem, update), class: "icon-pencil", rel: "facebox[.edit_update_facebox]"
-        = link_to "", problem_update_path(@problem, update), method: :delete, class: "icon-trash", :confirm => "Você realmente quer apagar esta atualização?"
+        = link_to "", edit_problem_update_path(@problem, update), class: "icon-new-24", rel: "facebox[.edit_update_facebox]"
+        = link_to "", problem_update_path(@problem, update), method: :delete, class: "icon-trash-24", :confirm => "Você realmente quer apagar esta atualização?"
     .created_at= l update.created_at, format: :short
     .title= link_to update.title, problem_update_path(@problem, update), id: "update_#{update.id}_btn", rel: "facebox[.update_facebox]"
     .body= update.lead

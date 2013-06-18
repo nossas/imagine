@@ -5,9 +5,9 @@
     .description= simple_format truncate(idea.description, :length => 140)
   .idea_bottom
     - if current_user && current_user.voted_on?(idea)
-      span.icon-heart.colored= idea.votes.count
+      span.icon-heart-24.colored= idea.votes.count
     - else
-      span.icon-heart= idea.votes.count
+      span.icon-heart-24= idea.votes.count
     - if current_user && current_user.contributed_to?(idea)
       span.icon-retweet.colored= idea.contributions.accepted.count
     - else

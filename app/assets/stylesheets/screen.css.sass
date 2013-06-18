@@ -4,6 +4,7 @@ $cerulean:    #0dbde6
 $athens-gray: #f4f5f7
 $alabaster:   #fbfbfb
 $french-rose: #EF3567
+$gray-suit:   #EEEDF2
 
 // Foundation variables
 $header-font-family:  "Proxima Nova"
@@ -13,13 +14,14 @@ $h1-font-size:        2em
 $small-font-color:    gray
 $small-font-size:     45%
 
+@import jquery.facebox
 @import compass/reset
 @import compass/css3
 @import foundation_and_overrides
 @import fonts
 @import sticky_footer
-@import icomoon
 @import hint-css-tooltip
+@import meurio_ui
 @import problems
 @import ideas
 @import pages
@@ -101,14 +103,15 @@ header
             +border-radius(2px)
   .menu_mobile
     position: relative
-    .icon-list
+    .icon-list-24
       float: right
-      margin-top: 16px
+      margin-top: 15px
       color: gray
       cursor: pointer
+      padding: 5px
       +border-radius(5px 5px 0 0)
       &:before
-        font-size: 36px
+        font-size: 30px
       &.selected
         background: $cerulean
         color: white
@@ -161,7 +164,7 @@ footer
     &:last-child
       margin: 0
 
-.icon-retweet, .icon-comment, .icon-clock, .icon-heart
+.icon-retweet, .icon-bubble-24, .icon-clock, .icon-heart-24
   &:before
     vertical-align: middle
     margin-right: 5px
@@ -237,6 +240,13 @@ form
 .popup
   .content
     padding: 30px !important
+
+.manage
+  background: $gray-suit
+  margin-top: -40px
+  padding: 20px 0
+  margin-bottom: 2em
+  +box-shadow(0 3px 4px -2px lightgray inset)
 
 @media screen and (max-width: 640px)
   header

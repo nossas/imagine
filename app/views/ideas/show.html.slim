@@ -24,20 +24,20 @@
   .idea_panel
 
     - if can? :edit, @idea
-      = link_to "Editar ideia", edit_problem_idea_path(@idea.problem, @idea), id: "edit_idea", class: ["btn", "icon-pencil"]
+      = link_to "Editar ideia", edit_problem_idea_path(@idea.problem, @idea), id: "edit_idea", class: ["btn", "icon-new-24"]
     - if can? :destroy, @idea
-      = link_to "Remover ideia", [@idea.problem, @idea], method: :delete, id: "remove_idea", class: ["btn", "icon-cross"]
+      = link_to "Remover ideia", [@idea.problem, @idea], method: :delete, id: "remove_idea", class: ["btn", "icon-cross-24"]
     - if @problem.voting_closed?
       = link_to "#", class: "vote", id: "vote" do
-        span.icon-heart votações encerradas
+        span.icon-heart-24 votações encerradas
         span= @idea.votes.count
     - elsif current_user && current_user.can_vote_for?(@idea) || current_user.nil?
       = link_to problem_idea_votes_path(@problem, @idea), class: "vote", id: "vote", method: :post do
-        span.icon-heart votar
+        span.icon-heart-24 votar
         span= @idea.votes.count
     - else
       = link_to "#", class: "vote already_voted", id: "vote" do
-        span.icon-heart você já votou
+        span.icon-heart-24 você já votou
         span= @idea.votes.count
 
     = link_to "#new_contribution", :class => "remix" do

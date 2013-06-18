@@ -25,13 +25,19 @@ body.contributions.pending_contributions
         text-align: right
         .accept, .reject
           text-align: center
-          padding: 4px 4px 0 4px
           background: #89db00
           letter-spacing: 0
           font-size: 18px
+          padding: 4px 4px 0 4px
+          &:before
+            top: 2px
+            position: relative
         .reject
           background: #ff0000
           margin-left: 5px
+          &:before
+            top: 1px
+            left: 1px
 
 @media screen and (max-width: 800px)
   body.contributions.pending_contributions

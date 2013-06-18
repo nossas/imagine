@@ -61,3 +61,4 @@ gem "fog", "~> 1.3.1"
 gem 'facebox-rails'
 gem "koala", "~> 1.7.0rc1"
 gem 'delayed_job_active_record'
+gem 'meurio_ui'
