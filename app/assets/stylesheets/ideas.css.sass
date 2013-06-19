@@ -34,6 +34,7 @@ body.ideas.show
     h1
       line-height: normal
       margin-bottom: 0
+      margin-left: -2px
   .idea_details
     font-size: .9em
     margin-bottom: 2em
@@ -122,6 +123,16 @@ body.ideas.show
         &:last-child
           color: $cerulean
           text-align: right
+      &.contribution_closed
+        color: gray
+        span
+          &:last-child
+            color: gray
+    a.already_voted
+      color: gray
+      span
+        &:last-child
+          color: gray
     .thanks_for_voting
       text-align: center
       margin-bottom: 20px

@@ -40,9 +40,14 @@
         span.icon-heart-24 você já votou
         span= @idea.votes.count
 
-    = link_to "#new_contribution", :class => "remix" do
-      span.icon-retweet #{@problem.contribution_closed? ? "contribuições encerradas" : "contribuir"}
-      span= @idea.contributions.accepted.count
+    - if @problem.contribution_closed?
+      = link_to "#", :class => "remix contribution_closed" do
+        span.icon-retweet contribuições encerradas
+        span= @idea.contributions.accepted.count
+    - else
+      = link_to "#new_contribution", :class => "remix" do
+        span.icon-retweet contribuir
+        span= @idea.contributions.accepted.count
 
     - if flash[:notice]
       .thanks_for_voting
