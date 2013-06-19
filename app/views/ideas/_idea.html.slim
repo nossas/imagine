@@ -4,11 +4,5 @@
     .user por #{idea.user.name}
     .description= simple_format truncate(idea.description, :length => 140)
   .idea_bottom
-    - if current_user && current_user.voted_on?(idea)
-      span.icon-heart-24.colored= idea.votes.count
-    - else
-      span.icon-heart-24= idea.votes.count
-    - if current_user && current_user.contributed_to?(idea)
-      span.icon-retweet.colored= idea.contributions.accepted.count
-    - else
-      span.icon-retweet= idea.contributions.accepted.count
+    = link_to idea.votes.count, problem_idea_path(idea.problem, idea), class: "icon-heart-24"
+    = link_to idea.contributions.accepted.count, problem_idea_path(idea.problem, idea), class: "icon-retweet"
