@@ -6,4 +6,11 @@ class ProblemsController < InheritedResources::Base
   def destroy
     destroy!(:notice => "Problema removido")
   end
+
+  def show
+    show! do |format|
+      format.html
+      format.json { render json: ProblemSerializer.new(resource) }
+    end
+  end
 end
