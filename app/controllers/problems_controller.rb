@@ -3,6 +3,8 @@ class ProblemsController < InheritedResources::Base
   before_filter only: [:create] { params[:problem][:user_id] = current_user.id }
   before_filter only: [:show] { @featured_update = params[:update_id].nil? ? nil : Update.find(params[:update_id]) }
 
+  respond_to :html, :json
+
   def destroy
     destroy!(:notice => "Problema removido")
   end
@@ -10,7 +12,14 @@ class ProblemsController < InheritedResources::Base
   def show
     show! do |format|
       format.html
-      format.json { render json: ProblemSerializer.new(resource) }
+      format.json do 
+        render json: ProblemSerializer.new(resource)
+      end
     end
+  end
+
+  def search
+    problems = Problem.where("lower(description) LIKE '%#{params[:q].downcase}%'")
+    respond_with problems
   end
 end

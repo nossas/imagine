@@ -1,24 +1,7 @@
-class ProblemSerializer
-  attr_reader :subject
+class ProblemSerializer < ActiveModel::Serializer
+  attributes :id, :title, :ideas
 
-  def initialize(subject)
-    @subject = subject
-  end
-
-  def as_json(opts = {})
-    {
-      id: subject.id,
-      name: subject.title,
-      ideas_count: ideas_count,
-      votes_count: votes_count
-    }
-  end
-
-  def votes_count
-    subject.ideas.sum { |i| i.votes.size }
-  end
-
-  def ideas_count
-    subject.ideas.size
+  def ideas
+    object.ideas.includes(:user, votes: :user).map { |idea| IdeaSerializer.new(idea) } 
   end
 end

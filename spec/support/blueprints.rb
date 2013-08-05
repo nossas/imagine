@@ -35,6 +35,8 @@ end
 
 Vote.blueprint do
   # Attributes here
+  idea        { Idea.make! }
+  user        { User.make! }
 end
 
 Contribution.blueprint do

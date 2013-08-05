@@ -7,6 +7,7 @@ class Ability
     can :read, Problem
     can :pending_contributions, Contribution
     can :read, Update
+    can :search, Problem
 
     if user
       can :create, Idea

@@ -4,6 +4,11 @@ Imagine::Application.routes.draw do
   resources :problems do
     post :idea_preview, :to => "ideas#preview"
     put :idea_preview, :to => "ideas#preview"
+
+    collection do
+      get :search
+    end
+
     member do
       get :updates, defaults: { section: "updates" }, as: :updates, to: "problems#show"
     end
