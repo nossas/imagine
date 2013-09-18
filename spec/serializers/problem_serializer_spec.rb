@@ -9,8 +9,6 @@ describe ProblemSerializer do
   describe "#as_json" do
     subject { serializer.as_json }
     it { should include title: problem.title }
-    it { should include votes_count: 1 }
-    it { should include ideas_count: 1 }
     it { should include id: problem.id }
   end
 end
