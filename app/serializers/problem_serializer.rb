@@ -1,5 +1,5 @@
 class ProblemSerializer < ActiveModel::Serializer
-  attributes :id, :title, :description, :status, :ideas, :created_at
+  attributes :id, :title, :description, :hashtag, :status, :ideas, :created_at
   has_one :user
 
   def ideas

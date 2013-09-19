@@ -10,5 +10,6 @@ describe ProblemSerializer do
     subject { serializer.as_json }
     it { should include title: problem.title }
     it { should include id: problem.id }
+    it { should include hashtag: problem.hashtag }
   end
 end
