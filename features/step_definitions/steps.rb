@@ -263,6 +263,7 @@ Given(/^I fill the problem form$/) do
     fill_in "problem_description", with: Faker::Lorem.paragraph
     attach_file "problem_image", "#{Rails.root}/features/support/problem.jpeg"
     fill_in "problem_objectives", with: Faker::Lorem.paragraph
+    fill_in "problem_hashtag", with: Faker::Lorem.words(1).sample
   end
 end
 
@@ -373,12 +374,12 @@ Given(/^there is an update for this problem$/) do
 end
 
 Then(/^I should see the update with a trash button$/) do
-  page.should have_css(".update .icon-trash")
+  page.should have_css(".update .icon-trash-24")
 end
 
 When(/^I click on the trash button$/) do
   within ".update" do
-    find("a[class='icon-trash']").click
+    find("a[class='icon-trash-24']").click
   end
 end
 
@@ -387,16 +388,16 @@ Then(/^I should not see the update anymore$/) do
 end
 
 Then(/^I should not see the update with a trash button$/) do
-  page.should_not have_css(".update .icon-trash")
+  page.should_not have_css(".update .icon-trash-24")
 end
 
 Then(/^I should see the edit update button$/) do
-  page.should have_css(".update .icon-pencil")
+  page.should have_css(".update .icon-new-24")
 end
 
 When(/^I click on the edit update button$/) do
   within ".update" do
-    find("a[class='icon-pencil']").click
+    find("a[class='icon-new-24']").click
   end
 end
 
@@ -417,5 +418,5 @@ When(/^I submit the edit update form$/) do
 end
 
 Then(/^I should not see the edit update button$/) do
-  page.should_not have_css(".update .icon-pencil")
+  page.should_not have_css(".update .icon-new-24")
 end

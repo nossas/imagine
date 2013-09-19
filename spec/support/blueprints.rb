@@ -16,6 +16,7 @@ Problem.blueprint do
   voting_deadline { Time.now + 2.months }
   user            { User.make! }
   objectives      { Faker::Lorem.paragraph }
+  hashtag         { Faker::Lorem.words(1).sample }
 end
 
 Idea.blueprint do

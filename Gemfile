@@ -63,4 +63,5 @@ gem 'facebox-rails'
 gem "koala", "~> 1.7.0rc1"
 gem 'delayed_job_active_record'
 gem 'meurio_ui'
-gem "active_model_serializers"
+gem 'active_model_serializers'
+gem 'selenium-webdriver'
