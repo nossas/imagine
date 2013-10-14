@@ -10,7 +10,7 @@
         = link_to image_tag("bt-facebook.png"), "/auth/facebook"
 
 .row
-  = render Problem.all
+  = render Problem.order("created_at DESC")
   - if can? :create, Problem
     .new_problem
       .box= link_to "Novo Problema", new_problem_path, class: ["btn"], id: "new_problem"
