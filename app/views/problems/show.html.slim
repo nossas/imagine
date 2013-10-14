@@ -44,6 +44,8 @@
           span.close encerrado
         - else
           span.open= l(@problem.voting_deadline, format: :short)
+    - if params[:section].nil? && !@problem.contribution_closed?
+      = link_to "Pergunte", new_problem_idea_path(@problem), id: "new_idea", class: "btn"
   .problem_objectives
     .box
       h2 O que será feito com as ideias?
@@ -60,8 +62,6 @@
       span= @problem.updates.count
     - if params[:section] == "updates" && can?(:create, Update)
       = link_to "Nova atualização", new_problem_update_path(@problem), id: "new_update", class: "btn", rel: "facebox[.new_update_facebox]"
-    - if params[:section].nil? && !@problem.contribution_closed?
-      = link_to "Crie sua ideia!", new_problem_idea_path(@problem), id: "new_idea", class: "btn"
 
 - if params[:section] == "updates"
   .row

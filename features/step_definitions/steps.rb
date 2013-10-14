@@ -60,7 +60,7 @@ Given(/^I already voted for this idea$/) do
   Vote.make! idea_id: @idea.id, user_id: current_user.id
 end
 
-Then(/^I should see you alredy voted for this idea$/) do
+Then(/^I should see you already voted for this idea$/) do
   page.should have_css("a.vote.already_voted")
 end
 

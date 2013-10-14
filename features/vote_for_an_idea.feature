@@ -25,11 +25,10 @@ Feature: vote for an idea
   @omniauth_test
   Scenario: when I already voted for this idea and I'm logged in
     Given there is an idea
-    And I'm in "this idea page"
     And I'm logged in
     And I already voted for this idea
     When I'm in "this idea page"
-    Then I should see you alredy voted for this idea
+    Then I should see you already voted for this idea
 
   Scenario: when the voting deadline is expired
     Given there is a problem with a expired voting deadline

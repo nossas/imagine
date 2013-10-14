@@ -1,6 +1,6 @@
 .problem
   .box
-    = image_tag problem.image.thumb.url
+    = link_to image_tag(problem.image.thumb.url), problem
     .user_name 
       strong #{problem.user.name} 
       |  quer saber...
