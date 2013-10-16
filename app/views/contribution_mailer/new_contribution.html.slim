@@ -6,5 +6,5 @@ p
   strong #{@contribution.idea.title} 
   | acaba de receber uma contribuição de 
   strong #{@contribution.user.name}.
-p Você pode ver e aprovar esta contribuição na sua #{link_to "página de contribuições pendentes", user_contributions_url(@user), style: "color:#0dbde6"}.
+p Você pode ver e aprovar esta contribuição na sua #{link_to "página de contribuições pendentes", user_pending_contributions_url(@user), style: "color:#0dbde6"}.
 p Equipe Imagine
