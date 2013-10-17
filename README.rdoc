@@ -1,3 +1,7 @@
+{<img src="https://travis-ci.org/meurio/imagine.png?branch=master" alt="Build Status" />}[https://travis-ci.org/meurio/imagine]
+{<img src="https://coveralls.io/repos/meurio/imagine/badge.png" alt="Coverage Status" />}[https://coveralls.io/r/meurio/imagine]
+{<img src="https://codeclimate.com/github/meurio/imagine.png" />}[https://codeclimate.com/github/meurio/imagine]
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
