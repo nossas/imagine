@@ -57,7 +57,7 @@ Then(/^I should have one vote for this idea$/) do
 end
 
 Given(/^I already voted for this idea$/) do
-  Vote.make! idea_id: @idea.id, user_id: current_user.id
+  @vote = Vote.make! idea: @idea, user: current_user
 end
 
 Then(/^I should see you already voted for this idea$/) do
