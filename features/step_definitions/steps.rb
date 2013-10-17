@@ -16,10 +16,6 @@ Then(/^I should see that idea$/) do
   page.should have_css(".idea .title", :text => @idea.title[0..25])
 end
 
-Then(/^I should see that problem$/) do
-  page.should have_css(".problem .title", :text => @problem.title)
-end
-
 When(/^I'm in "(.*?)"$/) do |arg1|
   visit path(arg1)
 end
@@ -104,16 +100,8 @@ Then(/^I should have one contribution$/) do
   current_user.contributions.count.should_not be_zero
 end
 
-Then(/^show me the page$/) do
-  save_and_open_page
-end
-
 Then(/^I should see the error message for contribution field$/) do
   page.should have_css(".field_with_errors label.message[for='contribution_body']")
-end
-
-Then(/^I should have no contribution$/) do
-  current_user.contributions.count.should be_zero
 end
 
 Given(/^there is an idea with an expired deadline for contribution$/) do
