@@ -65,3 +65,4 @@ gem 'delayed_job_active_record'
 gem 'meurio_ui'
 gem 'active_model_serializers'
 gem 'selenium-webdriver'
+gem 'coveralls', require: false
