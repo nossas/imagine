@@ -6,6 +6,8 @@ class IdeasController < InheritedResources::Base
   before_filter only: [:create] { params[:idea][:user_id] = current_user.id }
   authorize_resource
 
+  respond_to :json, only: [:index]
+
   def preview
     @idea = Idea.new(params[:idea])
     render partial: "description"

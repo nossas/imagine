@@ -1,7 +1,7 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user)
+  def initialize(user, request)
     can :read, Idea
     can :preview, Idea
     can :read, Problem
@@ -31,6 +31,16 @@ class Ability
         can :manage, Idea
         can :manage, Problem
         can :manage, Update
+      end
+    end
+
+    if request.format.json?
+      if request.params[:token] == ENV["API_TOKEN"]
+        can :index, Problem
+        can :index, Idea
+      else
+        cannot :index, Problem
+        cannot :index, Idea
       end
     end
   end

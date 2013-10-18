@@ -11,6 +11,10 @@ class Idea < ActiveRecord::Base
     "#{self.id}-#{self.title.parameterize}"
   end
 
+  def as_json options
+    super({include: :user}.merge(options))
+  end
+
   auto_html_for :description do
     html_escape
     image

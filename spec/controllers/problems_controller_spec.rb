@@ -1,23 +1,16 @@
 require 'spec_helper'
 
 describe ProblemsController do
-  describe "GET show" do
-    let(:problem) { double "problem" }
-    let(:serializer) { double "serializer" }
-
-    before do
-      Problem.should_receive(:find).with("1").and_return(problem)
-      ProblemSerializer.should_receive(:new).with(problem).and_return(serializer)
-      serializer.should_receive(:as_json).and_return([])
-    end
-
-    context "as json" do
-      before do
-        get :show, id: 1, format: :json
+  describe "GET index" do
+    context "when it's a json format request" do
+      context "when the token is not provided" do
+        subject { get :index, format: :json }
+        its(:status) { should be_== 302 }
       end
 
-      describe "response" do
-        its("response.body") { should == "[]" }
+      context "when the token is provided" do
+        subject { get :index, format: :json, token: ENV['API_TOKEN'] }
+        its(:status) { should be_== 200 }
       end
     end
   end

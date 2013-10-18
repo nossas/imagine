@@ -9,12 +9,16 @@ class Problem < ActiveRecord::Base
   def voting_closed?
     self.voting_deadline <= Time.now
   end
-  
+
   def contribution_closed?
     self.ideas_deadline <= Time.now
   end
 
   def to_param
     "#{self.id}-#{self.title.parameterize}"
+  end
+
+  def as_json options
+    super({include: :user}.merge(options))
   end
 end
