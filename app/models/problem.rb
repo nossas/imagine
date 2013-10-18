@@ -19,6 +19,6 @@ class Problem < ActiveRecord::Base
   end
 
   def as_json options
-    super({include: [:user, :ideas]}.merge(options))
+    super({include: [:user, ideas: {include: :user}]}.merge(options))
   end
 end
