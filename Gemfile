@@ -67,3 +67,4 @@ gem 'meurio_ui'
 gem 'active_model_serializers'
 gem 'selenium-webdriver'
 gem 'coveralls', require: false
+gem 'meurio_ui'

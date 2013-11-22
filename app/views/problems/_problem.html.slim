@@ -5,15 +5,14 @@
       strong #{problem.user.name} 
       |  quer saber...
     .title= link_to truncate(problem.title, length: 88), problem, title: problem.title
-    .hint.hint--top data-hint="Prazo para o envio de ideias e votação"
-      .icon-clock
-        strong ideias:  
-        - if problem.contribution_closed?
-          span.closed encerrado 
-        - else
-          span.open #{distance_of_time_in_words_to_now(problem.ideas_deadline)} 
-        strong | votação: 
-        - if problem.voting_closed?
-          span.closed encerrado 
-        - else
-          span.open #{distance_of_time_in_words_to_now(problem.voting_deadline)}
+    .icon-clock
+      strong ideias:  
+      - if problem.contribution_closed?
+        span.closed encerrado 
+      - else
+        span.open #{distance_of_time_in_words_to_now(problem.ideas_deadline)} 
+      strong | votação: 
+      - if problem.voting_closed?
+        span.closed encerrado 
+      - else
+        span.open #{distance_of_time_in_words_to_now(problem.voting_deadline)}

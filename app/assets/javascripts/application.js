@@ -17,5 +17,6 @@
 //= require jquery.facebox
 //= require app
 //= require ideas
+//= require meurio_ui
 
 $(document).foundation();

@@ -25,130 +25,18 @@ $small-font-size:     45%
 @import ideas
 @import pages
 @import contributions
+@import meurio_ui
 
 body
   background: $athens-gray
   font-family: "Proxima Nova"
   color: $dove-gray
 
-header
-  background: white
-  padding: 10px 0
+header.meurio_header
   margin-bottom: 40px
-  +box-shadow(gray 0 0 3px)
-  .logo
+  .meurio_logo, .user_menu, .meurio_apps, .application_menu
     +grid-column(6)
-    img
-      float: left
-    a
-      &:first-child
-        img
-          padding-right: 20px
-          border-right: 1px solid lightgray
-          margin-right: 20px
-      &:last-child
-        img
-          margin-top: 14px
-  .menu
-    +grid-column(6)
-    text-align: right
-    .links
-      float: right
-      padding-top: 2px
-      a
-        padding: 15px 20px 15px 0
-        margin-right: 20px
-        color: $casablanca
-        text-align: left
-        display: inline-block
-        font-size: 1.1em
-        font-family: "Proxima Nova"
-        border-right: 1px lightgray solid
-        &:hover
-          span
-            text-decoration: underline
-        span
-          display: block
-          color: lighten(gray, 10%)
-          font-size: .8em
-    .login
-      float: right
-      text-align: right
-      line-height: 67px
-      font-size: 14px
-      img
-        vertical-align: middle
-      a#auth-facebook
-        &:hover
-          +opacity(.9)
-      span
-        line-height: normal
-        position: relative
-        margin-right: 10px
-        &:before, &:after
-          left: 0
-        a.icon-retweet
-          font-size: 24px
-          color: gray
-          span.counter
-            background: red
-            color: white
-            position: absolute
-            left: 0
-            top: 0
-            font-size: 10px
-            padding: 0 4px
-            font-weight: bold
-            +border-radius(2px)
-  .menu_mobile
-    position: relative
-    .icon-list-24
-      float: right
-      margin-top: 15px
-      color: gray
-      cursor: pointer
-      padding: 5px
-      +border-radius(5px 5px 0 0)
-      &:before
-        font-size: 30px
-      &.selected
-        background: $cerulean
-        color: white
-    .links
-      z-index: 999
-      width: 250px
-      right: 14px
-      top: 50px
-      position: absolute
-      .box
-        background: $cerulean
-        color: white
-        .user
-          border-bottom: 1px solid white
-          padding-bottom: 5px
-          margin-bottom: 20px
-          font-size: 12px
-          img
-            width: 25px
-            height: 25px
-            vertical-align: middle
-            +border-radius(25px)
-        a
-          color: white
-          display: block
-          margin-bottom: 10px
-          &:last-child
-            margin-bottom: 0
-          &:hover
-            text-decoration: underline
-
-footer
-  background: $cerulean
-  padding: 5px 0
-  .signature
-    text-align: right
-    +grid-column(12)
-
+    
 .row
   +grid-row
 
@@ -223,10 +111,6 @@ p
   &:last-child
     margin-bottom: 0
 
-img.user_image
-  width: 25px
-  +border-radius(25px)
-
 select, input[type="file"]
   width: auto
 
@@ -246,17 +130,3 @@ form
   padding: 20px 0
   margin-bottom: 2em
   +box-shadow(0 3px 4px -2px lightgray inset)
-
-@media screen and (max-width: 640px)
-  header
-    .menu
-      display: none
-    .logo
-      +grid-column(10)
-    .menu_mobile
-      +grid-column(2)
-
-@media screen and (min-width: 641px)
-  header
-    .menu_mobile
-      display: none
