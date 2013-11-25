@@ -17,8 +17,8 @@
   .manage
     .row
       .manage_problem
-        = link_to "Editar", edit_problem_path(@problem), id: "edit_problem", class: "icon-new-24"
-        = link_to "Remover", @problem, id: "remove_problem", class: "icon-trash-24", method: :delete
+        = link_to "Editar", edit_problem_path(@problem), id: "edit_problem", class: "icon-pencil"
+        = link_to "Remover", @problem, id: "remove_problem", class: "icon-remove", method: :delete
 
 .row
   .problem_user #{@problem.user.name} quer saber...
@@ -29,7 +29,7 @@
     .problem_description= simple_format @problem.description
     .problem_deadlines
       .box
-        span.icon-bubble-24 envio de ideias: 
+        span.icon-comments envio de ideias: 
         - if @problem.ideas_deadline.nil?
           span.open sem prazo final
         - elsif @problem.ideas_deadline < Time.now

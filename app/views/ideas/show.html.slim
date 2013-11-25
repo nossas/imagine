@@ -24,29 +24,29 @@
   .idea_panel
 
     - if can? :edit, @idea
-      = link_to "Editar ideia", edit_problem_idea_path(@idea.problem, @idea), id: "edit_idea", class: ["btn", "icon-new-24"]
+      = link_to "Editar ideia", edit_problem_idea_path(@idea.problem, @idea), id: "edit_idea", class: ["btn", "icon-pencil"]
     - if can? :destroy, @idea
-      = link_to "Remover ideia", [@idea.problem, @idea], method: :delete, id: "remove_idea", class: ["btn", "icon-cross-24"]
+      = link_to "Remover ideia", [@idea.problem, @idea], method: :delete, id: "remove_idea", class: ["btn", "icon-close"]
     - if @problem.voting_closed?
       = link_to "#", class: "vote", id: "vote" do
-        span.icon-heart-24 votações encerradas
+        span.icon-heart votações encerradas
         span= @idea.votes.count
     - elsif current_user && current_user.can_vote_for?(@idea) || current_user.nil?
       = link_to problem_idea_votes_path(@problem, @idea), class: "vote", id: "vote", method: :post do
-        span.icon-heart-24 votar
+        span.icon-heart votar
         span= @idea.votes.count
     - else
       = link_to "#", class: "vote already_voted", id: "vote" do
-        span.icon-heart-24 você já votou
+        span.icon-heart você já votou
         span= @idea.votes.count
 
     - if @problem.contribution_closed?
       = link_to "#", :class => "remix contribution_closed" do
-        span.icon-retweet contribuições encerradas
+        span.icon-loop contribuições encerradas
         span= @idea.contributions.accepted.count
     - else
       = link_to "#new_contribution", :class => "remix" do
-        span.icon-retweet contribuir
+        span.icon-loop contribuir
         span= @idea.contributions.accepted.count
 
     - if flash[:notice]
@@ -68,5 +68,5 @@
       = form.label :body, "Contribua com referências e mais informações para o desenvolvimento da ideia. Ajude a elaborar as necessidades e próximos passos."
       = form.text_area :body 
       = form.hidden_field :idea_id, value: @idea.id
-      = link_to "#new_contribution", class: "submit icon-retweet", id: "submit_contribution" do
+      = link_to "#new_contribution", class: "submit icon-loop", id: "submit_contribution" do
         span Contribuir

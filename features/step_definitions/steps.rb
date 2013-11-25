@@ -362,12 +362,12 @@ Given(/^there is an update for this problem$/) do
 end
 
 Then(/^I should see the update with a trash button$/) do
-  page.should have_css(".update .icon-trash-24")
+  page.should have_css(".update .icon-remove")
 end
 
 When(/^I click on the trash button$/) do
   within ".update" do
-    find("a[class='icon-trash-24']").click
+    find("a[class='icon-remove']").click
   end
 end
 
@@ -376,16 +376,16 @@ Then(/^I should not see the update anymore$/) do
 end
 
 Then(/^I should not see the update with a trash button$/) do
-  page.should_not have_css(".update .icon-trash-24")
+  page.should_not have_css(".update .icon-remove")
 end
 
 Then(/^I should see the edit update button$/) do
-  page.should have_css(".update .icon-new-24")
+  page.should have_css(".update .icon-pencil")
 end
 
 When(/^I click on the edit update button$/) do
   within ".update" do
-    find("a[class='icon-new-24']").click
+    find("a[class='icon-pencil']").click
   end
 end
 
@@ -406,5 +406,5 @@ When(/^I submit the edit update form$/) do
 end
 
 Then(/^I should not see the edit update button$/) do
-  page.should_not have_css(".update .icon-new-24")
+  page.should_not have_css(".update .icon-pencil")
 end

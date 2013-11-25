@@ -7,7 +7,7 @@
   .row
     .banner
       - if current_user.nil?
-        = link_to image_tag("bt-facebook.png"), "/auth/facebook"
+        = link_to image_tag("bt-facebook.png"), "/auth/facebook", id: "auth-facebook"
 
 .row
   = render Problem.order("created_at DESC")

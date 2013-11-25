@@ -7,7 +7,7 @@ body.problems.show
     a
       display: inline-block
       font-size: 1.1em
-      &.icon-new-24, &.icon-trash-24
+      &.icon-pencil, &.icon-remove
         color: $casablanca
         margin-right: 2em
         &:before
@@ -17,7 +17,7 @@ body.problems.show
           margin-right: .25em
         &:hover
           color: darken($casablanca, 10%)
-      &.icon-trash-24
+      &.icon-remove
         color: red
         &:before
           top: 3px
@@ -52,7 +52,7 @@ body.problems.show
         a.btn
           margin-left: 20px
           font-size: 12px
-      span.icon-bubble-24, span.icon-clock
+      span.icon-comments, span.icon-clock
         &:before
           font-size: 20px
       span.icon-clock
@@ -105,12 +105,12 @@ body.problems.show
         position: absolute
         top: 0
         right: 0
-        .icon-trash-24
+        .icon-remove
           color: red
           &:before
             top: -1px
             position: relative
-        .icon-new-24
+        .icon-pencil
           color: $casablanca
           margin-right: 5px
   .update, .update_facebox
@@ -172,9 +172,9 @@ body.problems.show
       border-top: 1px solid lightgray
       +border-radius(0 0 5px 5px)
       +box-shadow(rgba(0, 0, 0, .15) 0 1px 1px)
-      .icon-heart-24
+      .icon-heart
         border-right: 1px solid lightgray
-      .icon-heart-24, .icon-retweet
+      .icon-heart, .icon-loop
         font-size: 1.25em
         width: 50%
         padding: 14px 20px 10px 20px
@@ -183,7 +183,7 @@ body.problems.show
         &:before
           color: lightgray
           font-size: 1.5em
-      .icon-retweet
+      .icon-loop
         &:before
           top: -2px
           position: relative
@@ -191,7 +191,7 @@ body.problems.show
           color: $casablanca
           &:before
             color: $casablanca
-      .icon-heart-24
+      .icon-heart
         &:hover
           color: $french-rose
           &:before

@@ -19,7 +19,7 @@ head
   meta property="og:type"         content="#{content_for?(:og_type) ? yield(:og_type) : "#{ENV["FACEBOOK_NAMESPACE"]}"}"
   meta property="og:description"  content="#{content_for?(:og_description) ? yield(:og_description) : "O Imagine é uma plataforma de produção colaborativa de idéias para os principais problemas da sua cidade"}"
   title= content_for?(:title) ? yield(:title) : "Imagine"
-  link rel="stylesheet" href="http://i.icomoon.io/public/temp/4a1314950d/MeuRio/style.css"
+  = meurio_ui_assets
   = favicon_link_tag "favicon.png", :type => "image/png"
   = stylesheet_link_tag "application"
   = javascript_include_tag "vendor/custom.modernizr"

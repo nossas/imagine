@@ -4,5 +4,5 @@
     .user por #{idea.user.name}
     .description= simple_format truncate(idea.description, :length => 140)
   .idea_bottom
-    = link_to idea.votes.count, problem_idea_path(idea.problem, idea), class: "icon-heart-24"
-    = link_to idea.contributions.accepted.count, problem_idea_path(idea.problem, idea), class: "icon-retweet"
+    = link_to idea.votes.count, problem_idea_path(idea.problem, idea), class: "icon-heart"
+    = link_to idea.contributions.accepted.count, problem_idea_path(idea.problem, idea), class: "icon-loop"
