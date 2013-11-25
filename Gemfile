@@ -68,3 +68,4 @@ gem 'active_model_serializers'
 gem 'selenium-webdriver'
 gem 'coveralls', require: false
 gem 'meurio_ui'
+gem 'rails_12factor'
