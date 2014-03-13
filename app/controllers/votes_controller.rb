@@ -15,7 +15,7 @@ class VotesController < InheritedResources::Base
   def create
     create! do |success, failure|
       success.html { redirect_to problem_idea_path(@idea.problem, @idea), notice: true }
-      failure.html { raise "Fail to create vote" }
+      failure.html { logger.warn("Fail to create vote"); redirect_to problem_idea_path(@idea.problem, @idea) }
     end
   end
 end
