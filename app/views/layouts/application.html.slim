@@ -31,7 +31,8 @@ body class="#{controller.controller_name} #{controller.action_name}"
     = link_to "Como funciona?", about_path, id: "about"
   = meurio_header_for(:imagine)  
 
-  = yield
+  .content
+    = yield
 
   = javascript_include_tag "application"
   #fb-root
