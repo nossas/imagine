@@ -66,7 +66,5 @@ gem 'delayed_job_active_record'
 gem 'active_model_serializers'
 gem 'selenium-webdriver'
 gem 'coveralls', require: false
-# gem 'meurio_ui'
-# gem 'meurio_ui', github: "meurio/meurio_ui", branch: "minhascidades"
-gem 'meurio_ui', path: "/Users/nicolasiensen/Projects/meurio_ui"
+gem 'meurio_ui', github: "meurio/meurio_ui", branch: "minhascidades"
 gem 'rails_12factor'

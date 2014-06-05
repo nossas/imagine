@@ -5,8 +5,10 @@ GIT
   specs:
     client_side_validations (3.2.5)
 
-PATH
-  remote: /Users/nicolasiensen/Projects/meurio_ui
+GIT
+  remote: git://github.com/meurio/meurio_ui.git
+  revision: 466df702f9671716f50b4df0383d5f29599633d4
+  branch: minhascidades
   specs:
     meurio_ui (1.4.4)
 
