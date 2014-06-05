@@ -32,14 +32,20 @@ body
   font-family: "Proxima Nova"
   color: $dove-gray
 
-header.meurio_header
-  margin-bottom: 40px
-  .meurio_logo, .user_menu, .meurio_apps, .application_menu
+.meurio_header
+  .meurio_logo, .user_menu
     +grid-column(6)
+  .meurio_apps
+    +grid-column(3)
+  .alert
+    +grid-column(1)
+  .application_menu
+    +grid-column(8)
+
 
 .content
   padding-top: 40px
-    
+
 .row
   +grid-row
 
