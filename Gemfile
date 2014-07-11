@@ -63,9 +63,8 @@ gem "fog", "~> 1.3.1"
 gem 'facebox-rails'
 gem "koala", "~> 1.7.0rc1"
 gem 'delayed_job_active_record'
-gem 'meurio_ui'
 gem 'active_model_serializers'
 gem 'selenium-webdriver'
 gem 'coveralls', require: false
-gem 'meurio_ui'
+gem 'meurio_ui', github: "meurio/meurio_ui", branch: "minhascidades"
 gem 'rails_12factor'
