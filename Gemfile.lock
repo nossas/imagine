@@ -7,10 +7,10 @@ GIT
 
 GIT
   remote: git://github.com/meurio/meurio_ui.git
-  revision: e1d1bbda1f2e0901f40cc7e8d6d951eeab4616ca
+  revision: 1b8f7bddbb8d55ef1021fa12f15c66c18209a36d
   branch: minhascidades
   specs:
-    meurio_ui (1.4.4)
+    meurio_ui (1.4.5)
 
 GEM
   remote: https://rubygems.org/
