@@ -10,8 +10,6 @@ head
   meta charset="utf-8"
   / Uncomment to make IE8 render like IE7
   / meta http-equiv="X-UA-Compatible" content="IE=7"
-  / Set the viewport width to device width for mobile
-  meta name="viewport" content="width=device-width, initial-scale=1.0"
   meta property="fb:app_id"       content="#{ENV['FACEBOOK_KEY']}"
   meta property="og:url"          content="#{content_for?(:og_url) ? yield(:og_url) : request.url}"
   meta property="og:title"        content="#{content_for?(:title) ? yield(:title) : "Imagine"}"
@@ -29,7 +27,7 @@ head
 body class="#{controller.controller_name} #{controller.action_name}"
   - content_for(:application_menu) do
     = link_to "Como funciona?", about_path, id: "about"
-  = meurio_header_for(:imagine)  
+  = meurio_header_for(:imagine)
 
   .content
     = yield
