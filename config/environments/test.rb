@@ -34,5 +34,5 @@ Imagine::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
-  default_url_options[:host] = "imagine.minhascidades.org.br"
+  default_url_options[:host] = "imagine.nossascidades.org"
 end
