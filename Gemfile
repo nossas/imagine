@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '1.9.3'
+ruby '2.1.3'
 
 gem 'rails', '3.2.13'
 
@@ -66,5 +66,5 @@ gem 'delayed_job_active_record'
 gem 'active_model_serializers'
 gem 'selenium-webdriver'
 gem 'coveralls', require: false
-gem 'meurio_ui', github: "meurio/meurio_ui", branch: "minhascidades"
+gem 'meurio_ui'
 gem 'rails_12factor'
