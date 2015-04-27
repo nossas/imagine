@@ -6,6 +6,8 @@ class Problem < ActiveRecord::Base
   belongs_to :user
   mount_uploader :image, ProblemImageUploader
 
+  before_create :set_default_organization
+
   def voting_closed?
     self.voting_deadline <= Time.now
   end
@@ -20,5 +22,9 @@ class Problem < ActiveRecord::Base
 
   def as_json options
     super({include: [:user, ideas: {include: :user}]}.merge(options))
+  end
+
+  def set_default_organization
+    self.organization_id = ENV["MEURIO_ORGANIZATION_ID"]
   end
 end
